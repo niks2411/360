@@ -2,15 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, 
-  CheckCircle,
-  Users,
-  Target,
-  Zap,
-  BarChart3
+  ArrowRight
 } from 'lucide-react';
 import PartnerLogos from '../components/PartnerLogos';
 import { FocusCardsDemo } from '../components/FocusCardsDemo';
+import { WobbleCardDemo } from '../components/WobbleCardDemo';
 import { ProgressiveBlur } from '../components/magicui/progressive-blur';
 
 const Home = () => {
@@ -23,14 +19,6 @@ const Home = () => {
     { number: '24/7', label: 'Support Available' }
   ];
 
-  const benefits = [
-    'Complete SEO optimization',
-    'Advanced marketing automation',
-    'Real-time analytics dashboard',
-    '24/7 expert support',
-    'Custom solutions for your business',
-    'Proven track record of success'
-  ];
 
   return (
     <div className="min-h-screen relative">
@@ -119,76 +107,158 @@ const Home = () => {
       </section>
 
 
-      {/* Benefits Section */}
+      {/* Wobble Cards Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+          <WobbleCardDemo />
+        </div>
+      </section>
+
+      {/* New Section */}
+      <section 
+        className="py-24 relative" 
+        style={{ backgroundColor: 'rgb(68,16,151)' }}
+      >
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{ 
+            backgroundImage: 'url(/glass.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            zIndex: 10
+          }}
+        ></div>
+        
+        {/* Vertical Stripes Overlay */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{ 
+            background: `
+              linear-gradient(90deg, 
+                rgba(68,16,151,0.8) 0%, 
+                rgba(68,16,151,0.6) 8%, 
+                rgba(68,16,151,0.8) 16%, 
+                rgba(68,16,151,0.5) 24%, 
+                rgba(68,16,151,0.7) 32%, 
+                rgba(68,16,151,0.6) 40%, 
+                rgba(68,16,151,0.8) 48%, 
+                rgba(68,16,151,0.5) 56%, 
+                rgba(68,16,151,0.7) 64%, 
+                rgba(68,16,151,0.6) 72%, 
+                rgba(68,16,151,0.8) 80%, 
+                rgba(68,16,151,0.5) 88%, 
+                rgba(68,16,151,0.8) 100%
+              )
+            `,
+            zIndex: 15
+          }}
+        ></div>
+        
+        {/* Content */}
+        <div className="container-max relative" style={{ zIndex: 20 }}>
+          {/* Hero Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              AI Foundry: <span className="italic">Casting the future</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-200 mb-8">
+              Harnessing AI to Shape the Future
+            </p>
+            <Link 
+              to="/services" 
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
             >
-              <h2 className="text-3xl md:text-4xl font-normal text-dark-800 mb-6 tracking-tight">
-                Why Choose Our Platform?
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                We provide comprehensive digital solutions that help businesses 
-                achieve their online goals with proven strategies and cutting-edge tools.
-              </p>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-3"
-                  >
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </motion.div>
-                ))}
+              DISCOVER AI FOUNDRY
+            </Link>
+          </motion.div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ 
+                  backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop)'
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Ready-Made AI Solutions
+                </h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  30+ Ready-Made AI Solutions: Pre-built, scalable tools tailored to meet diverse business needs.
+                </p>
               </div>
             </motion.div>
 
+            {/* Card 2 */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-6"
+              className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
             >
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <Users className="w-8 h-8 text-blue-500 mb-4" />
-                  <h3 className="font-semibold text-dark-800 mb-2">Expert Team</h3>
-                  <p className="text-sm text-gray-600">Certified professionals with years of experience</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <Target className="w-8 h-8 text-green-500 mb-4" />
-                  <h3 className="font-semibold text-dark-800 mb-2">Proven Results</h3>
-                  <p className="text-sm text-gray-600">Track record of successful campaigns</p>
-                </div>
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ 
+                  backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop)'
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Tailored AI Partnerships
+                </h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  70+ Partners: A vast network of trusted collaborators and strategic alliances in the AI ecosystem.
+                </p>
               </div>
-              <div className="space-y-6 mt-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <Zap className="w-8 h-8 text-yellow-500 mb-4" />
-                  <h3 className="font-semibold text-dark-800 mb-2">Fast Implementation</h3>
-                  <p className="text-sm text-gray-600">Quick setup and immediate results</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <BarChart3 className="w-8 h-8 text-purple-500 mb-4" />
-                  <h3 className="font-semibold text-dark-800 mb-2">Real-time Data</h3>
-                  <p className="text-sm text-gray-600">Live analytics and reporting</p>
-                </div>
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ 
+                  backgroundImage: 'url(https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=400&fit=crop)'
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Elite AI Workforce
+                </h3>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Expert AI Engineers: A powerhouse of 5,000+ skilled professionals driving innovation.
+                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-
       
       {/* Progressive Blur Effect - Only after hero section */}
       <ProgressiveBlur 

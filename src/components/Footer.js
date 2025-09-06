@@ -21,7 +21,7 @@ const Footer = () => {
     <footer className="text-white relative overflow-hidden" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', backgroundColor: 'rgb(12,33,20)' }}>
       <div className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
         {/* Free Consultancy Section - Now at the top */}
-        <div className="mb-12 pb-8 border-b border-gray-600">
+        <div className="mb-16 pb-12 border-b border-gray-600">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Transform Your Digital Presence?
@@ -114,4 +114,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

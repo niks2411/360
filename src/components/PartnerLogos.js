@@ -69,17 +69,17 @@ const PartnerLogos = () => {
 
       {/* Left Blur Effect */}
       <div 
-        className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/6"
         style={{ 
           background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
-          maskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 100%)',
+          maskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 90%)',
           WebkitMaskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 100%)',
           backdropFilter: 'blur(0px)',
           WebkitBackdropFilter: 'blur(0px)'
         }}
       ></div>
       <div 
-        className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/6"
         style={{ 
           background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
           maskImage: 'linear-gradient(to right, transparent 0%, black 10px, black 100%)',
@@ -91,7 +91,7 @@ const PartnerLogos = () => {
 
       {/* Right Blur Effect */}
       <div 
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/3"
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/6"
         style={{ 
           background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
           maskImage: 'linear-gradient(to left, black 0%, black 10px, transparent 100%)',
@@ -101,7 +101,7 @@ const PartnerLogos = () => {
         }}
       ></div>
       <div 
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/3"
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/6"
         style={{ 
           background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
           maskImage: 'linear-gradient(to left, transparent 0%, black 10px, black 100%)',
