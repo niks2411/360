@@ -1,0 +1,25 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background for better particle detection -->
+  <rect width="600" height="300" fill="#000000" opacity="0.01"/>
+  
+  <!-- Main 360 Text -->
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="120" font-weight="bold" text-anchor="middle" fill="#FFFFFF">360</text>
+  
+  <!-- Degree symbol -->
+  <circle cx="480" cy="80" r="18" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="150" cy="150" r="12" fill="#FFFFFF"/>
+  <circle cx="450" cy="150" r="12" fill="#FFFFFF"/>
+  
+  <!-- Orbit rings */
+  <circle cx="300" cy="150" r="140" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.6"/>
+  <circle cx="300" cy="150" r="110" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+  <circle cx="300" cy="150" r="80" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Corner elements for better particle spread -->
+  <circle cx="50" cy="50" r="8" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="550" cy="50" r="8" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="50" cy="250" r="8" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="550" cy="250" r="8" fill="#FFFFFF" opacity="0.8"/>
+</svg>

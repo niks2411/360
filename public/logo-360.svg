@@ -1,0 +1,18 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for better particle detection -->
+  <circle cx="200" cy="100" r="80" fill="#47BF72" opacity="0.1"/>
+  
+  <!-- 360 Text -->
+  <text x="200" y="120" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#47BF72">360</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="120" cy="100" r="8" fill="#47BF72"/>
+  <circle cx="280" cy="100" r="8" fill="#47BF72"/>
+  
+  <!-- Degree symbol -->
+  <circle cx="320" cy="60" r="12" fill="none" stroke="#47BF72" stroke-width="4"/>
+  
+  <!-- Orbit lines -->
+  <circle cx="200" cy="100" r="90" fill="none" stroke="#47BF72" stroke-width="2" opacity="0.3"/>
+  <circle cx="200" cy="100" r="70" fill="none" stroke="#47BF72" stroke-width="2" opacity="0.3"/>
+</svg>
