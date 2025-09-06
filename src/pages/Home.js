@@ -36,7 +36,7 @@ const Home = () => {
     <div className="min-h-screen relative">
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen w-full py-20 px-4 sm:px-6 lg:px-8" style={{
-        backgroundImage: 'url(/bg.jpg)',
+        backgroundImage: 'url(/bg1.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -58,16 +58,33 @@ const Home = () => {
                 to maximize your online presence and drive real results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/services" className="bg-white text-green-800 px-8 py-4 rounded-full font-medium uppercase tracking-wide text-sm hover:bg-green-50 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
-                  Get Started
+                <Link 
+                  to="/services" 
+                  className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg inline-flex items-center justify-center"
+                  style={{ 
+                    backgroundColor: '#47BF72',
+                    borderRadius: '5px',
+                    border: '0.5px solid white'
+                  }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#47BF72'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                >
+                  GET STARTED
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
-                <Link to="/contact" className="border-2 border-white text-white px-8 py-4 rounded-full font-medium uppercase tracking-wide text-sm hover:bg-white hover:text-green-800 transition-all duration-200 inline-flex items-center justify-center">
-                  Contact Us
-                </Link>
+                
               </div>
             </motion.div>
 
+            {/* Right Side Background Image */}
+            <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full z-10">
+              <img
+                src="/bgright.png"
+                alt="Background Right"
+                className="w-full h-full object-cover object-right"
+                style={{ zIndex: 10 }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -172,34 +189,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-dark-800 text-white">
-        <div className="container-max text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Online Presence?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses that trust us with their digital success. 
-              Get started today and see the difference.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-white text-dark-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Start Your Journey
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <Link to="/services" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-800 transition-colors inline-flex items-center justify-center">
-                View Our Services
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
       
       {/* Progressive Blur Effect - Only after hero section */}
       <ProgressiveBlur 

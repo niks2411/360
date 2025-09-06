@@ -42,7 +42,10 @@ const PartnerLogos = () => {
   ];
 
   return (
-    <div className="relative flex h-16 w-screen items-center justify-start overflow-hidden bg-blue-50">
+    <div 
+      className="relative flex h-24 w-screen items-center justify-start overflow-hidden"
+      style={{ backgroundColor: 'rgb(12,32,21)' }}
+    >
       {/* Single Marquee */}
       <Marquee
         pauseOnHover
@@ -51,24 +54,62 @@ const PartnerLogos = () => {
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="flex items-center justify-center px-2 py-4 -mx-2"
+            className="flex items-center justify-center px-2 py-6 -mx-2"
           >
             <div className="flex items-center justify-center group">
               <img
                 src={partner.logo}
                 alt={partner.alt}
-                className="h-6 w-auto opacity-80 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                className="h-8 w-auto opacity-80 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
               />
             </div>
           </div>
         ))}
       </Marquee>
 
-      {/* Left Gradient */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-50"></div>
+      {/* Left Blur Effect */}
+      <div 
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+        style={{ 
+          background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
+          maskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 100%)',
+          backdropFilter: 'blur(0px)',
+          WebkitBackdropFilter: 'blur(0px)'
+        }}
+      ></div>
+      <div 
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/3"
+        style={{ 
+          background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
+          maskImage: 'linear-gradient(to right, transparent 0%, black 10px, black 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10px, black 100%)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)'
+        }}
+      ></div>
 
-      {/* Right Gradient */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-50"></div>
+      {/* Right Blur Effect */}
+      <div 
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/3"
+        style={{ 
+          background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
+          maskImage: 'linear-gradient(to left, black 0%, black 10px, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to left, black 0%, black 10px, transparent 100%)',
+          backdropFilter: 'blur(0px)',
+          WebkitBackdropFilter: 'blur(0px)'
+        }}
+      ></div>
+      <div 
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/3"
+        style={{ 
+          background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
+          maskImage: 'linear-gradient(to left, transparent 0%, black 10px, black 100%)',
+          WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 10px, black 100%)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)'
+        }}
+      ></div>
     </div>
   );
 };

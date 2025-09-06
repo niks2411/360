@@ -7,12 +7,14 @@ import {
   Mail, 
   Users, 
   Settings, 
-  Phone,
   ChevronDown,
   Menu,
   X,
-  ArrowRight,
-  CheckCircle
+  Code,
+  Monitor,
+  Cpu,
+  Smartphone,
+  Globe
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -46,40 +48,31 @@ const Navbar = () => {
       hasDropdown: true,
       dropdownItems: [
         {
-          name: 'SEO Optimization',
+          name: 'Technology',
           path: '/seo-tools',
-          icon: Search,
-          description: 'Optimize your website for search engines',
-          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
-          features: ['Keyword Research', 'On-page SEO', 'Technical SEO', 'Link Building'],
+          icon: Cpu,
+          description: 'Website Design & Development, SEO & Performance Optimization, Automation & Tech Solutions',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
+          features: ['Website Design & Development', 'SEO & Performance Optimization', 'Automation & Tech Solutions'],
           price: 'Starting at $299/month'
         },
         {
-          name: 'Marketing Tools',
+          name: 'Media & Design',
           path: '/marketing-tools',
           icon: Mail,
-          description: 'Boost your marketing campaigns',
-          image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop',
-          features: ['Email Marketing', 'Social Media', 'PPC Advertising', 'Automation'],
+          description: 'Creative Campaigns, Photography & Video Production, Branding & Visual Identity',
+          image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=300&fit=crop',
+          features: ['Creative Campaigns', 'Photography & Video Production', 'Branding & Visual Identity'],
           price: 'Starting at $499/month'
         },
         {
-          name: 'Analytics',
+          name: 'Marketing',
           path: '/analytics',
           icon: BarChart3,
-          description: 'Track and analyze your performance',
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
-          features: ['Real-time Reports', 'Custom Dashboards', 'ROI Tracking', 'Performance Analysis'],
+          description: 'Social Media Management, PPC & Performance Marketing, Lead Generation & Growth',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
+          features: ['Social Media Management', 'PPC & Performance Marketing', 'Lead Generation & Growth'],
           price: 'Starting at $199/month'
-        },
-        {
-          name: 'All Services',
-          path: '/services',
-          icon: Settings,
-          description: 'View all our services',
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop',
-          features: ['Complete Solutions', 'Expert Support', 'Custom Packages', '24/7 Assistance'],
-          price: 'Custom Pricing'
         }
       ]
     },
@@ -233,7 +226,7 @@ const Navbar = () => {
                         }}
                       >
                         <div className="flex items-center space-x-3">
-                          <dropdownItem.icon className="w-5 h-5 text-blue-600" />
+                          <dropdownItem.icon className="w-5 h-5 text-white" />
                           <span className="text-sm font-light text-white">{dropdownItem.name}</span>
                         </div>
                       </Link>

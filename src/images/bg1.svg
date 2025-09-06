@@ -1,0 +1,91 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c2114;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#1a3d2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#064e3b;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#065f46;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#064e3b;stop-opacity:0" />
+    </radialGradient>
+    
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#10b981" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main Background -->
+  <rect width="1920" height="1080" fill="url(#mainGradient)"/>
+  
+  <!-- Grid Pattern -->
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  
+  <!-- Center Glow -->
+  <rect width="1920" height="1080" fill="url(#centerGlow)"/>
+  
+  <!-- Floating Geometric Shapes -->
+  <g opacity="0.1">
+    <!-- Top Left -->
+    <circle cx="200" cy="150" r="80" fill="#10b981"/>
+    <rect x="100" y="250" width="60" height="60" fill="#059669" transform="rotate(45 130 280)"/>
+    
+    <!-- Top Right -->
+    <circle cx="1720" cy="200" r="60" fill="#047857"/>
+    <polygon points="1600,100 1650,50 1700,100 1650,150" fill="#10b981"/>
+    
+    <!-- Bottom Left -->
+    <circle cx="150" cy="900" r="50" fill="#065f46"/>
+    <rect x="250" y="850" width="80" height="80" fill="#059669" transform="rotate(30 290 890)"/>
+    
+    <!-- Bottom Right -->
+    <circle cx="1800" cy="950" r="70" fill="#10b981"/>
+    <polygon points="1650,900 1700,850 1750,900 1700,950" fill="#047857"/>
+    
+    <!-- Center Elements -->
+    <circle cx="960" cy="300" r="40" fill="#10b981"/>
+    <circle cx="1200" cy="800" r="35" fill="#059669"/>
+    <rect x="700" y="700" width="50" height="50" fill="#047857" transform="rotate(60 725 725)"/>
+  </g>
+  
+  <!-- Subtle Particle Effects -->
+  <g opacity="0.3">
+    <circle cx="300" cy="400" r="2" fill="#10b981"/>
+    <circle cx="500" cy="200" r="1.5" fill="#34d399"/>
+    <circle cx="800" cy="600" r="2.5" fill="#10b981"/>
+    <circle cx="1100" cy="300" r="1" fill="#34d399"/>
+    <circle cx="1400" cy="700" r="2" fill="#10b981"/>
+    <circle cx="1600" cy="400" r="1.5" fill="#34d399"/>
+    <circle cx="400" cy="800" r="1" fill="#10b981"/>
+    <circle cx="1300" cy="150" r="2" fill="#34d399"/>
+    <circle cx="600" cy="950" r="1.5" fill="#10b981"/>
+    <circle cx="1500" cy="600" r="1" fill="#34d399"/>
+  </g>
+  
+  <!-- Subtle Lines -->
+  <g opacity="0.05">
+    <line x1="0" y1="300" x2="1920" y2="280" stroke="#10b981" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1920" y2="620" stroke="#34d399" stroke-width="1"/>
+    <line x1="0" y1="900" x2="1920" y2="880" stroke="#10b981" stroke-width="1"/>
+  </g>
+  
+  <!-- Corner Accents -->
+  <g opacity="0.2">
+    <!-- Top Left Corner -->
+    <path d="M 0 0 L 200 0 L 0 200 Z" fill="url(#centerGlow)"/>
+    
+    <!-- Top Right Corner -->
+    <path d="M 1920 0 L 1720 0 L 1920 200 Z" fill="url(#centerGlow)"/>
+    
+    <!-- Bottom Left Corner -->
+    <path d="M 0 1080 L 200 1080 L 0 880 Z" fill="url(#centerGlow)"/>
+    
+    <!-- Bottom Right Corner -->
+    <path d="M 1920 1080 L 1720 1080 L 1920 880 Z" fill="url(#centerGlow)"/>
+  </g>
+</svg>
