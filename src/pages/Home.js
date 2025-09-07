@@ -9,6 +9,7 @@ import { FocusCardsDemo } from '../components/FocusCardsDemo';
 import { WobbleCardDemo } from '../components/WobbleCardDemo';
 import { ProgressiveBlur } from '../components/magicui/progressive-blur';
 import { Marquee } from '../components/magicui/marquee';
+import TestimonialCards from '../components/TestimonialCards';
 
 const Home = () => {
 
@@ -300,16 +301,16 @@ const Home = () => {
               <div className="rounded-2xl overflow-hidden">
                 <img src="/ba.jpg" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
               </div>
-              <div className="relative rounded-2xl bg-gray-100 p-6">
+              <div className="relative rounded-2xl bg-white p-8 overflow-hidden" style={{ background: '#f8fafc' }}>
                 <div className="text-center mb-4">
                   <div className="text-lg font-semibold text-gray-800">Trusted By</div>
                   <div className="text-sm text-gray-600">Our partners and clients</div>
                 </div>
-                <div className="relative overflow-hidden">
-                  <Marquee pauseOnHover className="[--duration:18s]">
+                <div className="relative overflow-hidden h-24 md:h-28 flex items-center">
+                  <Marquee pauseOnHover className="[--duration:18s] w-full">
                     {['/1.png','/2.png','/3.png','/1.png','/2.png','/3.png'].map((src, i) => (
-                      <div key={i} className="px-6">
-                        <img src={src} alt={`logo-${i}`} className="h-14 w-14 rounded-full object-cover border-2 border-white shadow" />
+                      <div key={i} className="px-10">
+                        <img src={src} alt={`logo-${i}`} className="h-14 md:h-16 w-auto object-contain" />
                       </div>
                     ))}
                   </Marquee>
@@ -319,6 +320,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Cards Section */}
+      <TestimonialCards />
 
       {/* Progressive Blur Effect - Only after hero section */}
       <ProgressiveBlur 
