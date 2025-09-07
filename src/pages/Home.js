@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className="min-h-screen relative">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen w-full py-12 px-4 sm:px-6 lg:px-8" style={{
+      <section className="relative overflow-hidden min-h-screen w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8" style={{
         backgroundImage: 'url(/bg1.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -37,9 +37,9 @@ const Home = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="mt-72 lg:mt-80 ml-4 lg:ml-12"
+              className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 xl:mt-40 ml-4 sm:ml-6 md:ml-8 lg:ml-12"
             >
-                <h1 className="text-5xl md:text-6xl lg:text-5xl leading-tight mb-8 tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight">
                   <span className="text-white drop-shadow-lg font-inter font-normal">
                     We Build Brands with
                   </span>
@@ -48,10 +48,10 @@ const Home = () => {
                     Tech, Media <span className="text-white font-normal text-8xl md:text-5xl lg:text-4xl">&</span> Marketing.
                   </span>
                 </h1>
-              <p className="text-xl text-green-50 mb-8 leading-relaxed font-inter font-normal drop-shadow-sm">
+              <p className="text-lg sm:text-xl text-green-50 mb-6 sm:mb-8 leading-relaxed font-inter font-normal drop-shadow-sm">
                 From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-16 lg:mb-20">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
                  <Link
                                to="/contact"
                                className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
@@ -70,7 +70,7 @@ const Home = () => {
             </motion.div>
 
             {/* Right Side Background Image */}
-            <div className="hidden lg:block absolute top-0 right-0 lg:w-3/5 xl:w-1/2 h-full z-10">
+            <div className="hidden md:block absolute top-0 right-0 md:w-2/5 lg:w-3/5 xl:w-1/2 h-3/4 z-10">
               <img
                 src="/bgright.png"
                 alt="Background Right"
