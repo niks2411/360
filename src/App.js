@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
-import FullScreenPreloader from './components/FullScreenPreloader';
 import Home from './pages/Home';
 import SEOTools from './pages/SEOTools';
 import MarketingTools from './pages/MarketingTools';
@@ -12,16 +11,6 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 
 function App() {
-  const [showPreloader, setShowPreloader] = useState(true);
-
-  const handlePreloaderComplete = () => {
-    setShowPreloader(false);
-  };
-
-  if (showPreloader) {
-    return <FullScreenPreloader onComplete={handlePreloaderComplete} />;
-  }
-
   return (
     <Router>
       <ScrollToTop />

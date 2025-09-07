@@ -1,36 +1,56 @@
 import React from "react";
-import { FocusCards } from "./ui/focus-cards";
+import SpotlightCard from "./SpotlightCard";
 
 export function FocusCardsDemo() {
   const cards = [
     {
       title: "Technology",
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      services: [
-        "Website Design & Development",
-        "SEO & Performance Optimization",
-        "Automation & Tech Solutions"
-      ]
+      text: "Websites, SEO & automation built to scale your brand.",
+      spotlightColor: "rgba(0, 255, 100, 0.3)"
     },
     {
       title: "Media & Design",
-      src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      services: [
-        "Creative Campaigns",
-        "Photography & Video Production",
-        "Branding & Visual Identity"
-      ]
+      text: "Creative visuals and content that tell your story with impact.",
+      spotlightColor: "rgba(0, 255, 100, 0.3)"
     },
     {
       title: "Marketing",
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      services: [
-        "Social Media Management",
-        "PPC & Performance Marketing",
-        "Lead Generation & Growth"
-      ]
+      text: "Performance-driven campaigns to grow reach, leads & sales.",
+      spotlightColor: "rgba(0, 255, 100, 0.3)"
     }
   ];
 
-  return <FocusCards cards={cards} />;
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {cards.map((card, index) => (
+        <SpotlightCard 
+          key={index} 
+          className="w-full h-[450px] relative flex flex-col" 
+          spotlightColor={card.spotlightColor}
+        >
+          {/* Logo in top-left */}
+          <div className="absolute top-4 left-4 z-10">
+            <img 
+              src="/EDED.png" 
+              alt="Logo" 
+              className="w-12 h-12"
+            />
+          </div>
+          
+          {/* Leaf graphics on right side */}
+          <div className="absolute top-0 right-0 w-32 h-full opacity-20">
+            <div className="w-full h-full bg-gradient-to-br from-green-400/20 to-transparent rounded-full transform rotate-12 translate-x-8 -translate-y-4"></div>
+            <div className="w-20 h-20 bg-gradient-to-br from-green-300/20 to-transparent rounded-full transform rotate-45 translate-x-12 translate-y-16"></div>
+            <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-transparent rounded-full transform -rotate-12 translate-x-16 translate-y-32"></div>
+          </div>
+          
+          {/* Content at bottom */}
+          <div className="relative z-10 mt-auto pb-6">
+            <h3 className="text-3xl font-bold text-white mb-4 font-inter">{card.title}</h3>
+            <p className="text-white text-base leading-relaxed font-inter">{card.text}</p>
+          </div>
+        </SpotlightCard>
+      ))}
+    </div>
+  );
 }

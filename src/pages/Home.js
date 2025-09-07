@@ -324,31 +324,55 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Brand Building Section */}
-      <section className="py-20 bg-white">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-left max-w-4xl"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
-              We Build Brands with
-            </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-light italic text-gray-600 mb-6 leading-tight">
-              Tech, Media & Marketing.
-            </h3>
-            <p className="text-lg md:text-xl text-black leading-relaxed">
-              From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Testimonial Cards Section */}
       <TestimonialCards />
+
+      {/* New Section with sukhi.png background */}
+      <section 
+        className="min-h-screen flex items-center"
+        style={{
+          backgroundImage: 'url(/sukhi.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                  <span className="text-white drop-shadow-lg font-inter font-normal">
+                    Your 360°
+                  </span>
+                  <br />
+                  <span className="text-white drop-shadow-lg font-fraunces italic font-light">
+                    Marketing Partner  </span>
+                </h2>
+              <p className="text-lg md:text-xl text-white mb-8 leading-relaxed">
+                From technology and creative media to performance-driven marketing, we deliver complete 360° solutions that build, scale, and sustain your brand in the digital era.
+              </p>
+              <Link 
+                to="/contact" 
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
+              >
+                GET STARTED
+              </Link>
+            </motion.div>
+
+            {/* Right Side - Empty for now, can add visual elements later */}
+            <div className="hidden lg:block">
+              {/* Space for future visual elements */}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Progressive Blur Effect - Only after hero section */}
       <ProgressiveBlur 

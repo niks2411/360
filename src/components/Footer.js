@@ -18,7 +18,17 @@ const Footer = () => {
 
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', backgroundColor: 'rgb(12,33,20)' }}>
+    <footer 
+      className="text-white relative overflow-hidden" 
+      style={{ 
+        width: '100vw', 
+        marginLeft: 'calc(-50vw + 50%)', 
+        backgroundImage: 'url(/bg1.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
         {/* Free Consultancy Section - Now at the top */}
         <div className="mb-16 pb-12 border-b border-gray-600">
@@ -39,58 +49,66 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">360</span>
-              </div>
-              <span className="text-2xl font-bold text-green-400">Website Control</span>
-            </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Comprehensive digital solutions for SEO, marketing, and analytics. 
-              We Build Brands with Tech, Media & Marketing. control of your online presence with our 360° approach.
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5" />
-                <span>contact@360websitecontrol.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="w-5 h-5" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <MapPin className="w-5 h-5" />
-                <span>123 Business St, City, State 12345</span>
-              </div>
-            </div>
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Large Logo Section - Left Side */}
+          <div className="lg:w-1/3 flex justify-center lg:justify-start -mt-0">
+            <img 
+              src="/lohgo.png" 
+              alt="360 Logo" 
+              className="w-80 h-96 object-contain"
+            />
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Content Columns - Right Side */}
+          <div className="lg:w-2/3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Company Info */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-white">Our Company</h3>
+                <p className="text-gray-300 mb-6 text-sm">
+                  Comprehensive digital solutions for SEO, marketing, and analytics. 
+                  We Build Brands with Tech, Media & Marketing.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <Mail className="w-4 h-4" />
+                    <span className="text-sm">contact@360websitecontrol.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <Phone className="w-4 h-4" />
+                    <span className="text-sm">+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-gray-300">
+                    <MapPin className="w-4 h-4" />
+                    <span className="text-sm">123 Business St, City, State 12345</span>
+                  </div>
+                </div>
+              </div>
 
-          {/* Team Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Our Team</h3>
-            {/* <AnimatedTooltipPreview /> */}
-            <div className="mt-4">
-              <AvatarCirclesDemo />
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                <ul className="space-y-2">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        to={link.path}
+                        className="text-gray-300 hover:text-white transition-colors text-sm"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Team Section */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-white">Our Team</h3>
+                <div className="mt-4">
+                  <AvatarCirclesDemo />
+                </div>
+              </div>
             </div>
           </div>
         </div>

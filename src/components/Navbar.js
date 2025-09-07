@@ -112,14 +112,12 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="flex flex-col">
-                <span className="text-white font-light text-lg uppercase tracking-wide">360 Global</span>
-                {/* <span className="text-white font-light text-lg uppercase tracking-wide">GLOBAL</span> */}
-              </div>
-              {/* <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-green-300 rounded-full"></div>
-              </div> */}
+            <Link to="/" className="flex items-center group">
+              <img 
+                src="/360.png" 
+                alt="360 Logo" 
+                className="w-48 h-44"
+              />
             </Link>
 
             {/* Desktop Navigation */}
