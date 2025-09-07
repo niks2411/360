@@ -43,7 +43,7 @@ const PartnerLogos = () => {
 
   return (
     <div 
-      className="relative flex h-24 w-screen items-center justify-start overflow-hidden"
+      className="relative flex h-24 w-full items-center justify-start overflow-hidden"
       style={{ backgroundColor: 'rgb(12,32,21)' }}
     >
       {/* Single Marquee */}

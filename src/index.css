@@ -30,6 +30,13 @@
     max-width: 100%;
   }
 
+  /* Prevent horizontal scroll everywhere */
+  html, body, #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   * {
     font-family: 'Inter', sans-serif;
   }
