@@ -37,7 +37,7 @@ const Home = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="mt-8 lg:mt-12 ml-4 lg:ml-12"
+              className="mt-72 lg:mt-80 ml-4 lg:ml-12"
             >
                 <h1 className="text-5xl md:text-6xl lg:text-5xl leading-tight mb-8 tracking-tight">
                   <span className="text-white drop-shadow-lg font-inter font-normal">
