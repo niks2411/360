@@ -65,11 +65,11 @@ const Home = () => {
             </motion.div>
 
             {/* Right Side Background Image */}
-            <div className="hidden lg:block absolute top-0 right-[-12%] w-1/2 h-full z-10">
+            <div className="hidden lg:block absolute top-0 right-[-6%] w-1/2 h-full z-10">
               <img
                 src="/bgright.png"
                 alt="Background Right"
-                className="w-full h-full object-cover object-right"
+                className="w-full h-full object-cover object-center"
                 style={{ zIndex: 10 }}
               />
             </div>
