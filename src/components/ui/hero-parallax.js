@@ -60,9 +60,14 @@ export const Header = () => {
   return (
     <div
       className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-3xl md:text-3xl lg:text-4xl font-light text-black mb-6 leading-tight tracking-wide">
-Get Your UI/UX & <br /> Website Development Started Now
-      </h1>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                  <span className="text-black drop-shadow-lg font-inter font-normal">
+                    Get Your UI/UX &
+                  </span>
+                  <br />
+                  <span className="text-black drop-shadow-lg font-fraunces italic font-light">
+                    Website Development Started Now   </span>
+                </h1>
       <p className="text-base sm:text-lg text-black sm: leading-relaxed font-inter font-light drop-shadow-sm mb-8">
        Your website is the face of your brand. We design and develop modern,<br /> conversion-focused websites with seamless UI/UX that engage and perform.
       </p>

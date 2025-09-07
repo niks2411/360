@@ -52,22 +52,21 @@ const Home = () => {
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed font-inter font-light drop-shadow-sm">
                 From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
               </p>
-              <div className="flex">
-                 <Link
-                               to="/contact"
-                               className="text-white px-8 py-4 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
-                               style={{ 
-                                 backgroundColor: '#47BF72',
-                                 borderRadius: '8px',
-                                 border: '1px solid white'
-                               }}
-                               onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
-                               onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
-                             >
-                               GET STARTED
-                             </Link>
-                
-              </div>
+              <div className="hidden lg:block">
+                           <Link
+                             to="/contact"
+                             className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
+                             style={{ 
+                               backgroundColor: '#47BF72',
+                               borderRadius: '5px',
+                               border: '0.5px solid white'
+                             }}
+                             onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                             onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                           >
+                             GET STARTED
+                           </Link>
+                         </div>
             </motion.div>
 
             {/* Right Side Background Image */}
@@ -171,17 +170,21 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              AI Foundry: <span className="italic">Casting the future</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8">
-              Harnessing AI to Shape the Future
-            </p>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                  <span className="text-white drop-shadow-lg font-inter font-normal">
+                    Next-Gen Technology for
+                  </span>
+                  <span>  </span>
+                  {/* <br /> */}
+                  <span className="text-white drop-shadow-lg font-fraunces italic font-light">
+                     Your Brand   </span>
+                </h1>
+          
             <Link 
               to="/services" 
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
             >
-              DISCOVER AI FOUNDRY
+              Get Listed on ChatGPT
             </Link>
           </motion.div>
 
@@ -204,11 +207,10 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Ready-Made AI Solutions
+                  List Your Business on ChatGPT
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">
-                  30+ Ready-Made AI Solutions: Pre-built, scalable tools tailored to meet diverse business needs.
-                </p>
+                  Be discoverable where people are searching next. We help list and integrate your business on ChatGPT and AI platforms, making your brand ready for the future of search. </p>
               </div>
             </motion.div>
 
@@ -229,11 +231,10 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Tailored AI Partnerships
+                  GMB #1 Optimization
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">
-                  70+ Partners: A vast network of trusted collaborators and strategic alliances in the AI ecosystem.
-                </p>
+                 Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most — on Google Maps and local search.  </p>
               </div>
             </motion.div>
 
@@ -254,11 +255,10 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Elite AI Workforce
+                  AI & Automation Tools
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">
-                  Expert AI Engineers: A powerhouse of 5,000+ skilled professionals driving innovation.
-                </p>
+                  Work smarter, not harder. We set up custom AI and automation solutions to streamline workflows, generate leads, and enhance customer engagement 24/7.  </p>
               </div>
             </motion.div>
           </div>
