@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'fraunces': ['Fraunces', 'serif'],
+        'inter': ['Inter', 'sans-serif'],
       },
       colors: {
         primary: {

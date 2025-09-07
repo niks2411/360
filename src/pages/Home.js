@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className="min-h-screen relative">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen w-full py-20 px-4 sm:px-6 lg:px-8" style={{
+      <section className="relative overflow-hidden min-h-screen w-full py-12 px-4 sm:px-6 lg:px-8" style={{
         backgroundImage: 'url(/bg1.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -37,17 +37,21 @@ const Home = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="mt-8 lg:mt-12 ml-4 lg:ml-12"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal leading-tight mb-8 tracking-tight">
-                <span className="text-white drop-shadow-lg">Take Complete</span>
-                <span className="text-yellow-300 drop-shadow-md block">360° Control</span>
-                <span className="text-green-100 drop-shadow-sm">of Your Website</span>
-              </h1>
-              <p className="text-xl text-green-50 mb-8 leading-relaxed font-normal drop-shadow-sm">
-                Comprehensive digital solutions combining SEO, marketing, and analytics 
-                to maximize your online presence and drive real results.
+                <h1 className="text-5xl md:text-6xl lg:text-5xl leading-tight mb-8 tracking-tight">
+                  <span className="text-white drop-shadow-lg font-inter font-normal">
+                    We Build Brands with
+                  </span>
+                  <br />
+                  <span className="text-white drop-shadow-lg font-fraunces italic font-normal">
+                    Tech, Media <span className="text-white font-normal text-8xl md:text-5xl lg:text-4xl">&</span> Marketing.
+                  </span>
+                </h1>
+              <p className="text-xl text-green-50 mb-8 leading-relaxed font-inter font-normal drop-shadow-sm">
+                From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-16 lg:mb-20">
                  <Link
                                to="/contact"
                                className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
@@ -318,6 +322,29 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Brand Building Section */}
+      <section className="py-20 bg-white">
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-left max-w-4xl"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
+              We Build Brands with
+            </h2>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-light italic text-gray-600 mb-6 leading-tight">
+              Tech, Media & Marketing.
+            </h3>
+            <p className="text-lg md:text-xl text-black leading-relaxed">
+              From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
+            </p>
+          </motion.div>
         </div>
       </section>
 

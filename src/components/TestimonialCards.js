@@ -9,7 +9,7 @@ const TestimonialCards = () => {
     {
       id: 1,
       company: "Shiprocket",
-      testimonial: "EMB executed our offline campaign for Shiprocket SHIVIR'24 seamlessly, ensuring smooth delivery with live tracking and competitive pricing. Their efficiency and ability to manage complex campaigns within tight timelines were truly impressive. Highly recommend for businesses looking for reliable execution!",
+      testimonial: "360 Website Control executed our digital marketing campaign for Shiprocket SHIVIR'24 seamlessly, ensuring smooth delivery with live tracking and competitive pricing. Their efficiency and ability to manage complex campaigns within tight timelines were truly impressive. Highly recommend for businesses looking for reliable execution!",
       reviewer: {
         name: "Muskaan Tandon",
         title: "Senior Director - Marketing, Shiprocket",

@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Comprehensive digital solutions for SEO, marketing, and analytics. 
-              Take complete control of your online presence with our 360° approach.
+              We Build Brands with Tech, Media & Marketing. control of your online presence with our 360° approach.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-300">
