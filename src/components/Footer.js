@@ -30,7 +30,7 @@ const Footer = () => {
               Book a free 30-minute consultancy session with our experts to discuss your digital marketing goals and get personalized recommendations.
             </p>
             <button 
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-8 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               onClick={() => window.open('/contact', '_blank')}
             >
               Book Free 30-Min Consultancy

@@ -54,6 +54,68 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Who We Are + Team strip section */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Left card */}
+            <div className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Are</h3>
+              <p className="text-gray-200 max-w-xl mb-6">
+                We’ve done all the heavy lifting so you don’t have to — get all the data you need
+                to launch and grow your business faster.
+              </p>
+              <button className="inline-flex items-center justify-center text-white px-5 py-3 rounded-md text-sm font-medium" style={{ backgroundColor: '#47BF72', border: '0.5px solid white' }}>
+                LEARN MORE
+              </button>
+              {/* Stats pinned to bottom */}
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8 absolute left-8 right-8 bottom-6">
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">22,000+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Projects Delivered</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">8,000+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Clients Served</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">23+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">9+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Average Client NPS</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column: image + small team strip */}
+            <div className="flex flex-col gap-6">
+              <div className="rounded-2xl overflow-hidden">
+                <img src="/ba.jpg" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
+              </div>
+              <div className="relative rounded-2xl bg-gray-100 p-6">
+                <div className="text-center mb-4">
+                  <div className="text-lg font-semibold text-gray-800">Small Team</div>
+                  <div className="text-lg font-semibold text-gray-800">Big Results</div>
+                </div>
+                <div className="relative">
+                  <div className="grid grid-cols-8 gap-4 items-center">
+                    {Array.from({ length: 16 }).map((_, i) => (
+                      <img key={i} src={`https://i.pravatar.cc/80?img=${i + 10}`} alt="avatar" className="w-12 h-12 rounded-full mx-auto" />
+                    ))}
+                  </div>
+                  {/* edge fade */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl" style={{
+                    background: `linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 5%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 16%, rgba(255,255,255,0) 22%), linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 5%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 16%, rgba(255,255,255,0) 22%)`
+                  }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Animated Stats */}
       <section className="section-padding bg-gray-50">
         <div className="container-max">
@@ -102,34 +164,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-dark-800 text-white">
-        <div className="container-max text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Work With Us?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses that trust us with their digital success. 
-              Let's work together to achieve your goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-dark-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-800 transition-colors inline-flex items-center justify-center">
-                Contact Us
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Section removed as requested */}
     </div>
   );
 };

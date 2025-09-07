@@ -174,15 +174,7 @@ const Services = () => {
               Comprehensive digital solutions tailored to your business needs. 
               From SEO to marketing automation, we provide everything you need to succeed online.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary inline-flex items-center justify-center">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="btn-secondary inline-flex items-center justify-center">
-                View Pricing
-              </button>
-            </div>
+            {/* CTA removed as requested */}
           </motion.div>
         </div>
       </section>
@@ -342,34 +334,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-dark-800 text-white">
-        <div className="container-max text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Choose the service that fits your needs and start your journey 
-              to digital success today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-dark-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Get Started Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-800 transition-colors inline-flex items-center justify-center">
-                Contact Sales
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Section removed as requested */}
     </div>
   );
 };

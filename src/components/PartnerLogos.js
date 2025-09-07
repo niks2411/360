@@ -67,49 +67,34 @@ const PartnerLogos = () => {
         ))}
       </Marquee>
 
-      {/* Left Blur Effect */}
-      <div 
-        className="pointer-events-none absolute inset-y-0 left-0 w-1/6"
-        style={{ 
-          background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
-          maskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 90%)',
-          WebkitMaskImage: 'linear-gradient(to right, black 0%, black 10px, transparent 100%)',
-          backdropFilter: 'blur(0px)',
-          WebkitBackdropFilter: 'blur(0px)'
+      {/* Dual-edge fade overlay (same color as background) */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(to right,
+              rgba(12,32,21,1) 0%,
+              rgba(12,32,21,0.98) 6%,
+              rgba(12,32,21,0.92) 12%,
+              rgba(12,32,21,0.8) 18%,
+              rgba(12,32,21,0.6) 24%,
+              rgba(12,32,21,0.4) 30%,
+              rgba(12,32,21,0.2) 32%,
+              rgba(12,32,21,0) 35%
+            ),
+            linear-gradient(to left,
+              rgba(12,32,21,1) 0%,
+              rgba(12,32,21,0.98) 6%,
+              rgba(12,32,21,0.92) 12%,
+              rgba(12,32,21,0.8) 18%,
+              rgba(12,32,21,0.6) 24%,
+              rgba(12,32,21,0.4) 30%,
+              rgba(12,32,21,0.2) 32%,
+              rgba(12,32,21,0) 35%
+            )
+          `,
         }}
-      ></div>
-      <div 
-        className="pointer-events-none absolute inset-y-0 left-0 w-1/6"
-        style={{ 
-          background: 'linear-gradient(to right, rgb(12,32,21), transparent)',
-          maskImage: 'linear-gradient(to right, transparent 0%, black 10px, black 100%)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10px, black 100%)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)'
-        }}
-      ></div>
-
-      {/* Right Blur Effect */}
-      <div 
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/6"
-        style={{ 
-          background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
-          maskImage: 'linear-gradient(to left, black 0%, black 10px, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to left, black 0%, black 10px, transparent 100%)',
-          backdropFilter: 'blur(0px)',
-          WebkitBackdropFilter: 'blur(0px)'
-        }}
-      ></div>
-      <div 
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/6"
-        style={{ 
-          background: 'linear-gradient(to left, rgb(12,32,21), transparent)',
-          maskImage: 'linear-gradient(to left, transparent 0%, black 10px, black 100%)',
-          WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 10px, black 100%)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)'
-        }}
-      ></div>
+      />
     </div>
   );
 };

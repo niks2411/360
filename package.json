@@ -9,11 +9,11 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
     "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.13",
-    "lucide-react": "^0.441.0",
+    "lucide-react": "0.294.0",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -36,4 +36,3 @@
     ]
   }
 }
-

@@ -8,6 +8,7 @@ import PartnerLogos from '../components/PartnerLogos';
 import { FocusCardsDemo } from '../components/FocusCardsDemo';
 import { WobbleCardDemo } from '../components/WobbleCardDemo';
 import { ProgressiveBlur } from '../components/magicui/progressive-blur';
+import { Marquee } from '../components/magicui/marquee';
 
 const Home = () => {
 
@@ -259,6 +260,66 @@ const Home = () => {
         </div>
       </section>
       
+      {/* Who We Are + Team strip section (replicated) */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Left card */}
+            <div className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Are</h3>
+              <p className="text-gray-200 max-w-xl mb-6">
+                We’ve done all the heavy lifting so you don’t have to — get all the data you need
+                to launch and grow your business faster.
+              </p>
+              <Link to="/about" className="inline-flex items-center justify-center text-white px-5 py-3 rounded-md text-sm font-medium" style={{ backgroundColor: '#47BF72', border: '0.5px solid white' }}>
+                LEARN MORE
+              </Link>
+              {/* Stats pinned to bottom */}
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8 absolute left-8 right-8 bottom-6">
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">22,000+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Projects Delivered</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">8,000+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Clients Served</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">23+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
+                </div>
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold text-white">9+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Average Client NPS</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column: image + small team strip */}
+            <div className="flex flex-col gap-6">
+              <div className="rounded-2xl overflow-hidden">
+                <img src="/ba.jpg" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
+              </div>
+              <div className="relative rounded-2xl bg-gray-100 p-6">
+                <div className="text-center mb-4">
+                  <div className="text-lg font-semibold text-gray-800">Trusted By</div>
+                  <div className="text-sm text-gray-600">Our partners and clients</div>
+                </div>
+                <div className="relative overflow-hidden">
+                  <Marquee pauseOnHover className="[--duration:18s]">
+                    {['/1.png','/2.png','/3.png','/1.png','/2.png','/3.png'].map((src, i) => (
+                      <div key={i} className="px-6">
+                        <img src={src} alt={`logo-${i}`} className="h-14 w-14 rounded-full object-cover border-2 border-white shadow" />
+                      </div>
+                    ))}
+                  </Marquee>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Progressive Blur Effect - Only after hero section */}
       <ProgressiveBlur 
         height="30%" 
