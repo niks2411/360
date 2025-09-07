@@ -46,26 +46,25 @@ const Home = () => {
                 to maximize your online presence and drive real results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/services" 
-                  className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg inline-flex items-center justify-center"
-                  style={{ 
-                    backgroundColor: '#47BF72',
-                    borderRadius: '5px',
-                    border: '0.5px solid white'
-                  }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = '#47BF72'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
-                >
-                  GET STARTED
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                 <Link
+                               to="/contact"
+                               className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
+                               style={{ 
+                                 backgroundColor: '#47BF72',
+                                 borderRadius: '5px',
+                                 border: '0.5px solid white'
+                               }}
+                               onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                               onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                             >
+                               GET STARTED
+                             </Link>
                 
               </div>
             </motion.div>
 
             {/* Right Side Background Image */}
-            <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full z-10">
+            <div className="hidden lg:block absolute top-0 right-[-12%] w-1/2 h-full z-10">
               <img
                 src="/bgright.png"
                 alt="Background Right"
