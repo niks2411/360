@@ -14,7 +14,7 @@ const Marquee = ({
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] will-change-transform transform-gpu",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -27,7 +27,7 @@ const Marquee = ({
         .map((_, i) => (
           <div
             key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+            className={cn("flex shrink-0 justify-around [gap:var(--gap)] will-change-transform transform-gpu", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,
               "group-hover:[animation-play-state:paused]": pauseOnHover,

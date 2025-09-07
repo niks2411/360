@@ -16,6 +16,36 @@
     scroll-behavior: smooth;
   }
   
+  /* Performance optimizations */
+  * {
+    will-change: auto;
+  }
+  
+  /* Optimize transforms and animations */
+  .motion-safe {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* GPU acceleration for better performance */
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  
+  /* Smooth scrolling optimizations */
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimize marquee animations */
+  .animate-marquee {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
   body {
     font-family: 'Inter', sans-serif;
     background: #f8fafc;

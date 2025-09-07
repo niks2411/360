@@ -284,19 +284,19 @@ const Home = () => {
               {/* Stats pinned to bottom */}
               <div className="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8 absolute left-8 right-8 bottom-6">
                 <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">22,000+</div>
+                  <div className="text-4xl md:text-5xl font-light text-white">22,000+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Projects Delivered</div>
                 </div>
                 <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">8,000+</div>
+                  <div className="text-4xl md:text-5xl font-light text-white">8,000+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Clients Served</div>
                 </div>
                 <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">23+</div>
+                  <div className="text-4xl md:text-5xl font-light text-white">23+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
                 </div>
                 <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">9+</div>
+                  <div className="text-4xl md:text-5xl font-light text-white">9+</div>
                   <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Average Client NPS</div>
                 </div>
               </div>

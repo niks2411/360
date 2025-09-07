@@ -4,63 +4,62 @@ import Marquee from './Marquee';
 const PartnerLogos = () => {
   const partners = [
     {
-      name: 'Google Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
-      alt: 'Google Partner'
+      name: 'Partner 1',
+      logo: '/logomarque/1.png',
+      alt: 'Partner 1'
     },
     {
-      name: 'Facebook Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg',
-      alt: 'Facebook Partner'
+      name: 'Partner 2',
+      logo: '/logomarque/2.png',
+      alt: 'Partner 2'
     },
     {
-      name: 'Microsoft Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
-      alt: 'Microsoft Partner'
+      name: 'Partner 3',
+      logo: '/logomarque/3.png',
+      alt: 'Partner 3'
     },
     {
-      name: 'Amazon Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
-      alt: 'Amazon Partner'
-    },
-  
-    {
-      name: 'Salesforce Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg',
-      alt: 'Salesforce Partner'
+      name: 'Partner 4',
+      logo: '/logomarque/4.png',
+      alt: 'Partner 4'
     },
     {
-      name: 'Shopify Partner',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/11/Shopify-Logo.png',
-      alt: 'Shopify Partner'
+      name: 'Partner 5',
+      logo: '/logomarque/5.png',
+      alt: 'Partner 5'
     },
     {
-      name: 'Adobe Partner',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg',
-      alt: 'Adobe Partner'
+      name: 'Partner 6',
+      logo: '/logomarque/6.png',
+      alt: 'Partner 6'
     }
   ];
 
   return (
     <div 
-      className="relative flex h-24 w-full items-center justify-start overflow-hidden"
-      style={{ backgroundColor: 'rgb(12,32,21)' }}
+      className="relative flex h-32 w-full items-center justify-start overflow-hidden transform-gpu"
+      style={{ 
+        backgroundColor: 'rgb(12,32,21)',
+        willChange: 'transform'
+      }}
     >
       {/* Single Marquee */}
-      <Marquee
+        <Marquee
         pauseOnHover
-        className="[--duration:20s]"
+        className="[--duration:15s]"
       >
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="flex items-center justify-center px-2 py-6 -mx-2"
+            className="flex items-center justify-center px-3 py-6 -mx-2 transform-gpu"
           >
-            <div className="flex items-center justify-center group">
+            <div className="flex items-center justify-center group transform-gpu">
               <img
                 src={partner.logo}
                 alt={partner.alt}
-                className="h-8 w-auto opacity-80 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                className="h-16 w-auto opacity-80 transition-all duration-200 filter grayscale group-hover:grayscale-0 will-change-transform"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>
