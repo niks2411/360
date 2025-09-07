@@ -6,10 +6,11 @@ import {
 } from 'lucide-react';
 import PartnerLogos from '../components/PartnerLogos';
 import { FocusCardsDemo } from '../components/FocusCardsDemo';
-import { WobbleCardDemo } from '../components/WobbleCardDemo';
+
 import { ProgressiveBlur } from '../components/magicui/progressive-blur';
 import { Marquee } from '../components/magicui/marquee';
 import TestimonialCards from '../components/TestimonialCards';
+import { HeroParallaxDemo } from '../components/HeroParallaxDemo';
 
 const Home = () => {
 
@@ -98,25 +99,25 @@ const Home = () => {
               <span className="text-sm font-medium text-green-500 uppercase tracking-wider mb-4 block">
                 What We Offer
               </span>
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-                Our Services
-              </h2>
+             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                  <span className="text-black drop-shadow-lg font-inter font-medium">
+                   Our Core
+                  </span>
+                  <span> </span>
+                  <span className="text-black drop-shadow-lg font-fraunces italic font-light">
+                    Expertise
+                  </span>
+                </h1>
             </div>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Comprehensive solutions designed to elevate your digital presence and drive measurable results
+            <p className="text-base sm:text-lg text-black sm: leading-relaxed font-inter font-light drop-shadow-sm">
+              Comprehensive solutions designed to elevate your digital presence and
             </p>
+            <p className="text-base sm:text-lg text-black mb-6 sm:mb-8 leading-relaxed font-inter font-light drop-shadow-sm"> drive measurable results</p>
           </motion.div>
           <FocusCardsDemo />
         </div>
       </section>
 
-
-      {/* Wobble Cards Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <WobbleCardDemo />
-        </div>
-      </section>
 
       {/* New Section */}
       <section 
@@ -269,8 +270,10 @@ const Home = () => {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left card */}
-            <div className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Are</h3>
+            <div className="relative overflow-hidden rounded-lg p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
+              <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight tracking-wide">
+              Who We Are
+            </h2>
               <p className="text-gray-200 max-w-xl mb-6">
                 We’ve done all the heavy lifting so you don’t have to — get all the data you need
                 to launch and grow your business faster.
@@ -301,19 +304,19 @@ const Home = () => {
 
             {/* Right column: image + small team strip */}
             <div className="flex flex-col gap-6">
-              <div className="rounded-2xl overflow-hidden">
-                <img src="/ba.jpg" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
+              <div className="rounded-lg overflow-hidden">
+                <img src="/ba.png" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
               </div>
-              <div className="relative rounded-2xl bg-white p-8 overflow-hidden" style={{ background: '#f8fafc' }}>
+              <div className="relative rounded-lg bg-white p-8 overflow-hidden" style={{ background: '#f8fafc' }}>
                 <div className="text-center mb-4">
-                  <div className="text-lg font-semibold text-gray-800">Trusted By</div>
-                  <div className="text-sm text-gray-600">Our partners and clients</div>
+                  <div className="text-lg font-light font-inter text-gray-800">We are Certified partners</div>
+                  {/* <div className="text-sm text-gray-600">Our partners</div> */}
                 </div>
                 <div className="relative overflow-hidden h-24 md:h-28 flex items-center">
                   <Marquee pauseOnHover className="[--duration:18s] w-full">
                     {['/1.png','/2.png','/3.png','/1.png','/2.png','/3.png'].map((src, i) => (
-                      <div key={i} className="px-10">
-                        <img src={src} alt={`logo-${i}`} className="h-14 md:h-16 w-auto object-contain" />
+                      <div key={i} className="px-4">
+                        <img src={src} alt={`logo-${i}`} className="h-20 md:h-24 w-auto object-contain" />
                       </div>
                     ))}
                   </Marquee>
@@ -328,9 +331,14 @@ const Home = () => {
       {/* Testimonial Cards Section */}
       <TestimonialCards />
 
+      {/* Hero Parallax Section */}
+      <div className="mt-8 mb-32">
+        <HeroParallaxDemo />
+      </div>
+
       {/* New Section with sukhi.png background */}
       <section 
-        className="min-h-screen flex items-center"
+        className="py-40 flex items-center"
         style={{
           backgroundImage: 'url(/sukhi.png)',
           backgroundSize: 'cover',

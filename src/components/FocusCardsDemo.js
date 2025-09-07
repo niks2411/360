@@ -46,7 +46,7 @@ export function FocusCardsDemo() {
           
           {/* Content at bottom */}
           <div className="relative z-10 mt-auto pb-6">
-            <h3 className="text-3xl font-bold text-white mb-4 font-inter">{card.title}</h3>
+            <h3 className="text-3xl text-white mb-4 font-inter font-medium">{card.title}</h3>
             <p className="text-white text-base leading-relaxed font-inter">{card.text}</p>
           </div>
         </SpotlightCard>
