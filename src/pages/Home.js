@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
+import {
   ArrowRight
 } from 'lucide-react';
 import PartnerLogos from '../components/PartnerLogos';
@@ -10,7 +10,10 @@ import { FocusCardsDemo } from '../components/FocusCardsDemo';
 import { ProgressiveBlur } from '../components/magicui/progressive-blur';
 import { Marquee } from '../components/magicui/marquee';
 import TestimonialCards from '../components/TestimonialCards';
-import { HeroParallaxDemo } from '../components/HeroParallaxDemo';
+import WhyChooseUs from '../components/WhyChooseUs';
+import ProcessWorkflow from '../components/ProcessWorkflow';
+import CredibilityBacking from '../components/CredibilityBacking';
+
 
 const Home = () => {
 
@@ -40,33 +43,33 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="text-left mt-8 ml-4"
             >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
-                  <span className="text-white drop-shadow-lg font-inter font-normal">
-                    We Build Brands with
-                  </span>
-                  <br />
-                  <span className="text-white drop-shadow-lg font-fraunces italic font-light">
-                    Tech, Media <span className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-normal">&</span> Marketing.
-                  </span>
-                </h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                <span className="text-white drop-shadow-lg font-inter font-normal">
+                  Creating Buzz.
+                </span>
+                <br />
+                <span className="text-white drop-shadow-lg font-fraunces italic font-light">
+                  Building Brands.
+                </span>
+              </h1>
               <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 leading-relaxed font-inter font-light drop-shadow-sm">
-                From powerful websites and performance marketing to creative media that inspires, we give your brand clarity, growth, and direction.
+                Full-stack marketing, branding & technology agency. From powerful websites and performance marketing to creative media that inspires, we deliver end-to-end solutions that drive measurable growth.
               </p>
               <div className="hidden lg:block">
-                           <Link
-                             to="/contact"
-                             className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
-                             style={{ 
-                               backgroundColor: '#47BF72',
-                               borderRadius: '5px',
-                               border: '0.5px solid white'
-                             }}
-                             onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
-                             onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
-                           >
-                             GET STARTED
-                           </Link>
-                         </div>
+                <Link
+                  to="/contact"
+                  className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
+                  style={{
+                    backgroundColor: '#47BF72',
+                    borderRadius: '5px',
+                    border: '0.5px solid white'
+                  }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                >
+                  GET STARTED
+                </Link>
+              </div>
             </motion.div>
 
             {/* Right Side Background Image */}
@@ -98,15 +101,15 @@ const Home = () => {
               <span className="text-sm font-medium text-green-500 uppercase tracking-wider mb-4 block">
                 What We Offer
               </span>
-             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
-                  <span className="text-black drop-shadow-lg font-inter font-medium">
-                   Our Core
-                  </span>
-                  <span> </span>
-                  <span className="text-black drop-shadow-lg font-fraunces italic font-light">
-                    Expertise
-                  </span>
-                </h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+                <span className="text-black drop-shadow-lg font-inter font-medium">
+                  Our Core
+                </span>
+                <span> </span>
+                <span className="text-black drop-shadow-lg font-fraunces italic font-light">
+                  Expertise
+                </span>
+              </h1>
             </div>
             <p className="text-base sm:text-lg text-black sm: leading-relaxed font-inter font-light drop-shadow-sm">
               Comprehensive solutions designed to elevate your digital presence and
@@ -119,14 +122,14 @@ const Home = () => {
 
 
       {/* New Section */}
-      <section 
-        className="py-24 relative" 
+      <section
+        className="py-24 relative"
         style={{ backgroundColor: 'rgb(68,16,151)' }}
       >
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
-          style={{ 
+          style={{
             backgroundImage: 'url(/glass.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -134,11 +137,11 @@ const Home = () => {
             zIndex: 10
           }}
         ></div>
-        
+
         {/* Vertical Stripes Overlay */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
-          style={{ 
+          style={{
             background: `
               linear-gradient(90deg, 
                 rgba(68,16,151,0.8) 0%, 
@@ -159,7 +162,7 @@ const Home = () => {
             zIndex: 15
           }}
         ></div>
-        
+
         {/* Content */}
         <div className="container-max relative" style={{ zIndex: 20 }}>
           {/* Hero Section */}
@@ -170,18 +173,18 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
-                  <span className="text-white drop-shadow-lg font-inter font-normal">
-                    Next-Gen Technology for
-                  </span>
-                  <span>  </span>
-                  {/* <br /> */}
-                  <span className="text-white drop-shadow-lg font-fraunces italic font-light">
-                     Your Brand   </span>
-                </h1>
-          
-            <Link 
-              to="/services" 
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
+              <span className="text-white drop-shadow-lg font-inter font-normal">
+                Next-Gen Technology for
+              </span>
+              <span>  </span>
+              {/* <br /> */}
+              <span className="text-white drop-shadow-lg font-fraunces italic font-light">
+                Your Brand   </span>
+            </h1>
+
+            <Link
+              to="/services"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
             >
               Get Listed on ChatGPT
@@ -198,9 +201,9 @@ const Home = () => {
               viewport={{ once: true }}
               className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
             >
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ 
+                style={{
                   backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop)'
                 }}
               ></div>
@@ -222,9 +225,9 @@ const Home = () => {
               viewport={{ once: true }}
               className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
             >
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ 
+                style={{
                   backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop)'
                 }}
               ></div>
@@ -234,7 +237,7 @@ const Home = () => {
                   GMB #1 Optimization
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">
-                 Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most — on Google Maps and local search.  </p>
+                  Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most — on Google Maps and local search.  </p>
               </div>
             </motion.div>
 
@@ -246,9 +249,9 @@ const Home = () => {
               viewport={{ once: true }}
               className="relative rounded-lg overflow-hidden h-96 group cursor-pointer"
             >
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ 
+                style={{
                   backgroundImage: 'url(https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=400&fit=crop)'
                 }}
               ></div>
@@ -264,7 +267,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Who We Are + Team strip section (replicated) */}
       <section className="section-padding bg-white">
         <div className="container-max">
@@ -272,8 +275,8 @@ const Home = () => {
             {/* Left card */}
             <div className="relative overflow-hidden rounded-lg p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
               <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight tracking-wide">
-              Who We Are
-            </h2>
+                Who We Are
+              </h2>
               <p className="text-gray-200 max-w-xl mb-6">
                 We’ve done all the heavy lifting so you don’t have to — get all the data you need
                 to launch and grow your business faster.
@@ -314,7 +317,7 @@ const Home = () => {
                 </div>
                 <div className="relative overflow-hidden h-24 md:h-28 flex items-center">
                   <Marquee pauseOnHover className="[--duration:18s] w-full">
-                    {['/1.png','/2.png','/3.png','/1.png','/2.png','/3.png'].map((src, i) => (
+                    {['/1.png', '/2.png', '/3.png', '/1.png', '/2.png', '/3.png'].map((src, i) => (
                       <div key={i} className="px-4">
                         <img src={src} alt={`logo-${i}`} className="h-20 md:h-24 w-auto object-contain" />
                       </div>
@@ -331,13 +334,17 @@ const Home = () => {
       {/* Testimonial Cards Section */}
       <TestimonialCards />
 
-      {/* Hero Parallax Section */}
-      <div className="mt-8 mb-32">
-        <HeroParallaxDemo />
-      </div>
+      {/* Process Workflow Section */}
+      <ProcessWorkflow />
+
+      {/* Credibility & Backing Section */}
+      <CredibilityBacking />
+
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
 
       {/* New Section with sukhi.png background */}
-      <section 
+      <section
         className="py-40 flex items-center"
         style={{
           backgroundImage: 'url(/sukhi.png)',
@@ -356,18 +363,18 @@ const Home = () => {
               className="text-left"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight mb-6 sm:mb-8 tracking-tight">
-                  <span className="text-white drop-shadow-lg font-inter font-normal">
-                    Your 360°
-                  </span>
-                  <br />
-                  <span className="text-white drop-shadow-lg font-fraunces italic font-light">
-                    Marketing Partner  </span>
-                </h2>
+                <span className="text-white drop-shadow-lg font-inter font-normal">
+                  Your 360°
+                </span>
+                <br />
+                <span className="text-white drop-shadow-lg font-fraunces italic font-light">
+                  Marketing Partner  </span>
+              </h2>
               <p className="text-lg md:text-xl text-white mb-8 leading-relaxed">
                 From technology and creative media to performance-driven marketing, we deliver complete 360° solutions that build, scale, and sustain your brand in the digital era.
               </p>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
               >
                 GET STARTED
@@ -383,9 +390,9 @@ const Home = () => {
       </section>
 
       {/* Progressive Blur Effect - Only after hero section */}
-      <ProgressiveBlur 
-        height="30%" 
-        position="bottom" 
+      <ProgressiveBlur
+        height="30%"
+        position="bottom"
         blurLevels={[0.2, 0.5, 1, 2, 3, 4, 6, 8]}
         className="hidden md:block"
       />

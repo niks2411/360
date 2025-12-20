@@ -1,340 +1,321 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Search, 
-  Mail, 
-  BarChart3, 
-  Settings, 
-  Users, 
-  Zap,
-  CheckCircle,
-  ArrowRight,
-  Star,
-  Shield,
-  Clock,
-  Headphones
+import {
+  TrendingUp, Share2, Video, Megaphone, Code, ShoppingCart, Search, Palette,
+  Camera, Pen, Film, Sparkles, ArrowRight, CheckCircle
 } from 'lucide-react';
 
 const Services = () => {
-  const services = [
+  const serviceCategories = [
     {
-      icon: Search,
-      title: 'SEO Optimization',
-      description: 'Complete search engine optimization to improve your website\'s visibility and rankings.',
-      features: [
-        'Keyword research and analysis',
-        'On-page and technical SEO',
-        'Content optimization',
-        'Link building strategies',
-        'Local SEO optimization',
-        'SEO performance tracking'
-      ],
-      price: 'Starting at $299/month',
-      popular: false
+      category: "Digital Marketing Services",
+      tagline: "ROI-Driven Campaigns That Scale",
+      color: "#47BF72",
+      icon: <TrendingUp className="w-8 h-8" />,
+      services: [
+        {
+          icon: <Share2 className="w-6 h-6" />,
+          title: "Social Media Management & Strategy",
+          description: "End-to-end social media management with data-driven content strategies, community engagement, and brand building across all major platforms.",
+          features: ["Content Calendar Planning", "Community Management", "Analytics & Reporting", "Influencer Coordination"]
+        },
+        {
+          icon: <Megaphone className="w-6 h-6" />,
+          title: "Performance Marketing",
+          description: "Meta Ads, Google Ads, and YouTube Ads campaigns optimized for maximum ROI. We focus on conversions, not vanity metrics.",
+          features: ["Meta Ads (Facebook & Instagram)", "Google Ads (Search & Display)", "YouTube Advertising", "Retargeting Campaigns"]
+        },
+        {
+          icon: <Video className="w-6 h-6" />,
+          title: "Influencer Marketing & PR",
+          description: "Strategic influencer partnerships and PR campaigns that amplify your brand message and build credibility.",
+          features: ["Influencer Outreach", "Campaign Management", "PR Strategy", "Media Relations"]
+        },
+        {
+          icon: <Film className="w-6 h-6" />,
+          title: "Content Creation & Video Marketing",
+          description: "Compelling content and video production that engages audiences and drives action across all channels.",
+          features: ["Video Production", "Content Writing", "Scriptwriting", "Post-Production"]
+        }
+      ]
     },
     {
-      icon: Mail,
-      title: 'Digital Marketing',
-      description: 'Comprehensive digital marketing solutions to grow your online presence and drive conversions.',
-      features: [
-        'Email marketing campaigns',
-        'Social media management',
-        'Content marketing',
-        'PPC advertising',
-        'Marketing automation',
-        'Campaign performance analysis'
-      ],
-      price: 'Starting at $499/month',
-      popular: true
+      category: "Technology & Development",
+      tagline: "Fast, Scalable, Conversion-Focused",
+      color: "#8B5CF6",
+      icon: <Code className="w-8 h-8" />,
+      services: [
+        {
+          icon: <Code className="w-6 h-6" />,
+          title: "Website Design & Development",
+          description: "Modern, responsive websites built with Next.js and cutting-edge tech. Fast loading, SEO-optimized, and conversion-focused.",
+          features: ["Next.js Development", "Responsive Design", "Performance Optimization", "CMS Integration"]
+        },
+        {
+          icon: <ShoppingCart className="w-6 h-6" />,
+          title: "E-commerce & Landing Pages",
+          description: "High-converting e-commerce stores and landing pages designed to maximize sales and minimize cart abandonment.",
+          features: ["Shopify Development", "WooCommerce Solutions", "Landing Page Design", "Conversion Optimization"]
+        },
+        {
+          icon: <Search className="w-6 h-6" />,
+          title: "SEO & Advanced Analytics",
+          description: "Technical SEO, keyword strategy, and advanced analytics to improve rankings and track every metric that matters.",
+          features: ["Technical SEO", "Keyword Research", "Google Analytics Setup", "Performance Tracking"]
+        },
+        {
+          icon: <Sparkles className="w-6 h-6" />,
+          title: "App UI/UX Design",
+          description: "Intuitive, beautiful app interfaces that users love. From wireframes to high-fidelity prototypes.",
+          features: ["UI/UX Design", "Prototyping", "User Testing", "Design Systems"]
+        }
+      ]
     },
     {
-      icon: BarChart3,
-      title: 'Analytics & Reporting',
-      description: 'Advanced analytics and reporting to track performance and make data-driven decisions.',
-      features: [
-        'Custom dashboard creation',
-        'Real-time reporting',
-        'Performance analytics',
-        'Conversion tracking',
-        'ROI analysis',
-        'Monthly strategy reviews'
-      ],
-      price: 'Starting at $199/month',
-      popular: false
-    },
-    {
-      icon: Settings,
-      title: 'Website Development',
-      description: 'Professional website development and optimization for better performance and user experience.',
-      features: [
-        'Responsive web design',
-        'Performance optimization',
-        'Security implementation',
-        'CMS integration',
-        'E-commerce solutions',
-        'Ongoing maintenance'
-      ],
-      price: 'Starting at $799/project',
-      popular: false
-    },
-    {
-      icon: Users,
-      title: 'Consulting Services',
-      description: 'Expert consulting to help you develop and implement effective digital strategies.',
-      features: [
-        'Strategy development',
-        'Competitive analysis',
-        'Market research',
-        'Implementation planning',
-        'Team training',
-        'Ongoing support'
-      ],
-      price: 'Starting at $150/hour',
-      popular: false
-    },
-    {
-      icon: Zap,
-      title: 'Marketing Automation',
-      description: 'Automate your marketing processes to improve efficiency and drive better results.',
-      features: [
-        'Lead nurturing sequences',
-        'Email automation',
-        'Behavioral triggers',
-        'CRM integration',
-        'Workflow optimization',
-        'Performance monitoring'
-      ],
-      price: 'Starting at $399/month',
-      popular: false
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: Star,
-      title: 'Proven Results',
-      description: 'Track record of successful campaigns and satisfied clients'
-    },
-    {
-      icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Enterprise-grade security and 99.9% uptime guarantee'
-    },
-    {
-      icon: Clock,
-      title: '24/7 Support',
-      description: 'Round-the-clock support from our expert team'
-    },
-    {
-      icon: Headphones,
-      title: 'Dedicated Account Manager',
-      description: 'Personal account manager for personalized service'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      company: 'TechStart Inc.',
-      content: 'The SEO optimization service has increased our organic traffic by 300% in just 6 months. Highly recommended!',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      company: 'E-commerce Plus',
-      content: 'Their marketing automation tools have streamlined our processes and improved our conversion rates significantly.',
-      rating: 5
-    },
-    {
-      name: 'Emily Rodriguez',
-      company: 'Local Business Co.',
-      content: 'The analytics dashboard provides incredible insights that help us make better business decisions.',
-      rating: 5
+      category: "Creative Solutions",
+      tagline: "Bold Ideas That Stand Out",
+      color: "#F59E0B",
+      icon: <Palette className="w-8 h-8" />,
+      services: [
+        {
+          icon: <Palette className="w-6 h-6" />,
+          title: "Branding & Logo Design",
+          description: "Distinctive brand identities that capture your essence and resonate with your target audience.",
+          features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"]
+        },
+        {
+          icon: <Pen className="w-6 h-6" />,
+          title: "Graphic Design & Motion Graphics",
+          description: "Eye-catching graphics and animations for social media, ads, and digital campaigns.",
+          features: ["Social Media Graphics", "Ad Creatives", "Motion Graphics", "Infographics"]
+        },
+        {
+          icon: <Camera className="w-6 h-6" />,
+          title: "Photography & Video Production",
+          description: "Professional photography and video production for products, events, and brand storytelling.",
+          features: ["Product Photography", "Event Coverage", "Brand Videos", "Commercial Shoots"]
+        }
+      ]
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-indigo-50 to-purple-100">
-        <div className="container-max">
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%)'
+        }}
+      >
+        {/* Animated background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container-max relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <Settings className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-dark-800 mb-6">
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6"
+              style={{
+                background: 'rgba(71, 191, 114, 0.1)',
+                border: '1px solid rgba(71, 191, 114, 0.3)',
+                color: '#47BF72'
+              }}>
               Our Services
+            </span>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
+              <span className="text-white font-inter font-normal">
+                End-to-End Solutions
+              </span>
+              <br />
+              <span className="text-white font-fraunces italic font-light">
+                Under One Roof
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Comprehensive digital solutions tailored to your business needs. 
-              From SEO to marketing automation, we provide everything you need to succeed online.
+
+            <p className="text-lg text-gray-400 leading-relaxed font-inter font-light mb-8">
+              From digital marketing to technology and creative solutions—everything you need to build, grow, and scale your brand. <span className="text-white font-medium">All services delivered in-house, not outsourced.</span>
             </p>
-            {/* CTA removed as requested */}
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <button
+                className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                  boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
+                }}
+              >
+                Get Started
+              </button>
+              <button
+                className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:bg-white/10"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)'
+                }}
+              >
+                View Case Studies
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-              What We Offer
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive suite of services covers every aspect of your digital presence, 
-              ensuring maximum impact and results.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`card p-8 relative ${service.popular ? 'ring-2 ring-indigo-500' : ''}`}
+      {/* Service Categories */}
+      {serviceCategories.map((category, catIndex) => (
+        <section
+          key={catIndex}
+          className="py-24 relative overflow-hidden"
+          style={{
+            background: catIndex % 2 === 0 ? '#0a0a0a' : 'linear-gradient(180deg, #0a0a0a 0%, #16213e 50%, #0a0a0a 100%)'
+          }}
+        >
+          <div className="container-max relative z-10">
+            {/* Category Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: `linear-gradient(135deg, ${category.color}30, ${category.color}15)`,
+                  border: `1px solid ${category.color}40`,
+                  color: category.color
+                }}
               >
-                {service.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-indigo-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </span>
+                {category.icon}
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+                {category.category}
+              </h2>
+              <p className="text-xl font-medium font-inter" style={{ color: category.color }}>
+                {category.tagline}
+              </p>
+            </motion.div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {category.services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                  className="group relative"
+                >
+                  {/* Card */}
+                  <div
+                    className="relative overflow-hidden rounded-2xl p-8 h-full backdrop-blur-xl border transition-all duration-300"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.03)',
+                      borderColor: 'rgba(255, 255, 255, 0.1)',
+                      boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }}
+                  >
+                    {/* Gradient overlay on hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background: `radial-gradient(circle at top left, ${category.color}15, transparent 70%)`
+                      }}
+                    ></div>
+
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+                        style={{
+                          background: `linear-gradient(135deg, ${category.color}30, ${category.color}15)`,
+                          border: `1px solid ${category.color}40`,
+                          color: category.color
+                        }}
+                      >
+                        {service.icon}
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold text-white mb-3 font-inter">
+                        {service.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-400 leading-relaxed font-inter font-light mb-6">
+                        {service.description}
+                      </p>
+
+                      {/* Features */}
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                            <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: category.color }} />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Bottom accent */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                      style={{ background: category.color }}
+                    ></div>
                   </div>
-                )}
-                
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
-                  <service.icon className="w-8 h-8 text-indigo-600" />
-                </div>
-                
-                <h3 className="text-xl font-semibold text-dark-800 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="text-center mb-6">
-                  <div className="text-2xl font-bold text-dark-800 mb-2">{service.price}</div>
-                </div>
-                
-                <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
-                  service.popular 
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
-                    : 'bg-gray-100 text-dark-800 hover:bg-gray-200'
-                }`}>
-                  Choose Plan
-                </button>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      {/* Benefits Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
+      {/* CTA Section */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(71, 191, 114, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)'
+        }}
+      >
+        <div className="container-max relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-              Why Choose Us?
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
+              Ready to Transform Your Brand?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We provide exceptional service with proven results and dedicated support 
-              to help your business thrive in the digital landscape.
+            <p className="text-lg text-gray-300 mb-8 font-light">
+              Let's discuss how our end-to-end solutions can help you achieve your business goals.
             </p>
+            <button
+              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              style={{
+                background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
+              }}
+            >
+              Schedule a Consultation
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-indigo-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-dark-800 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients 
-              have to say about our services.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="card p-8"
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-dark-800">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.company}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section removed as requested */}
     </div>
   );
 };
