@@ -1,150 +1,262 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Users, 
-  ArrowRight
-} from 'lucide-react';
 import { TimelineDemo } from '../components/TimelineDemo';
 import { MarqueeDemo } from '../components/MarqueeDemo';
-import AnimatedCountdown from '../components/AnimatedCountdown';
 
 const AboutUs = () => {
-
-  const milestones = [
-    { year: '2018', event: 'Company Founded' },
-    { year: '2019', event: 'First 100 Clients' },
-    { year: '2020', event: 'Remote Team Expansion' },
-    { year: '2021', event: 'International Expansion' },
-    { year: '2022', event: 'AI Integration' },
-    { year: '2023', event: '10,000+ Websites Optimized' }
+  const stats = [
+    { value: "112.5B+", label: "YouTube Views Delivered" },
+    { value: "₹35+ Cr", label: "Group Annual Revenue" },
+    { value: "1M+", label: "Combined Subscribers" },
+    { value: "100+", label: "Brand Partnerships" }
   ];
 
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="section-padding" style={{ backgroundColor: 'rgb(13,33,21)' }}>
-        <div className="container-max">
+    <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+      {/* Hero Section - Dark Green Theme matching homepage */}
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
+        }}
+      >
+        {/* Subtle animated background */}
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container-max relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            {/* <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <Users className="w-10 h-10 text-white" />
-            </div> */}
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              About Our Team
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
+              style={{
+                background: 'rgba(71, 191, 114, 0.2)',
+                border: '1px solid rgba(71, 191, 114, 0.4)',
+                color: '#47BF72'
+              }}
+            >
+              About XD MEDIA
+            </motion.div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
+              <span className="text-white font-inter font-normal block mb-2">
+                Creating Buzz.
+              </span>
+              <span className="text-white font-fraunces italic font-light">
+                Building Brands.
+              </span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              We're a passionate team of digital experts dedicated to helping businesses 
-              achieve their online goals through innovative solutions and exceptional service.
+
+            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto">
+              A full-stack marketing, branding & technology agency backed by proven industry leaders.
+              We deliver end-to-end solutions that drive real, measurable growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary inline-flex items-center justify-center">
-                Meet Our Team
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="btn-secondary inline-flex items-center justify-center">
-                Join Our Team
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Who We Are + Team strip section */}
-      <section className="section-padding bg-white">
+      {/* Stats Grid - Dark Background like homepage */}
+      <section className="py-20" style={{ background: '#0a0a0a' }}>
         <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left card */}
-            <div className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-28" style={{ background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)', backgroundColor: 'rgb(12,33,21)' }}>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Who We Are</h3>
-              <p className="text-gray-200 max-w-xl mb-6">
-                We’ve done all the heavy lifting so you don’t have to — get all the data you need
-                to launch and grow your business faster.
-              </p>
-              <button className="inline-flex items-center justify-center text-white px-5 py-3 rounded-md text-sm font-medium" style={{ backgroundColor: '#47BF72', border: '0.5px solid white' }}>
-                LEARN MORE
-              </button>
-              {/* Stats pinned to bottom */}
-              <div className="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8 absolute left-8 right-8 bottom-6">
-                <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">22,000+</div>
-                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">8,000+</div>
-                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Clients Served</div>
-                </div>
-                <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">23+</div>
-                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Countries Served</div>
-                </div>
-                <div>
-                  <div className="text-4xl md:text-5xl font-bold text-white">9+</div>
-                  <div className="text-[11px] uppercase tracking-widest text-white/80 mt-2">Average Client NPS</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right column: image + small team strip */}
-            <div className="flex flex-col gap-6">
-              <div className="rounded-2xl overflow-hidden">
-                <img src="/ba.jpg" alt="Team at work" className="w-full h-[260px] md:h-[340px] object-cover" />
-              </div>
-              <div className="relative rounded-2xl bg-gray-100 p-6">
-                <div className="text-center mb-4">
-                  <div className="text-lg font-semibold text-gray-800">Small Team</div>
-                  <div className="text-lg font-semibold text-gray-800">Big Results</div>
-                </div>
-                <div className="relative">
-                  <div className="grid grid-cols-8 gap-4 items-center">
-                    {Array.from({ length: 16 }).map((_, i) => (
-                      <img key={i} src={`https://i.pravatar.cc/80?img=${i + 10}`} alt="avatar" className="w-12 h-12 rounded-full mx-auto" />
-                    ))}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div
+                  className="relative overflow-hidden rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    borderColor: 'rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <div className="text-5xl font-bold mb-3" style={{
+                    background: 'linear-gradient(135deg, #47BF72 0%, #3aa85f 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}>
+                    {stat.value}
                   </div>
-                  {/* edge fade */}
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl" style={{
-                    background: `linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 5%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 16%, rgba(255,255,255,0) 22%), linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 5%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 16%, rgba(255,255,255,0) 22%)`
-                  }} />
+                  <div className="text-sm text-gray-400 uppercase tracking-wider font-medium">
+                    {stat.label}
+                  </div>
+
+                  {/* Hover accent */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                    style={{ background: '#47BF72' }}
+                  ></div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Animated Stats */}
-      <section className="section-padding bg-gray-50">
+      {/* Mission & Vision - Dark gradient like homepage */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)'
+        }}
+      >
         <div className="container-max">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Our Impact in Numbers
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+              Our Purpose
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we've helped businesses grow and succeed across the globe
-            </p>
+            <div className="w-20 h-1 mx-auto" style={{ background: '#47BF72' }}></div>
           </motion.div>
-          <AnimatedCountdown />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div
+                className="relative overflow-hidden rounded-3xl p-10 h-full transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <div className="mb-6">
+                  <h3 className="text-3xl font-bold mb-2" style={{ color: '#47BF72' }}>
+                    Mission
+                  </h3>
+                  <div className="w-12 h-1" style={{ background: '#47BF72' }}></div>
+                </div>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  To help brands grow <span className="font-semibold text-white">smarter, faster, and stronger</span> through innovation, creativity, and technology. We believe in delivering measurable results that transform businesses.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div
+                className="relative overflow-hidden rounded-3xl p-10 h-full transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                <div className="mb-6">
+                  <h3 className="text-3xl font-bold mb-2" style={{ color: '#47BF72' }}>
+                    Vision
+                  </h3>
+                  <div className="w-12 h-1" style={{ background: '#47BF72' }}></div>
+                </div>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  To become the <span className="font-semibold text-white">most trusted marketing & tech partner worldwide</span>, where creativity meets performance and innovation drives success.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
+      {/* Who We Are - Premium Card with dark theme */}
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
+        <div className="container-max">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-3xl p-12 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
+              }}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-4xl font-bold text-white mb-6 font-inter">
+                    Who We Are
+                  </h3>
+                  <p className="text-xl text-gray-200 leading-relaxed mb-8 font-light">
+                    Backed by established ventures with ₹35+ crore annual revenue, 112.5+ billion YouTube views delivered, and 1M+ combined subscribers. This is the powerhouse behind XD MEDIA.
+                  </p>
+                  <button
+                    className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: '#47BF72',
+                      boxShadow: '0 10px 30px rgba(71, 191, 114, 0.3)'
+                    }}
+                  >
+                    Learn More About Us
+                  </button>
+                </div>
 
-      {/* Timeline */}
-      <section className="section-padding bg-white">
+                <div className="grid grid-cols-2 gap-6">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-center"
+                    >
+                      <div className="text-4xl font-bold text-white mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs text-gray-300 uppercase tracking-wider">
+                        {stat.label}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline - Dark gradient */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)'
+        }}
+      >
         <TimelineDemo />
       </section>
 
-      {/* Reviews Section */}
-      <section className="section-padding bg-gray-50">
+      {/* Testimonials - Dark background */}
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,18 +265,17 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it - hear from our satisfied customers
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+              Real results, real testimonials from brands we've helped grow
             </p>
+            <div className="w-20 h-1 mx-auto mt-6" style={{ background: '#47BF72' }}></div>
           </motion.div>
           <MarqueeDemo />
         </div>
       </section>
-
-      {/* CTA Section removed as requested */}
     </div>
   );
 };

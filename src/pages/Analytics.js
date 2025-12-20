@@ -1,342 +1,355 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  BarChart3, 
-  TrendingUp, 
-  Users, 
-  Eye,
-  MousePointer,
-  Clock,
-  ArrowRight,
-  Download,
-  RefreshCw,
-  Filter
-} from 'lucide-react';
-import {
-  LineChart,
-  Line,
-  AreaChart,
-  Area,
-  BarChart,
-  Bar,
-  PieChart,
-  Pie,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer
-} from 'recharts';
+import { BarChart3, TrendingUp, Eye, MousePointer, Clock, CheckCircle, ArrowRight, PieChart, Activity } from 'lucide-react';
 
 const Analytics = () => {
-  // Sample data for charts
-  const trafficData = [
-    { month: 'Jan', visitors: 4000, pageViews: 8000, sessions: 3500 },
-    { month: 'Feb', visitors: 3000, pageViews: 6000, sessions: 2800 },
-    { month: 'Mar', visitors: 5000, pageViews: 10000, sessions: 4200 },
-    { month: 'Apr', visitors: 4500, pageViews: 9000, sessions: 3800 },
-    { month: 'May', visitors: 6000, pageViews: 12000, sessions: 5200 },
-    { month: 'Jun', visitors: 5500, pageViews: 11000, sessions: 4800 }
-  ];
-
-  const conversionData = [
-    { name: 'Organic', value: 45, color: '#3B82F6' },
-    { name: 'Direct', value: 25, color: '#10B981' },
-    { name: 'Social', value: 15, color: '#F59E0B' },
-    { name: 'Email', value: 10, color: '#EF4444' },
-    { name: 'Paid', value: 5, color: '#8B5CF6' }
-  ];
-
-  const deviceData = [
-    { device: 'Desktop', users: 65, color: '#3B82F6' },
-    { device: 'Mobile', users: 30, color: '#10B981' },
-    { device: 'Tablet', users: 5, color: '#F59E0B' }
-  ];
-
-  const metrics = [
+  const analyticsFeatures = [
     {
-      icon: Users,
-      title: 'Total Visitors',
-      value: '125,430',
-      change: '+12.5%',
-      trend: 'up'
+      title: "Real-Time Tracking",
+      description: "Monitor website visitors, user behavior, and conversions as they happen in real-time",
+      features: ["Live Visitor Tracking", "Real-Time Events", "Session Recording", "Heatmaps"]
     },
     {
-      icon: Eye,
-      title: 'Page Views',
-      value: '2.1M',
-      change: '+8.2%',
-      trend: 'up'
+      title: "Advanced Reporting",
+      description: "Custom reports and dashboards with actionable insights to drive business decisions",
+      features: ["Custom Dashboards", "Automated Reports", "Data Export", "Goal Tracking"]
     },
     {
-      icon: MousePointer,
-      title: 'Click Rate',
-      value: '3.2%',
-      change: '-2.1%',
-      trend: 'down'
-    },
-    {
-      icon: Clock,
-      title: 'Avg. Session',
-      value: '2m 45s',
-      change: '+15.3%',
-      trend: 'up'
+      title: "Conversion Optimization",
+      description: "Identify bottlenecks, optimize funnels, and increase conversion rates with data-driven insights",
+      features: ["Funnel Analysis", "A/B Testing", "User Journey Mapping", "Conversion Attribution"]
     }
   ];
 
-  const topPages = [
-    { page: '/home', views: 12500, bounceRate: '45%' },
-    { page: '/products', views: 8900, bounceRate: '52%' },
-    { page: '/about', views: 6700, bounceRate: '38%' },
-    { page: '/contact', views: 4200, bounceRate: '65%' },
-    { page: '/blog', views: 3800, bounceRate: '48%' }
+  const metrics = [
+    { label: "Page Views", value: "2.4M", change: "+45%", icon: <Eye className="w-5 h-5" /> },
+    { label: "Avg. Session", value: "4:32", change: "+28%", icon: <Clock className="w-5 h-5" /> },
+    { label: "Conversion Rate", value: "8.2%", change: "+92%", icon: <MousePointer className="w-5 h-5" /> },
+    { label: "Bounce Rate", value: "32%", change: "-18%", icon: <Activity className="w-5 h-5" /> }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-green-50 to-emerald-100">
-        <div className="container-max">
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
+        }}
+      >
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container-max relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <BarChart3 className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-dark-800 mb-6">
-              Analytics & Insights
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
+              style={{
+                background: 'rgba(71, 191, 114, 0.2)',
+                border: '1px solid rgba(71, 191, 114, 0.4)',
+                color: '#47BF72'
+              }}
+            >
+              <BarChart3 className="w-4 h-4" />
+              Advanced Analytics & Insights
+            </motion.div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
+              <span className="text-white font-inter font-normal block mb-2">
+                Track Everything.
+              </span>
+              <span className="text-white font-fraunces italic font-light">
+                Optimize Anything.
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Comprehensive analytics dashboard to track performance, 
-              understand user behavior, and make data-driven decisions.
+
+            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto mb-10">
+              Powerful analytics that turn data into actionable insights. Understand your audience, optimize performance, and grow faster.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary inline-flex items-center justify-center">
-                View Dashboard
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="btn-secondary inline-flex items-center justify-center">
-                Export Data
-              </button>
+
+            <button
+              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              style={{
+                background: '#47BF72',
+                boxShadow: '0 10px 30px rgba(71, 191, 114, 0.3)'
+              }}
+            >
+              View Analytics Demo
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Analytics Dashboard Visualization */}
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+              Your Analytics Command Center
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+              All your key metrics in one beautiful, easy-to-understand dashboard
+            </p>
+          </motion.div>
+
+          {/* Key Metrics */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="group"
+              >
+                <div className="rounded-2xl p-6 backdrop-blur-xl border transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)'
+                }}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{
+                      background: 'rgba(71, 191, 114, 0.2)',
+                      color: '#47BF72'
+                    }}>
+                      {metric.icon}
+                    </div>
+                    <span className={`text-sm font-semibold ${metric.change.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}>
+                      {metric.change}
+                    </span>
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-1">{metric.value}</div>
+                  <div className="text-sm text-gray-400">{metric.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Main Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="rounded-3xl overflow-hidden backdrop-blur-xl border" style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderColor: 'rgba(255, 255, 255, 0.1)'
+            }}
+          >
+            <div className="p-8">
+              {/* Dashboard Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">Traffic Overview</h3>
+                  <p className="text-gray-400 text-sm">Last 30 days performance</p>
+                </div>
+                <div className="flex gap-2">
+                  <button className="px-4 py-2 rounded-lg text-sm font-medium text-white" style={{
+                    background: 'rgba(71, 191, 114, 0.2)',
+                    border: '1px solid rgba(71, 191, 114, 0.3)'
+                  }}>
+                    Last 30 Days
+                  </button>
+                </div>
+              </div>
+
+              {/* Traffic Chart */}
+              <div className="rounded-xl p-8 mb-8" style={{
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.05)'
+              }}>
+                <div className="flex items-end justify-between h-64 gap-2">
+                  {[45, 52, 48, 65, 58, 72, 68, 75, 70, 82, 78, 88, 85, 92, 89, 95, 90, 98, 94, 100, 96, 98, 95, 97, 94, 96, 93, 95, 92, 94].map((height, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ height: 0 }}
+                      whileInView={{ height: `${height}%` }}
+                      transition={{ duration: 0.8, delay: index * 0.03 }}
+                      viewport={{ once: true }}
+                      className="flex-1 rounded-t transition-all duration-300 hover:opacity-80"
+                      style={{
+                        background: `linear-gradient(180deg, #47BF72 0%, #3aa85f 100%)`,
+                        minHeight: '10px',
+                        maxWidth: '20px'
+                      }}
+                    ></motion.div>
+                  ))}
+                </div>
+                <div className="flex justify-between mt-4 text-xs text-gray-500">
+                  <span>Day 1</span>
+                  <span>Day 15</span>
+                  <span>Day 30</span>
+                </div>
+              </div>
+
+              {/* Traffic Sources */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Top Pages */}
+                <div className="rounded-xl p-6" style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)'
+                }}>
+                  <h4 className="text-white font-semibold mb-4">Top Pages</h4>
+                  <div className="space-y-3">
+                    {[
+                      { page: "/services", views: "45.2K", percentage: 85 },
+                      { page: "/about-us", views: "32.8K", percentage: 65 },
+                      { page: "/contact", views: "28.4K", percentage: 55 },
+                      { page: "/blog", views: "21.6K", percentage: 42 }
+                    ].map((item, index) => (
+                      <div key={index}>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-300">{item.page}</span>
+                          <span className="text-white font-medium">{item.views}</span>
+                        </div>
+                        <div className="w-full h-2 rounded-full" style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${item.percentage}%` }}
+                            transition={{ duration: 1, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className="h-full rounded-full"
+                            style={{ background: '#47BF72' }}
+                          ></motion.div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Traffic Sources */}
+                <div className="rounded-xl p-6" style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)'
+                }}>
+                  <h4 className="text-white font-semibold mb-4">Traffic Sources</h4>
+                  <div className="space-y-4">
+                    {[
+                      { source: "Organic Search", percentage: "45%", color: "#47BF72" },
+                      { source: "Direct", percentage: "28%", color: "#8B5CF6" },
+                      { source: "Social Media", percentage: "18%", color: "#F59E0B" },
+                      { source: "Referral", percentage: "9%", color: "#EF4444" }
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full" style={{ background: item.color }}></div>
+                          <span className="text-gray-300 text-sm">{item.source}</span>
+                        </div>
+                        <span className="text-white font-semibold">{item.percentage}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Metrics Overview */}
-      <section className="section-padding bg-white">
+      {/* Analytics Features */}
+      <section className="py-24 relative overflow-hidden" style={{
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)'
+      }}>
         <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {metrics.map((metric, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+              Powerful Analytics Features
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+              Everything you need to understand and optimize your digital presence
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {analyticsFeatures.map((feature, index) => (
               <motion.div
-                key={metric.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="card p-6"
+                whileHover={{ y: -8 }}
+                className="group"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <metric.icon className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div className={`flex items-center text-sm font-semibold ${
-                    metric.trend === 'up' ? 'text-green-500' : 'text-red-500'
-                  }`}>
-                    <TrendingUp className={`w-4 h-4 mr-1 ${
-                      metric.trend === 'down' ? 'rotate-180' : ''
-                    }`} />
-                    {metric.change}
-                  </div>
+                <div className="relative overflow-hidden rounded-2xl p-8 h-full backdrop-blur-xl border transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)'
+                }}>
+                  <h3 className="text-2xl font-bold text-white mb-4 font-inter">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                    {feature.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {feature.features.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-green-400" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                    style={{ background: '#47BF72' }}
+                  ></div>
                 </div>
-                <h3 className="text-2xl font-bold text-dark-800 mb-1">{metric.value}</h3>
-                <p className="text-gray-600">{metric.title}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Charts Section */}
-      <section className="section-padding bg-gray-50">
+      {/* CTA Section */}
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-              Performance Analytics
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
+              Start Tracking Your Growth
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visualize your data with interactive charts and graphs 
-              to understand trends and patterns.
+            <p className="text-lg text-gray-300 mb-8 font-light">
+              Get complete visibility into your website performance with our analytics platform
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Traffic Chart */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="card p-8"
+            <button
+              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
+              }}
             >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-semibold text-dark-800">Traffic Overview</h3>
-                <div className="flex space-x-2">
-                  <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <RefreshCw className="w-4 h-4 text-gray-600" />
-                  </button>
-                  <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <Filter className="w-4 h-4 text-gray-600" />
-                  </button>
-                </div>
-              </div>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={trafficData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="month" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Area type="monotone" dataKey="visitors" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} />
-                  <Area type="monotone" dataKey="pageViews" stackId="1" stroke="#10B981" fill="#10B981" fillOpacity={0.6} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </motion.div>
-
-            {/* Conversion Sources */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="card p-8"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-semibold text-dark-800">Traffic Sources</h3>
-                <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                  <Download className="w-4 h-4 text-gray-600" />
-                </button>
-              </div>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={conversionData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={100}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    {conversionData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </ResponsiveContainer>
-            </motion.div>
-          </div>
-
-          {/* Device Analytics */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="card p-8 mb-12"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-semibold text-dark-800">Device Analytics</h3>
-              <div className="flex space-x-4">
-                <button className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">
-                  Last 30 Days
-                </button>
-                <button className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors">
-                  Last 7 Days
-                </button>
-              </div>
-            </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={deviceData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="device" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="users" fill="#10B981" />
-              </BarChart>
-            </ResponsiveContainer>
-          </motion.div>
-
-          {/* Top Pages */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="card p-8"
-          >
-            <h3 className="text-xl font-semibold text-dark-800 mb-6">Top Performing Pages</h3>
-            <div className="space-y-4">
-              {topPages.map((page, index) => (
-                <div key={page.page} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <span className="text-sm font-semibold text-green-600">{index + 1}</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-dark-800">{page.page}</div>
-                      <div className="text-sm text-gray-600">{page.views.toLocaleString()} views</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-600">Bounce Rate</div>
-                    <div className="font-semibold text-dark-800">{page.bounceRate}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-dark-800 text-white">
-        <div className="container-max text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Get Deeper Insights
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Unlock the full potential of your data with advanced analytics, 
-              custom reports, and actionable insights.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-dark-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Upgrade to Pro
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-800 transition-colors inline-flex items-center justify-center">
-                Schedule Demo
-              </button>
-            </div>
+              Get Started Free
+            </button>
           </motion.div>
         </div>
       </section>

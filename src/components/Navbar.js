@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Search, 
-  BarChart3, 
-  Mail, 
-  Users, 
-  Settings, 
+import {
+  Search,
+  BarChart3,
+  Mail,
+  Users,
+  Settings,
   ChevronDown,
   Menu,
   X,
@@ -113,9 +113,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <img 
-                src="/360.png" 
-                alt="360 Logo" 
+              <img
+                src="/360.png"
+                alt="360 Logo"
                 className="w-48 h-44"
               />
             </Link>
@@ -138,11 +138,10 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.path}
-                    className={`relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group ${
-                      isActive(item.path)
-                        ? 'text-white font-light'
-                        : 'text-white hover:text-green-200'
-                    }`}
+                    className={`relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group ${isActive(item.path)
+                      ? 'text-white font-light'
+                      : 'text-white hover:text-green-200'
+                      }`}
                     onClick={(e) => {
                       if (item.hasDropdown) {
                         e.preventDefault();
@@ -154,7 +153,7 @@ const Navbar = () => {
                     {item.icon && <item.icon className="w-4 h-4" />}
                     <span className="uppercase tracking-wide text-sm font-light">{item.name}</span>
                     {item.hasDropdown && <ChevronDown className="w-3 h-3 text-white" />}
-                    
+
                     {/* Animated Line */}
                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></div>
                   </Link>
@@ -167,7 +166,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
-                style={{ 
+                style={{
                   backgroundColor: '#47BF72',
                   borderRadius: '5px',
                   border: '0.5px solid white'
@@ -212,10 +211,10 @@ const Navbar = () => {
                   {/* Service Links */}
                   <div className="w-40 flex-shrink-0 pr-4">
                     {servicesItem?.dropdownItems?.map((dropdownItem) => (
-                                              <Link
-                          key={dropdownItem.name}
-                          to={dropdownItem.path}
-                          className="block p-4 text-sm hover:bg-gray-700 transition-colors duration-200 rounded-lg mb-2 uppercase tracking-wide font-medium"
+                      <Link
+                        key={dropdownItem.name}
+                        to={dropdownItem.path}
+                        className="block p-4 text-sm hover:bg-gray-700 transition-colors duration-200 rounded-lg mb-2 uppercase tracking-wide font-medium"
                         onMouseEnter={() => setHoveredService(dropdownItem)}
                         onMouseLeave={() => setHoveredService(null)}
                         onClick={() => {
@@ -224,7 +223,7 @@ const Navbar = () => {
                         }}
                       >
                         <div className="flex items-center space-x-3">
-                          <dropdownItem.icon className="w-5 h-5 text-white" />
+                          {dropdownItem.icon && <dropdownItem.icon className="w-5 h-5 text-white flex-shrink-0" />}
                           <span className="text-sm font-light text-white">{dropdownItem.name}</span>
                         </div>
                       </Link>
@@ -276,11 +275,10 @@ const Navbar = () => {
                   <div key={item.name}>
                     <Link
                       to={item.path}
-                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                        isActive(item.path)
-                          ? 'bg-green-700 text-white font-semibold'
-                          : 'text-white hover:bg-green-700 hover:text-white'
-                      }`}
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path)
+                        ? 'bg-green-700 text-white font-semibold'
+                        : 'text-white hover:bg-green-700 hover:text-white'
+                        }`}
                       onClick={() => {
                         if (!item.hasDropdown) {
                           setIsMobileMenuOpen(false);
@@ -296,11 +294,10 @@ const Navbar = () => {
                           <Link
                             key={dropdownItem.name}
                             to={dropdownItem.path}
-                            className={`flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors text-sm ${
-                              isActive(dropdownItem.path)
-                                ? 'bg-gray-100 text-dark-800 font-semibold'
-                                : 'text-gray-500 hover:bg-gray-50 hover:text-dark-800'
-                            }`}
+                            className={`flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors text-sm ${isActive(dropdownItem.path)
+                              ? 'bg-gray-100 text-dark-800 font-semibold'
+                              : 'text-gray-500 hover:bg-gray-50 hover:text-dark-800'
+                              }`}
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             <dropdownItem.icon className="w-4 h-4" />

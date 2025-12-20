@@ -1,248 +1,360 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Search, 
-  Tag, 
-  Map, 
-  TrendingUp, 
-  FileText, 
-  Globe,
-  CheckCircle,
-  ArrowRight,
-  BarChart3
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { TrendingUp, Search, BarChart3, Globe, CheckCircle, ArrowRight } from 'lucide-react';
 
 const SEOTools = () => {
-  const tools = [
+  const [animationStep, setAnimationStep] = useState(0);
+
+  useEffect(() => {
+    // Step 0: Initial state (0s)
+    // Step 1: Move to #2 (after 2s)
+    // Step 2: Move to #1 (after 4s)
+    const timer1 = setTimeout(() => setAnimationStep(1), 2000);
+    const timer2 = setTimeout(() => setAnimationStep(2), 4000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
+  const seoServices = [
     {
-      icon: Search,
-      title: 'Keyword Analysis',
-      description: 'Discover high-value keywords and analyze search volume, competition, and trends.',
-      features: ['Keyword research', 'Competitor analysis', 'Search volume data', 'Trend tracking']
+      title: "Technical SEO",
+      description: "Site speed optimization, mobile responsiveness, structured data, and crawlability improvements",
+      features: ["Site Speed Optimization", "Mobile-First Indexing", "Schema Markup", "XML Sitemaps"]
     },
     {
-      icon: Tag,
-      title: 'Meta Tag Generator',
-      description: 'Create optimized meta titles and descriptions for better search engine visibility.',
-      features: ['Title optimization', 'Meta descriptions', 'Character counting', 'Preview testing']
+      title: "On-Page SEO",
+      description: "Content optimization, keyword research, meta tags, and internal linking strategies",
+      features: ["Keyword Research", "Content Optimization", "Meta Tags Setup", "Internal Linking"]
     },
     {
-      icon: Map,
-      title: 'Sitemap Builder',
-      description: 'Generate XML sitemaps to help search engines crawl and index your site.',
-      features: ['XML sitemap generation', 'URL prioritization', 'Change frequency', 'Last modified dates']
-    },
-    {
-      icon: FileText,
-      title: 'Content Optimizer',
-      description: 'Analyze and optimize your content for better SEO performance.',
-      features: ['Readability analysis', 'Keyword density', 'Content suggestions', 'SEO scoring']
-    },
-    {
-      icon: Globe,
-      title: 'Site Audit',
-      description: 'Comprehensive website analysis to identify SEO issues and opportunities.',
-      features: ['Technical SEO audit', 'Page speed analysis', 'Mobile optimization', 'Link analysis']
-    },
-    {
-      icon: BarChart3,
-      title: 'Rank Tracking',
-      description: 'Monitor your keyword rankings across different search engines.',
-      features: ['Position tracking', 'Ranking history', 'Competitor monitoring', 'Performance reports']
+      title: "Off-Page SEO",
+      description: "Link building, brand mentions, social signals, and authority building campaigns",
+      features: ["Quality Backlinks", "Brand Mentions", "Guest Posting", "Authority Building"]
     }
   ];
 
-  const benefits = [
-    'Increase organic traffic by up to 300%',
-    'Improve search engine rankings',
-    'Better user experience and engagement',
-    'Higher conversion rates',
-    'Comprehensive SEO insights',
-    'Competitive advantage'
-  ];
+  // Define the ranking order for each step
+  const getRankings = () => {
+    if (animationStep === 0) {
+      // Initial: competitor1 #1, competitor2 #2, yourwebsite #3
+      return [
+        { position: 1, url: "competitor1.com", title: "Digital Marketing Agency - Professional Services", isYours: false },
+        { position: 2, url: "competitor2.com", title: "Marketing Solutions for Your Business", isYours: false },
+        { position: 3, url: "yourwebsite.com", title: "Best Digital Marketing Services | Expert SEO & Growth", isYours: true }
+      ];
+    } else if (animationStep === 1) {
+      // Step 1: competitor1 #1, yourwebsite #2, competitor2 #3
+      return [
+        { position: 1, url: "competitor1.com", title: "Digital Marketing Agency - Professional Services", isYours: false },
+        { position: 2, url: "yourwebsite.com", title: "Best Digital Marketing Services | Expert SEO & Growth", isYours: true },
+        { position: 3, url: "competitor2.com", title: "Marketing Solutions for Your Business", isYours: false }
+      ];
+    } else {
+      // Step 2: yourwebsite #1, competitor1 #2, competitor2 #3
+      return [
+        { position: 1, url: "yourwebsite.com", title: "Best Digital Marketing Services | Expert SEO & Growth", isYours: true },
+        { position: 2, url: "competitor1.com", title: "Digital Marketing Agency - Professional Services", isYours: false },
+        { position: 3, url: "competitor2.com", title: "Marketing Solutions for Your Business", isYours: false }
+      ];
+    }
+  };
+
+  const rankings = getRankings();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container-max">
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
+        }}
+      >
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container-max relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <Search className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-dark-800 mb-6">
-              SEO Tools & Optimization
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
+              style={{
+                background: 'rgba(71, 191, 114, 0.2)',
+                border: '1px solid rgba(71, 191, 114, 0.4)',
+                color: '#47BF72'
+              }}
+            >
+              <Search className="w-4 h-4" />
+              SEO & Performance Optimization
+            </motion.div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
+              <span className="text-white font-inter font-normal block mb-2">
+                Rank Higher.
+              </span>
+              <span className="text-white font-fraunces italic font-light">
+                Get Found.
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Comprehensive SEO tools to boost your search engine rankings, 
-              increase organic traffic, and improve your website's visibility.
+
+            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto mb-10">
+              We optimize your website to rank #1 on Google. From technical SEO to content strategy, we drive organic traffic that converts.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary inline-flex items-center justify-center">
-                Start Free Trial
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="btn-secondary inline-flex items-center justify-center">
-                View Pricing
-              </button>
-            </div>
+
+            <button
+              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              style={{
+                background: '#47BF72',
+                boxShadow: '0 10px 30px rgba(71, 191, 114, 0.3)'
+              }}
+            >
+              Get SEO Audit
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </motion.div>
         </div>
       </section>
 
-      {/* Tools Grid */}
-      <section className="section-padding bg-white">
+      {/* Sequential SEO Animation */}
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
         <div className="container-max">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-              Powerful SEO Tools
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+              See SEO in Action
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to optimize your website for search engines 
-              and drive more organic traffic to your business.
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+              Watch how your website climbs from position #3 → #2 → #1 after our SEO optimization
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tools.map((tool, index) => (
-              <motion.div
-                key={tool.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="card p-8 group"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
-                  <tool.icon className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-dark-800 mb-4">{tool.title}</h3>
-                <p className="text-gray-600 mb-6">{tool.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {tool.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
+          {/* Search Results Mockup */}
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-2xl p-8 backdrop-blur-xl border" style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderColor: 'rgba(255, 255, 255, 0.1)'
+            }}>
+              {/* Search Bar Mockup */}
+              <div className="flex items-center gap-3 p-4 rounded-full mb-8" style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <Search className="w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  value="digital marketing services"
+                  readOnly
+                  className="flex-1 bg-transparent text-white outline-none"
+                />
+              </div>
+
+              {/* Animated Rankings */}
+              <div className="space-y-4 relative" style={{ minHeight: '400px' }}>
+                <AnimatePresence mode="popLayout">
+                  {rankings.map((rank) => (
+                    <motion.div
+                      key={rank.url}
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        layout: { duration: 1, type: "spring", stiffness: 50, damping: 20 },
+                        opacity: { duration: 0.3 }
+                      }}
+                    >
+                      <div
+                        className={`p-6 rounded-xl transition-all duration-300 ${rank.isYours && rank.position === 1 ? 'relative overflow-hidden' : ''}`}
+                        style={rank.isYours && rank.position === 1 ? {
+                          background: 'linear-gradient(135deg, rgba(71, 191, 114, 0.2) 0%, rgba(71, 191, 114, 0.05) 100%)',
+                          border: '2px solid #47BF72',
+                          boxShadow: '0 0 30px rgba(71, 191, 114, 0.3)'
+                        } : {
+                          background: 'rgba(255, 255, 255, 0.05)',
+                          border: '1px solid rgba(255, 255, 255, 0.1)'
+                        }}
+                      >
+                        {rank.isYours && rank.position === 1 && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-transparent animate-pulse"></div>
+                        )}
+
+                        <div className="flex items-start gap-4 relative z-10">
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                            style={{
+                              background: rank.position === 1 ? '#FFD700' : rank.position === 2 ? '#C0C0C0' : '#CD7F32',
+                              boxShadow: rank.isYours && rank.position === 1 ? '0 0 20px rgba(255, 215, 0, 0.5)' : 'none'
+                            }}
+                          >
+                            #{rank.position}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Globe className={`w-4 h-4 ${rank.isYours ? 'text-green-400' : 'text-gray-400'}`} />
+                              <span className={`font-medium ${rank.isYours ? 'text-green-400 font-bold' : 'text-gray-400'}`}>
+                                {rank.url}
+                              </span>
+                              {rank.isYours && (
+                                <span className="px-2 py-1 rounded text-xs font-semibold" style={{
+                                  background: 'rgba(71, 191, 114, 0.2)',
+                                  color: '#47BF72'
+                                }}>
+                                  YOUR SITE
+                                </span>
+                              )}
+                            </div>
+                            <h3 className={`text-lg font-semibold mb-1 ${rank.isYours ? 'text-white' : 'text-gray-300'}`}>
+                              {rank.title}
+                            </h3>
+                            <p className={`text-sm ${rank.isYours ? 'text-gray-300' : 'text-gray-500'}`}>
+                              {rank.isYours
+                                ? "Optimized for search engines with targeted keywords, quality content, and technical SEO perfection..."
+                                : "Marketing services for businesses looking to grow online..."}
+                            </p>
+                          </div>
+                          {rank.isYours && rank.position === 1 && (
+                            <div className="flex-shrink-0 text-right">
+                              <div className="flex items-center gap-1 text-green-400 font-bold text-xl">
+                                <TrendingUp className="w-5 h-5" />
+                                +450%
+                              </div>
+                              <span className="text-xs text-gray-400">traffic increase</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
                   ))}
-                </ul>
-                <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Try Now
-                </button>
+                </AnimatePresence>
+              </div>
+
+              {/* SEO Impact Note */}
+              {animationStep === 2 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="mt-8 p-6 rounded-xl text-center" style={{
+                    background: 'rgba(71, 191, 114, 0.1)',
+                    border: '1px solid rgba(71, 191, 114, 0.2)'
+                  }}
+                >
+                  <p className="text-green-400 font-medium mb-2">
+                    🚀 After 3 months of SEO optimization
+                  </p>
+                  <p className="text-gray-300 text-sm">
+                    Your website moved from position #3 to #1, resulting in 450% traffic increase and 5× more leads
+                  </p>
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Services */}
+      <section className="py-24 relative overflow-hidden" style={{
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)'
+      }}>
+        <div className="container-max">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+              Complete SEO Solutions
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+              Everything you need to dominate search rankings
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {seoServices.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <div className="relative overflow-hidden rounded-2xl p-8 h-full backdrop-blur-xl border transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)'
+                }}>
+                  <h3 className="text-2xl font-bold text-white mb-4 font-inter">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed mb-6 font-light">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-green-400" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                    style={{ background: '#47BF72' }}
+                  ></div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-800 mb-6">
-                Why SEO Matters for Your Business
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Search Engine Optimization is crucial for online success. 
-                Our tools help you achieve better rankings and drive qualified traffic.
-              </p>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-3"
-                  >
-                    <TrendingUp className="w-6 h-6 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8"
-            >
-              <h3 className="text-2xl font-bold text-dark-800 mb-6">SEO Performance Metrics</h3>
-              <div className="space-y-6">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Organic Traffic Growth</span>
-                  <span className="text-2xl font-bold text-green-500">+285%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-green-500 h-3 rounded-full" style={{ width: '85%' }}></div>
-                </div>
-                
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Average Ranking Position</span>
-                  <span className="text-2xl font-bold text-blue-500">#3.2</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-blue-500 h-3 rounded-full" style={{ width: '70%' }}></div>
-                </div>
-                
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Click-Through Rate</span>
-                  <span className="text-2xl font-bold text-purple-500">12.5%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div className="bg-purple-500 h-3 rounded-full" style={{ width: '75%' }}></div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="section-padding bg-dark-800 text-white">
-        <div className="container-max text-center">
+      <section className="py-24" style={{ background: '#0a0a0a' }}>
+        <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Boost Your SEO?
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
+              Ready to Rank #1?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Start using our powerful SEO tools today and watch your organic traffic grow. 
-              No technical knowledge required.
+            <p className="text-lg text-gray-300 mb-8 font-light">
+              Get a free SEO audit and discover how we can boost your rankings
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-dark-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Start Free Trial
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-dark-800 transition-colors inline-flex items-center justify-center">
-                Schedule Demo
-              </button>
-            </div>
+            <button
+              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
+              }}
+            >
+              Get Free SEO Audit
+            </button>
           </motion.div>
         </div>
       </section>
