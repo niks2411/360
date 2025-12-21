@@ -18,29 +18,29 @@ const Footer = () => {
 
 
   return (
-    <footer 
-      className="text-white relative overflow-hidden" 
-      style={{ 
-        width: '100vw', 
-        marginLeft: 'calc(-50vw + 50%)', 
+    <footer
+      className="text-white relative overflow-hidden"
+      style={{
+        width: '100vw',
+        marginLeft: 'calc(-50vw + 50%)',
         backgroundImage: 'url(/bg1.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
+      <div className="w-full py-3 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
         {/* Free Consultancy Section - Now at the top */}
-        <div className="mb-16 pb-12 border-b border-gray-600">
+        <div className=" mt-4 mb-4 pb-3 border-b border-gray-600">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-white mb-3">
               Ready to Transform Your Digital Presence?
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-4 max-w-2xl mx-auto">
               Book a free 30-minute consultancy session with our experts to discuss your digital marketing goals and get personalized recommendations.
             </p>
-            <button 
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-8 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            <button
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-2 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               onClick={() => window.open('/contact', '_blank')}
             >
               Book Free 30-Min Consultancy
@@ -49,13 +49,14 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-2 items-center">
           {/* Large Logo Section - Left Side */}
-          <div className="lg:w-1/3 flex justify-center lg:justify-start -mt-0">
-            <img 
-              src="/lohgo.png" 
-              alt="360 Logo" 
-              className="w-80 h-96 object-contain"
+          <div className="lg:w-1/3 flex justify-center lg:justify-start">
+            <img
+              src="/logo.png"
+              alt="360 Logo"
+              style={{ width: '600px', height: '600px', display: 'block' }}
+              className="object-cover"
             />
           </div>
 
@@ -66,7 +67,7 @@ const Footer = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-white">Our Company</h3>
                 <p className="text-gray-300 mb-6 text-sm">
-                  Comprehensive digital solutions for SEO, marketing, and analytics. 
+                  Comprehensive digital solutions for SEO, marketing, and analytics.
                   We Build Brands with Tech, Media & Marketing.
                 </p>
                 <div className="space-y-3">
@@ -114,7 +115,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-dark-700 mt-8 pt-8 w-full" style={{ width: '100%' }}>
+        <div className="border-t border-dark-700 mt-2 pt-2 w-full" style={{ width: '100%' }}>
           <div className="flex flex-col md:flex-row justify-between items-center w-full">
             <p className="text-gray-400 text-sm">
               © {currentYear} 360 Website Control. All rights reserved.
