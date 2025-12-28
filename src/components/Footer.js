@@ -31,16 +31,16 @@ const Footer = () => {
     >
       <div className="w-full py-3 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
         {/* Free Consultancy Section - Now at the top */}
-        <div className=" mt-4 mb-4 pb-3 border-b border-gray-600">
+        <div className=" mt-6 mb-4 pb-3 border-b border-gray-600">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">
+            <h3 className="text-2xl font-light text-white mb-3">
               Ready to Transform Your Digital Presence?
             </h3>
             <p className="text-gray-300 mb-4 max-w-2xl mx-auto">
               Book a free 30-minute consultancy session with our experts to discuss your digital marketing goals and get personalized recommendations.
             </p>
             <button
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-2 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-10 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               onClick={() => window.open('/contact', '_blank')}
             >
               Book Free 30-Min Consultancy

@@ -78,7 +78,7 @@ const CredibilityBacking = () => {
                     </div>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-inter font-normal">
+                        <span className="text-white font-light font-normal">
                             Powered by
                         </span>
                         <br />
@@ -131,13 +131,13 @@ const CredibilityBacking = () => {
                                 </div>
 
                                 {/* Company Name */}
-                                <h3 className="text-2xl font-bold text-white mb-2 font-inter">
+                                <h3 className="text-2xl font-light text-white mb-2 font-inter">
                                     {company.name}
                                 </h3>
 
                                 {/* Revenue/Description */}
                                 <div className="mb-4">
-                                    <div className="text-3xl font-bold mb-1" style={{ color: company.color }}>
+                                    <div className="text-3xl font-light mb-1" style={{ color: company.color }}>
                                         {company.revenue}
                                     </div>
                                     <div className="text-sm text-gray-400 uppercase tracking-wider">
@@ -194,7 +194,7 @@ const CredibilityBacking = () => {
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
 
                         <div className="relative z-10">
-                            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-inter">
+                            <h3 className="text-3xl sm:text-4xl font-light text-white mb-4 font-inter">
                                 Combined Group Strength
                             </h3>
                             <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto font-light">

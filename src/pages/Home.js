@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, LazyMotion, domAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight
@@ -567,7 +567,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight"
               >
-                <span className="text-white drop-shadow-2xl font-inter font-semibold block mb-2" style={{
+                <span className="text-white drop-shadow-2xl font-inter font-light block mb-2" style={{
                   textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
                 }}>
                   Your 360°

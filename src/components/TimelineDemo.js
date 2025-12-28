@@ -206,7 +206,7 @@ export function TimelineDemo() {
                   Company Formation
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">EMB Global Inc.</span>
+                  {/* <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">EMB Global Inc.</span> */}
                   <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Initial Funding</span>
                   <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Mumbai Office</span>
                   <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Mission Defined</span>

@@ -74,7 +74,7 @@ const ProcessWorkflow = () => {
                     </span>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-inter font-normal">
+                        <span className="text-white font-light font-light">
                             Our Proven
                         </span>
                         <br />
@@ -157,7 +157,7 @@ const ProcessWorkflow = () => {
 
                                                     {/* Title & Subtitle */}
                                                     <div className="flex-1">
-                                                        <h3 className="text-3xl font-bold text-white mb-2 font-inter">
+                                                        <h3 className="text-3xl font-light text-white mb-2 font-inter">
                                                             {step.title}
                                                         </h3>
                                                         <p className="text-lg font-medium font-inter" style={{ color: step.color }}>

@@ -14,50 +14,74 @@ export function ProgressiveBlur({
   const [isInRange, setIsInRange] = useState(false);
   const [isFading, setIsFading] = useState(false);
   const [fadeProgress, setFadeProgress] = useState(0); // 0 => visible, 1 => hidden
+  const [blurOpacity, setBlurOpacity] = useState(1); // Controls overall blur opacity
   const scrollStopTimerRef = useRef(null);
   const fadeRafRef = useRef(0);
+  const lastScrollYRef = useRef(0);
+  const lastScrollTimeRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
+      const currentTime = performance.now();
+
+      // Calculate scroll velocity
+      const scrollDelta = Math.abs(scrollY - lastScrollYRef.current);
+      const timeDelta = currentTime - lastScrollTimeRef.current;
+
+      // Only activate blur if scrolled more than 30px at a time (lowered from 50px)
+      // OR if scrolling very fast (high velocity)
+      const isRapidScroll = scrollDelta > 30 || (timeDelta > 0 && scrollDelta / timeDelta > 0.5);
+
+      // Update refs for next calculation
+      lastScrollYRef.current = scrollY;
+      lastScrollTimeRef.current = currentTime;
+
       // Start showing blur after hero section (approximately 100vh)
       const heroHeight = windowHeight;
       const footerStart = documentHeight - windowHeight;
-      
+
       // Within range where blur is allowed
       const inRange = scrollY > heroHeight && scrollY < footerStart - 200;
       setIsInRange(inRange);
+
+      // Only proceed if rapid scroll detected
+      if (!isRapidScroll) {
+        return;
+      }
 
       // Mark as scrolling and set a small debounce to hide when stopping
       // User is scrolling: cancel any fade-out and make sure blur is visible within range
       setIsScrolling(true);
       setIsFading(false);
       setFadeProgress(0);
+      setBlurOpacity(1); // Full opacity when scrolling
       if (fadeRafRef.current) cancelAnimationFrame(fadeRafRef.current);
       if (scrollStopTimerRef.current) clearTimeout(scrollStopTimerRef.current);
       scrollStopTimerRef.current = setTimeout(() => {
         // begin fade-out animation after short idle
         setIsFading(true);
         const start = performance.now();
-        const duration = 350; // ms
+        const duration = 4500; // ms (increased from 800ms for much smoother fade-out)
         const tick = (now) => {
           const elapsed = now - start;
           const t = Math.min(1, elapsed / duration);
           // ease-out
           const eased = 1 - Math.pow(1 - t, 2);
           setFadeProgress(eased);
+          setBlurOpacity(1 - eased); // Gradually reduce opacity
           if (t < 1) {
             fadeRafRef.current = requestAnimationFrame(tick);
           } else {
             setIsFading(false);
             setIsScrolling(false);
+            setBlurOpacity(0);
           }
         };
         fadeRafRef.current = requestAnimationFrame(tick);
-      }, 150);
+      }, 500); // increased from 300ms for longer visible time
 
       // Update visibility based on range
       setShowBlur(inRange && true);
@@ -79,7 +103,7 @@ export function ProgressiveBlur({
   return (
     <div
       className={cn(
-        "gradient-blur pointer-events-none fixed z-10 left-0 right-0",
+        "gradient-blur pointer-events-none fixed z-10 left-0 right-0 transition-opacity duration-300",
         className,
         position === "top"
           ? "top-0"
@@ -90,6 +114,7 @@ export function ProgressiveBlur({
       style={{
         width: "100%",
         height: position === "both" ? "100vh" : height,
+        opacity: blurOpacity, // Smooth opacity transition
         // Parent mask to fade out from top -> bottom while stopping
         maskImage:
           isFading

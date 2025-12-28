@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
                     </span>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-inter font-normal">
+                        <span className="text-white font-light font-normal">
                             Built for
                         </span>
                         <br />
@@ -117,7 +117,7 @@ const WhyChooseUs = () => {
                                     {/* Content */}
                                     <div className="relative z-10">
                                         {/* Title */}
-                                        <h3 className="text-2xl font-bold text-white mb-2 font-inter">
+                                        <h3 className="text-2xl font-light text-white mb-2 font-inter">
                                             {feature.title}
                                         </h3>
 

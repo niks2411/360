@@ -118,7 +118,7 @@ const Contact = () => {
               </span>
             </h1>
 
-            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 leading-relaxed font-light max-w-3xl mx-auto">
               Ready to transform your digital presence? Contact us today and let's discuss how we can help you achieve your goals.
             </p>
           </motion.div>
