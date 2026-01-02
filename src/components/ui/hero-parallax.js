@@ -73,18 +73,18 @@ export const Header = () => {
       </p>
       <div className="hidden lg:block">
         <Link
-          to="/contact"
-          className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
-          style={{ 
-            backgroundColor: 'black',
-            borderRadius: '5px',
-            border: '0.5px solid white'
-          }}
-          onMouseEnter={(e) => e.target.style.backgroundColor = '#333333'}
-          onMouseLeave={(e) => e.target.style.backgroundColor = 'black'}
-        >
-          GET STARTED
-        </Link>
+                       to="/contact"
+                       className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
+                       style={{
+                         backgroundColor: '#47BF72',
+                         borderRadius: '5px'
+                         
+                       }}
+                       onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                       onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+                     >
+                       GET STARTED
+                     </Link>
       </div>
     </div>
     

@@ -6,8 +6,11 @@ import {
   MapPin,
   Send,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  AlertCircle
 } from 'lucide-react';
+import { db } from '../firebaseConfig';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +22,8 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,20 +33,38 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // Add document to Firestore
+      await addDoc(collection(db, 'contacts'), {
+        ...formData,
+        timestamp: serverTimestamp(),
+        status: 'new',
+        sourcePage: 'Contact Page'
       });
-    }, 3000);
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }, 3000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -173,6 +196,21 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-white mb-2 font-inter">Send Us a Message</h2>
                 <p className="text-gray-400 mb-8">Fill out the form below and we'll get back to you within 24 hours</p>
 
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 rounded-lg flex items-center gap-3"
+                    style={{
+                      background: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)'
+                    }}
+                  >
+                    <AlertCircle className="w-5 h-5 text-red-400" />
+                    <p className="text-red-400">{error}</p>
+                  </motion.div>
+                )}
+
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -204,7 +242,8 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                           style={{
                             background: 'rgba(255, 255, 255, 0.05)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -224,7 +263,8 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                           style={{
                             background: 'rgba(255, 255, 255, 0.05)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -246,7 +286,8 @@ const Contact = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                           style={{
                             background: 'rgba(255, 255, 255, 0.05)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -265,7 +306,8 @@ const Contact = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                           style={{
                             background: 'rgba(255, 255, 255, 0.05)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -285,7 +327,8 @@ const Contact = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
                         style={{
                           background: 'rgba(255, 255, 255, 0.05)',
                           border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -309,8 +352,9 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         required
+                        disabled={isSubmitting}
                         rows={6}
-                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 resize-none outline-none"
+                        className="w-full px-4 py-3 rounded-lg transition-all duration-300 resize-none outline-none disabled:opacity-50"
                         style={{
                           background: 'rgba(255, 255, 255, 0.05)',
                           border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -322,13 +366,14 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       style={{
                         background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
                         boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
                       }}
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                       <Send className="w-5 h-5" />
                     </button>
                   </form>

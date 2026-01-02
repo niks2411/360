@@ -41,7 +41,7 @@ const Footer = () => {
             </p>
             <button
               className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-10 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
-              onClick={() => window.open('/contact', '_blank')}
+              onClick={() => window.open('/contact')}
             >
               Book Free 30-Min Consultancy
             </button>

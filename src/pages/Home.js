@@ -84,26 +84,16 @@ const Home = () => {
               >
                 <Link
                   to="/contact"
-                  className="group relative inline-flex items-center justify-center text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm transition-all duration-300 overflow-hidden"
+                  className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
                   style={{
-                    backgroundColor: '#47BF72',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(255,255,255,0.3)',
-                    boxShadow: '0 4px 20px rgba(71, 191, 114, 0.4), 0 0 40px rgba(71, 191, 114, 0.2)'
+                    backgroundColor: '#47a858',
+                    borderRadius: '5px'
+
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#3aa85f';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(71, 191, 114, 0.6), 0 0 60px rgba(71, 191, 114, 0.3)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#47BF72';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(71, 191, 114, 0.4), 0 0 40px rgba(71, 191, 114, 0.2)';
-                  }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#47BF72'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#47a858'}
                 >
-                  <span className="relative z-10">GET STARTED</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></span>
+                  GET STARTED
                 </Link>
               </motion.div>
             </motion.div>
@@ -240,7 +230,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-8 sm:mb-10 tracking-tight"
             >
-              <span className="text-white drop-shadow-2xl font-inter font-semibold" style={{
+              <span className="text-white drop-shadow-2xl font-light" style={{
                 textShadow: '0 0 40px rgba(255, 255, 255, 0.2), 0 4px 20px rgba(0,0,0,0.5)'
               }}>
                 Next-Gen Technology for{' '}
@@ -567,7 +557,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 tracking-tight"
               >
-                <span className="text-white drop-shadow-2xl font-inter font-light block mb-2" style={{
+                <span className="text-white drop-shadow-2xl font-light block mb-2" style={{
                   textShadow: '0 0 40px rgba(71, 191, 114, 0.3), 0 4px 20px rgba(0,0,0,0.5)'
                 }}>
                   Your 360°

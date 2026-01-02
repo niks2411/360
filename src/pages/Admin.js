@@ -1,0 +1,552 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+    Mail,
+    Phone,
+    Building2,
+    Calendar,
+    MessageSquare,
+    Search,
+    Filter,
+    Trash2,
+    CheckCircle,
+    Clock,
+    XCircle,
+    Eye,
+    Lock,
+    LogOut
+} from 'lucide-react';
+import { db } from '../firebaseConfig';
+import {
+    collection,
+    query,
+    orderBy,
+    onSnapshot,
+    doc,
+    updateDoc,
+    deleteDoc
+} from 'firebase/firestore';
+
+const Admin = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState('');
+    const [contacts, setContacts] = useState([]);
+    const [filteredContacts, setFilteredContacts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [statusFilter, setStatusFilter] = useState('all');
+    const [sourcePageFilter, setSourcePageFilter] = useState('all');
+    const [selectedContact, setSelectedContact] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    // Check if already authenticated
+    useEffect(() => {
+        const auth = sessionStorage.getItem('adminAuth');
+        if (auth === 'true') {
+            setIsAuthenticated(true);
+        }
+    }, []);
+
+    // Fetch contacts from Firebase
+    useEffect(() => {
+        if (!isAuthenticated) return;
+
+        const q = query(collection(db, 'contacts'), orderBy('timestamp', 'desc'));
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const contactsData = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setContacts(contactsData);
+            setFilteredContacts(contactsData);
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, [isAuthenticated]);
+
+    // Filter contacts based on search, status, and source page
+    useEffect(() => {
+        let filtered = contacts;
+
+        // Filter by status
+        if (statusFilter !== 'all') {
+            filtered = filtered.filter(contact => contact.status === statusFilter);
+        }
+
+        // Filter by source page
+        if (sourcePageFilter !== 'all') {
+            filtered = filtered.filter(contact => contact.sourcePage === sourcePageFilter);
+        }
+
+        // Filter by search term
+        if (searchTerm) {
+            filtered = filtered.filter(contact =>
+                contact.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                contact.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                contact.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                contact.sourcePage?.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        setFilteredContacts(filtered);
+    }, [searchTerm, statusFilter, sourcePageFilter, contacts]);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (password === process.env.REACT_APP_ADMIN_PASSWORD) {
+            setIsAuthenticated(true);
+            sessionStorage.setItem('adminAuth', 'true');
+        } else {
+            alert('Incorrect password');
+        }
+    };
+
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        sessionStorage.removeItem('adminAuth');
+        setPassword('');
+    };
+
+    const updateStatus = async (contactId, newStatus) => {
+        try {
+            await updateDoc(doc(db, 'contacts', contactId), {
+                status: newStatus
+            });
+        } catch (error) {
+            console.error('Error updating status:', error);
+        }
+    };
+
+    const deleteContact = async (contactId) => {
+        if (window.confirm('Are you sure you want to delete this contact?')) {
+            try {
+                await deleteDoc(doc(db, 'contacts', contactId));
+                setSelectedContact(null);
+            } catch (error) {
+                console.error('Error deleting contact:', error);
+            }
+        }
+    };
+
+    const formatDate = (timestamp) => {
+        if (!timestamp) return 'N/A';
+        const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    };
+
+    const getStatusIcon = (status) => {
+        switch (status) {
+            case 'new':
+                return <Clock className="w-4 h-4" />;
+            case 'contacted':
+                return <CheckCircle className="w-4 h-4" />;
+            case 'resolved':
+                return <CheckCircle className="w-4 h-4" />;
+            default:
+                return <Clock className="w-4 h-4" />;
+        }
+    };
+
+    const getStatusColor = (status) => {
+        switch (status) {
+            case 'new':
+                return { bg: 'rgba(59, 130, 246, 0.2)', border: 'rgba(59, 130, 246, 0.4)', text: '#60A5FA' };
+            case 'contacted':
+                return { bg: 'rgba(251, 191, 36, 0.2)', border: 'rgba(251, 191, 36, 0.4)', text: '#FBBF24' };
+            case 'resolved':
+                return { bg: 'rgba(71, 191, 114, 0.2)', border: 'rgba(71, 191, 114, 0.4)', text: '#47BF72' };
+            default:
+                return { bg: 'rgba(107, 114, 128, 0.2)', border: 'rgba(107, 114, 128, 0.4)', text: '#9CA3AF' };
+        }
+    };
+
+    // Login Screen
+    if (!isAuthenticated) {
+        return (
+            <div className="min-h-screen flex items-center justify-center" style={{ background: '#0a0a0a' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="w-full max-w-md p-8 rounded-2xl backdrop-blur-xl border"
+                    style={{
+                        background: 'rgba(255, 255, 255, 0.03)',
+                        borderColor: 'rgba(255, 255, 255, 0.1)'
+                    }}
+                >
+                    <div className="flex items-center justify-center mb-8">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{
+                            background: 'rgba(71, 191, 114, 0.2)',
+                            border: '2px solid #47BF72'
+                        }}>
+                            <Lock className="w-8 h-8 text-green-400" />
+                        </div>
+                    </div>
+                    <h1 className="text-3xl font-bold text-white text-center mb-2">Admin Login</h1>
+                    <p className="text-gray-400 text-center mb-8">Enter your password to access the dashboard</p>
+
+                    <form onSubmit={handleLogin}>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Enter admin password"
+                            className="w-full px-4 py-3 rounded-lg mb-4 outline-none"
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                color: 'white'
+                            }}
+                            required
+                        />
+                        <button
+                            type="submit"
+                            className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+                            style={{
+                                background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                                boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
+                            }}
+                        >
+                            Login
+                        </button>
+                    </form>
+                </motion.div>
+            </div>
+        );
+    }
+
+    // Admin Dashboard
+    return (
+        <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
+            {/* Header */}
+            <div className="border-b" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+                <div className="container-max py-6">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <h1 className="text-3xl font-bold text-white mb-1">Contact Submissions</h1>
+                            <p className="text-gray-400">Manage and respond to customer inquiries</p>
+                        </div>
+                        <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300"
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)'
+                            }}
+                        >
+                            <LogOut className="w-4 h-4" />
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Filters and Search */}
+            <div className="container-max py-6">
+                <div className="flex flex-col md:flex-row gap-4 mb-6">
+                    {/* Search */}
+                    <div className="flex-1 relative">
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input
+                            type="text"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            placeholder="Search by name, email, or company..."
+                            className="w-full pl-12 pr-4 py-3 rounded-lg outline-none"
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                color: 'white'
+                            }}
+                        />
+                    </div>
+
+                    {/* Status Filter */}
+                    <div className="flex items-center gap-2">
+                        <Filter className="w-5 h-5 text-gray-400" />
+                        <select
+                            value={statusFilter}
+                            onChange={(e) => setStatusFilter(e.target.value)}
+                            className="px-4 py-3 rounded-lg outline-none"
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                color: 'white'
+                            }}
+                        >
+                            <option value="all" style={{ background: '#1a1a2e' }}>All Status</option>
+                            <option value="new" style={{ background: '#1a1a2e' }}>New</option>
+                            <option value="contacted" style={{ background: '#1a1a2e' }}>Contacted</option>
+                            <option value="resolved" style={{ background: '#1a1a2e' }}>Resolved</option>
+                        </select>
+                    </div>
+
+                    {/* Source Page Filter */}
+                    <div className="flex items-center gap-2">
+                        <select
+                            value={sourcePageFilter}
+                            onChange={(e) => setSourcePageFilter(e.target.value)}
+                            className="px-4 py-3 rounded-lg outline-none"
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                color: 'white'
+                            }}
+                        >
+                            <option value="all" style={{ background: '#1a1a2e' }}>All Pages</option>
+                            <option value="Contact Page" style={{ background: '#1a1a2e' }}>Contact Page</option>
+                            <option value="SEO Tools" style={{ background: '#1a1a2e' }}>SEO Tools</option>
+                            <option value="Marketing Tools" style={{ background: '#1a1a2e' }}>Marketing Tools</option>
+                            <option value="Analytics" style={{ background: '#1a1a2e' }}>Analytics</option>
+                        </select>
+                    </div>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div className="p-4 rounded-lg" style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                        <p className="text-gray-400 text-sm mb-1">Total</p>
+                        <p className="text-2xl font-bold text-white">{contacts.length}</p>
+                    </div>
+                    <div className="p-4 rounded-lg" style={{ background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
+                        <p className="text-blue-400 text-sm mb-1">New</p>
+                        <p className="text-2xl font-bold text-blue-400">{contacts.filter(c => c.status === 'new').length}</p>
+                    </div>
+                    <div className="p-4 rounded-lg" style={{ background: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.2)' }}>
+                        <p className="text-yellow-400 text-sm mb-1">Contacted</p>
+                        <p className="text-2xl font-bold text-yellow-400">{contacts.filter(c => c.status === 'contacted').length}</p>
+                    </div>
+                    <div className="p-4 rounded-lg" style={{ background: 'rgba(71, 191, 114, 0.1)', border: '1px solid rgba(71, 191, 114, 0.2)' }}>
+                        <p className="text-green-400 text-sm mb-1">Resolved</p>
+                        <p className="text-2xl font-bold text-green-400">{contacts.filter(c => c.status === 'resolved').length}</p>
+                    </div>
+                </div>
+
+                {/* Contacts List */}
+                {loading ? (
+                    <div className="text-center py-12">
+                        <p className="text-gray-400">Loading contacts...</p>
+                    </div>
+                ) : filteredContacts.length === 0 ? (
+                    <div className="text-center py-12">
+                        <p className="text-gray-400">No contacts found</p>
+                    </div>
+                ) : (
+                    <div className="space-y-4">
+                        {filteredContacts.map((contact) => (
+                            <motion.div
+                                key={contact.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="p-6 rounded-xl backdrop-blur-xl border cursor-pointer hover:border-green-500/30 transition-all duration-300"
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    borderColor: 'rgba(255, 255, 255, 0.1)'
+                                }}
+                                onClick={() => setSelectedContact(contact)}
+                            >
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <h3 className="text-lg font-semibold text-white">{contact.name}</h3>
+                                            <div
+                                                className="px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1"
+                                                style={{
+                                                    background: getStatusColor(contact.status).bg,
+                                                    border: `1px solid ${getStatusColor(contact.status).border}`,
+                                                    color: getStatusColor(contact.status).text
+                                                }}
+                                            >
+                                                {getStatusIcon(contact.status)}
+                                                {contact.status}
+                                            </div>
+                                            {contact.sourcePage && (
+                                                <div
+                                                    className="px-3 py-1 rounded-full text-xs font-medium"
+                                                    style={{
+                                                        background: 'rgba(139, 92, 246, 0.2)',
+                                                        border: '1px solid rgba(139, 92, 246, 0.3)',
+                                                        color: '#A78BFA'
+                                                    }}
+                                                >
+                                                    {contact.sourcePage}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                                            <div className="flex items-center gap-2">
+                                                <Mail className="w-4 h-4" />
+                                                {contact.email}
+                                            </div>
+                                            {contact.company && (
+                                                <div className="flex items-center gap-2">
+                                                    <Building2 className="w-4 h-4" />
+                                                    {contact.company}
+                                                </div>
+                                            )}
+                                            {contact.phone && (
+                                                <div className="flex items-center gap-2">
+                                                    <Phone className="w-4 h-4" />
+                                                    {contact.phone}
+                                                </div>
+                                            )}
+                                            <div className="flex items-center gap-2">
+                                                <Calendar className="w-4 h-4" />
+                                                {formatDate(contact.timestamp)}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300" style={{
+                                        background: 'rgba(255, 255, 255, 0.05)',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)'
+                                    }}>
+                                        <Eye className="w-4 h-4" />
+                                        View Details
+                                    </button>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Contact Detail Modal */}
+            <AnimatePresence>
+                {selectedContact && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        onClick={() => setSelectedContact(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="w-full max-w-2xl rounded-2xl p-8 border"
+                            style={{
+                                background: '#0a0a0a',
+                                borderColor: 'rgba(255, 255, 255, 0.1)'
+                            }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex items-start justify-between mb-6">
+                                <div>
+                                    <h2 className="text-2xl font-bold text-white mb-2">{selectedContact.name}</h2>
+                                    <p className="text-gray-400">{formatDate(selectedContact.timestamp)}</p>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedContact(null)}
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <XCircle className="w-6 h-6" />
+                                </button>
+                            </div>
+
+                            <div className="space-y-4 mb-6">
+                                <div className="flex items-center gap-3 text-gray-300">
+                                    <Mail className="w-5 h-5 text-gray-400" />
+                                    <a href={`mailto:${selectedContact.email}`} className="hover:text-green-400 transition-colors">
+                                        {selectedContact.email}
+                                    </a>
+                                </div>
+                                {selectedContact.phone && (
+                                    <div className="flex items-center gap-3 text-gray-300">
+                                        <Phone className="w-5 h-5 text-gray-400" />
+                                        <a href={`tel:${selectedContact.phone}`} className="hover:text-green-400 transition-colors">
+                                            {selectedContact.phone}
+                                        </a>
+                                    </div>
+                                )}
+                                {selectedContact.company && (
+                                    <div className="flex items-center gap-3 text-gray-300">
+                                        <Building2 className="w-5 h-5 text-gray-400" />
+                                        {selectedContact.company}
+                                    </div>
+                                )}
+                                {selectedContact.service && (
+                                    <div className="flex items-center gap-3 text-gray-300">
+                                        <MessageSquare className="w-5 h-5 text-gray-400" />
+                                        {selectedContact.service}
+                                    </div>
+                                )}
+                                {selectedContact.sourcePage && (
+                                    <div className="flex items-center gap-3 text-gray-300">
+                                        <div className="w-5 h-5 flex items-center justify-center text-gray-400">📄</div>
+                                        <span>Source: <span className="text-purple-400 font-medium">{selectedContact.sourcePage}</span></span>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="mb-6">
+                                <h3 className="text-sm font-semibold text-gray-400 mb-2">MESSAGE</h3>
+                                <div className="p-4 rounded-lg" style={{
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                                }}>
+                                    <p className="text-gray-300 whitespace-pre-wrap">{selectedContact.message}</p>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-wrap gap-3">
+                                <button
+                                    onClick={() => updateStatus(selectedContact.id, 'new')}
+                                    className="px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+                                    style={{
+                                        background: getStatusColor('new').bg,
+                                        border: `1px solid ${getStatusColor('new').border}`,
+                                        color: getStatusColor('new').text
+                                    }}
+                                >
+                                    Mark as New
+                                </button>
+                                <button
+                                    onClick={() => updateStatus(selectedContact.id, 'contacted')}
+                                    className="px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+                                    style={{
+                                        background: getStatusColor('contacted').bg,
+                                        border: `1px solid ${getStatusColor('contacted').border}`,
+                                        color: getStatusColor('contacted').text
+                                    }}
+                                >
+                                    Mark as Contacted
+                                </button>
+                                <button
+                                    onClick={() => updateStatus(selectedContact.id, 'resolved')}
+                                    className="px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+                                    style={{
+                                        background: getStatusColor('resolved').bg,
+                                        border: `1px solid ${getStatusColor('resolved').border}`,
+                                        color: getStatusColor('resolved').text
+                                    }}
+                                >
+                                    Mark as Resolved
+                                </button>
+                                <button
+                                    onClick={() => deleteContact(selectedContact.id)}
+                                    className="px-4 py-2 rounded-lg font-medium text-red-400 transition-all duration-300 hover:scale-105 ml-auto"
+                                    style={{
+                                        background: 'rgba(239, 68, 68, 0.1)',
+                                        border: '1px solid rgba(239, 68, 68, 0.3)'
+                                    }}
+                                >
+                                    <Trash2 className="w-4 h-4 inline mr-2" />
+                                    Delete
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
+
+export default Admin;

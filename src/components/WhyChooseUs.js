@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
                     </span>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-                        <span className="text-white font-light font-normal">
+                        <span className="text-white font-light">
                             Built for
                         </span>
                         <br />

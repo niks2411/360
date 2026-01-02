@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, TrendingUp, Users, Target, Zap, CheckCircle, ArrowRight, Share2, MessageCircle } from 'lucide-react';
+import InlineContactForm from '../components/InlineContactForm';
 
 const MarketingTools = () => {
   const marketingServices = [
@@ -30,9 +31,9 @@ const MarketingTools = () => {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
-      {/* Hero Section */}
+      {/* Hero Section with Contact Form */}
       <section
-        className="py-32 relative overflow-hidden"
+        className="min-h-screen py-20 relative overflow-hidden flex items-center"
         style={{
           background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
         }}
@@ -43,51 +44,78 @@ const MarketingTools = () => {
         </div>
 
         <div className="container-max relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Service Details */}
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-8"
-              style={{
-                background: 'rgba(71, 191, 114, 0.2)',
-                border: '1px solid rgba(71, 191, 114, 0.4)',
-                color: '#47BF72'
-              }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <BarChart3 className="w-4 h-4" />
-              Performance Marketing & Analytics
+              <motion.div
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6"
+                style={{
+                  background: 'rgba(71, 191, 114, 0.2)',
+                  border: '1px solid rgba(71, 191, 114, 0.4)',
+                  color: '#47BF72'
+                }}
+              >
+                <BarChart3 className="w-4 h-4" />
+                Performance Marketing & Analytics
+              </motion.div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
+                <span className="text-white font-inter font-normal block mb-2">
+                  Data-Driven.
+                </span>
+                <span className="text-white font-fraunces italic font-light">
+                  Results-Focused.
+                </span>
+              </h1>
+
+              <p className="text-lg text-gray-300 leading-relaxed font-inter font-light mb-8">
+                Track every metric that matters. Our marketing dashboards give you real-time insights to optimize campaigns and maximize ROI.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Social Media Management</h3>
+                    <p className="text-gray-400 text-sm">Complete strategy, content creation, and community engagement</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Performance Marketing</h3>
+                    <p className="text-gray-400 text-sm">Data-driven ad campaigns on Meta, Google, and YouTube</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Content & Video Marketing</h3>
+                    <p className="text-gray-400 text-sm">Compelling content and video production that drives conversions</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight mb-8 tracking-tight">
-              <span className="text-white font-inter font-normal block mb-2">
-                Data-Driven.
-              </span>
-              <span className="text-white font-fraunces italic font-light">
-                Results-Focused.
-              </span>
-            </h1>
-
-            <p className="text-xl text-gray-300 leading-relaxed font-inter font-light max-w-3xl mx-auto mb-10">
-              Track every metric that matters. Our marketing dashboards give you real-time insights to optimize campaigns and maximize ROI.
-            </p>
-
-            <button
-              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
-              style={{
-                background: '#47BF72',
-                boxShadow: '0 10px 30px rgba(71, 191, 114, 0.3)'
-              }}
+            {/* Right: Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              View Demo Dashboard
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
+              <InlineContactForm
+                servicePage="Marketing Tools"
+                defaultService="Digital Marketing & Analytics"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -294,35 +322,6 @@ const MarketingTools = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24" style={{ background: '#0a0a0a' }}>
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
-              Ready to Scale Your Marketing?
-            </h2>
-            <p className="text-lg text-gray-300 mb-8 font-light">
-              Get access to our marketing dashboard and start tracking your growth
-            </p>
-            <button
-              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
-                boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'
-              }}
-            >
-              Start Free Trial
-            </button>
-          </motion.div>
         </div>
       </section>
     </div>
