@@ -499,11 +499,11 @@ const Home = () => {
                   <div className="text-lg font-light font-inter text-gray-800">We are Certified partners</div>
                   {/* <div className="text-sm text-gray-600">Our partners</div> */}
                 </div>
-                <div className="relative overflow-hidden h-24 md:h-28 flex items-center">
+                <div className="relative overflow-hidden h-28 flex items-center">
                   <Marquee pauseOnHover className="[--duration:18s] w-full">
                     {['/1.png', '/2.png', '/3.png', '/1.png', '/2.png', '/3.png'].map((src, i) => (
                       <div key={i} className="px-4">
-                        <img src={src} alt={`logo-${i}`} className="h-20 md:h-24 w-auto object-contain" />
+                        <img src={src} alt={`logo-${i}`} className="h-32 w-28 object-contain" />
                       </div>
                     ))}
                   </Marquee>
