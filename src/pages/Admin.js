@@ -13,6 +13,7 @@ import {
     Clock,
     XCircle,
     Eye,
+    EyeOff,
     Lock,
     LogOut
 } from 'lucide-react';
@@ -29,7 +30,9 @@ import {
 
 const Admin = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [contacts, setContacts] = useState([]);
     const [filteredContacts, setFilteredContacts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -94,17 +97,18 @@ const Admin = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if (password === process.env.REACT_APP_ADMIN_PASSWORD) {
+        if (username === process.env.REACT_APP_ADMIN_USERNAME && password === process.env.REACT_APP_ADMIN_PASSWORD) {
             setIsAuthenticated(true);
             sessionStorage.setItem('adminAuth', 'true');
         } else {
-            alert('Incorrect password');
+            alert('Incorrect username or password');
         }
     };
 
     const handleLogout = () => {
         setIsAuthenticated(false);
         sessionStorage.removeItem('adminAuth');
+        setUsername('');
         setPassword('');
     };
 
@@ -189,14 +193,14 @@ const Admin = () => {
                         </div>
                     </div>
                     <h1 className="text-3xl font-bold text-white text-center mb-2">Admin Login</h1>
-                    <p className="text-gray-400 text-center mb-8">Enter your password to access the dashboard</p>
+                    <p className="text-gray-400 text-center mb-8">Enter your credentials to access the dashboard</p>
 
                     <form onSubmit={handleLogin}>
                         <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Enter admin password"
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Enter username"
                             className="w-full px-4 py-3 rounded-lg mb-4 outline-none"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.05)',
@@ -205,6 +209,28 @@ const Admin = () => {
                             }}
                             required
                         />
+                        <div className="relative mb-4">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Enter password"
+                                className="w-full px-4 py-3 rounded-lg outline-none pr-12"
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                                    color: 'white'
+                                }}
+                                required
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                            >
+                                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                            </button>
+                        </div>
                         <button
                             type="submit"
                             className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"

@@ -77,13 +77,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      detail: '+1 (555) 123-4567',
-      action: 'tel:+15551234567'
+      detail: '+91 7901724043',
+      action: 'tel:+917901724043'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      detail: '123 Business Street, City, State',
+      detail: 'SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh',
       action: '#'
     }
   ];

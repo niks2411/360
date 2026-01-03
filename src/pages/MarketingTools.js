@@ -63,42 +63,42 @@ const MarketingTools = () => {
                 }}
               >
                 <BarChart3 className="w-4 h-4" />
-                Performance Marketing & Analytics
+                Core Expertise ⭐
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
                 <span className="text-white font-inter font-normal block mb-2">
-                  Data-Driven.
+                  Website Design & Development
                 </span>
                 <span className="text-white font-fraunces italic font-light">
-                  Results-Focused.
+                  Designed to Convert.
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
-                Track every metric that matters. Our marketing dashboards give you real-time insights to optimize campaigns and maximize ROI.
+                High-performance websites built for speed, scale, and conversions. We design and develop websites that don't just look good — they perform. SEO-first, mobile-first, and conversion-focused.
               </p>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2 sm:gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Social Media Management</h3>
-                    <p className="text-gray-400 text-sm">Complete strategy, content creation, and community engagement</p>
+                    <h3 className="text-white font-semibold mb-1">Custom UI/UX & Development</h3>
+                    <p className="text-gray-400 text-sm">React.js, Next.js, WordPress, Shopify & WooCommerce</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Performance Marketing</h3>
-                    <p className="text-gray-400 text-sm">Data-driven ad campaigns on Meta, Google, and YouTube</p>
+                    <h3 className="text-white font-semibold mb-1">Ecommerce Solutions</h3>
+                    <p className="text-gray-400 text-sm">Single & multi-product stores with payment integrations</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Content & Video Marketing</h3>
-                    <p className="text-gray-400 text-sm">Compelling content and video production that drives conversions</p>
+                    <h3 className="text-white font-semibold mb-1">Speed & CRO Optimization</h3>
+                    <p className="text-gray-400 text-sm">Performance optimization and conversion rate improvements</p>
                   </div>
                 </div>
               </div>

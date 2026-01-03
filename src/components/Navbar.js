@@ -48,31 +48,31 @@ const Navbar = () => {
       hasDropdown: true,
       dropdownItems: [
         {
-          name: 'Technology',
+          name: 'SEO & Organic Growth',
           path: '/seo-tools',
           icon: Cpu,
-          description: 'Website Design & Development, SEO & Performance Optimization, Automation & Tech Solutions',
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
-          features: ['Website Design & Development', 'SEO & Performance Optimization', 'Automation & Tech Solutions'],
-          price: 'Starting at $299/month'
+          description: 'Technical SEO, Keyword Research, Ecommerce & SaaS SEO, Authority Building',
+          image: '/images/seo.webp',
+          features: ['Technical SEO & Site Architecture', 'Ecommerce & SaaS SEO', 'Authority & Backlink Building'],
+          price: 'Core Expertise ⭐'
         },
         {
-          name: 'Media & Design',
-          path: '/marketing-tools',
+          name: 'Website Design & Development',
+          path: '/website-design',
           icon: Mail,
-          description: 'Creative Campaigns, Photography & Video Production, Branding & Visual Identity',
-          image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=300&fit=crop',
-          features: ['Creative Campaigns', 'Photography & Video Production', 'Branding & Visual Identity'],
-          price: 'Starting at $499/month'
+          description: 'React.js, Next.js, WordPress, Shopify, WooCommerce, Speed Optimization',
+          image: '/images/web.webp?v=1',
+          features: ['Custom UI/UX & Development', 'Ecommerce Solutions', 'Speed & CRO Optimization'],
+          price: 'Core Expertise ⭐'
         },
         {
-          name: 'Marketing',
-          path: '/analytics',
+          name: 'Performance Marketing',
+          path: '/performance-marketing',
           icon: BarChart3,
-          description: 'Social Media Management, PPC & Performance Marketing, Lead Generation & Growth',
-          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
-          features: ['Social Media Management', 'PPC & Performance Marketing', 'Lead Generation & Growth'],
-          price: 'Starting at $199/month'
+          description: 'Google Ads, Meta Ads, Social Media Marketing, Funnel Optimization',
+          image: '/images/market.webp?v=1',
+          features: ['Google & Meta Ads', 'Social Media Marketing', 'Funnel & Retargeting'],
+          price: 'Brand Growth'
         }
       ]
     },
@@ -196,7 +196,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-96 h-80 z-50 services-dropdown shadow-xl border border-gray-200"
+              className="absolute top-full left-1/2 transform -translate-x-1/2 rounded-xl mt-3 w-[480px] z-50 services-dropdown shadow-xl border border-gray-200"
               style={{ backgroundColor: 'rgb(12,33,20)' }}
               onMouseEnter={() => {
                 setIsDropdownOpen(true);
@@ -206,38 +206,41 @@ const Navbar = () => {
                 // Don't close on mouse leave - keep it open until user clicks elsewhere
               }}
             >
-              <div className="p-6 h-full">
-                <div className="flex h-full">
-                  {/* Service Links */}
-                  <div className="w-40 flex-shrink-0 pr-4">
+              <div className="p-4">
+                <div className="flex gap-4">
+                  {/* Service Links - Left */}
+                  <div className="flex-1">
                     {servicesItem?.dropdownItems?.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.name}
                         to={dropdownItem.path}
-                        className="block p-4 text-sm hover:bg-gray-700 transition-colors duration-200 rounded-lg mb-2 uppercase tracking-wide font-medium"
+                        className="block p-3 hover:bg-gray-700 transition-colors duration-200 rounded-lg mb-2"
                         onMouseEnter={() => setHoveredService(dropdownItem)}
-                        onMouseLeave={() => setHoveredService(null)}
                         onClick={() => {
                           setIsDropdownOpen(false);
                           setHoveredService(null);
                         }}
                       >
-                        <div className="flex items-center space-x-3">
-                          {dropdownItem.icon && <dropdownItem.icon className="w-5 h-5 text-white flex-shrink-0" />}
-                          <span className="text-sm font-light text-white">{dropdownItem.name}</span>
+                        <div className="flex items-start space-x-3">
+                          {dropdownItem.icon && <dropdownItem.icon className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />}
+                          <div className="flex-1">
+                            <h3 className="text-white font-medium text-sm mb-1 leading-tight">{dropdownItem.name}</h3>
+                            <span className="inline-block text-xs font-medium text-green-400">{dropdownItem.price}</span>
+                          </div>
                         </div>
                       </Link>
                     ))}
                   </div>
 
-                  {/* Service Preview */}
-                  <div className="flex-1 pl-4">
+                  {/* Image Preview - Right */}
+                  <div className="w-48 flex-shrink-0">
                     {hoveredService ? (
                       <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        key={hoveredService.name}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-gray-800 rounded-xl h-full overflow-hidden shadow-inner"
+                        className="bg-gray-800 rounded-lg overflow-hidden h-full"
                       >
                         <img
                           src={hoveredService.image}
@@ -246,10 +249,10 @@ const Navbar = () => {
                         />
                       </motion.div>
                     ) : (
-                      <div className="bg-gray-800 rounded-xl h-full overflow-hidden shadow-inner">
+                      <div className="bg-gray-800 rounded-lg overflow-hidden h-full">
                         <img
-                          src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop"
-                          alt="Our Services"
+                          src="/images/web.webp?v=1"
+                          alt="Website Design & Development"
                           className="w-full h-full object-cover"
                         />
                       </div>

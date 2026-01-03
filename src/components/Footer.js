@@ -9,10 +9,9 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'Our Story', path: '/about-us' },
-    { name: 'Services', path: '/services' },
-    { name: 'SEO Tools', path: '/seo-tools' },
-    { name: 'Marketing Tools', path: '/marketing-tools' },
-    { name: 'Analytics', path: '/analytics' },
+    { name: 'SEO & Organic Growth', path: '/seo-tools' },
+    { name: 'Website Design & Development', path: '/website-design' },
+    { name: 'Performance Marketing', path: '/performance-marketing' },
     { name: 'Contact Us', path: '/contact' }
   ];
 
@@ -77,11 +76,11 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Phone className="w-4 h-4" />
-                    <span className="text-sm">+1 (555) 123-4567</span>
+                    <span className="text-sm">+91 7901724043</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <MapPin className="w-4 h-4" />
-                    <span className="text-sm">123 Business St, City, State 12345</span>
+                    <span className="text-sm">SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh</span>
                   </div>
                 </div>
               </div>

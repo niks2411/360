@@ -63,42 +63,42 @@ const Analytics = () => {
                 }}
               >
                 <BarChart3 className="w-4 h-4" />
-                Advanced Analytics & Insights
+                Performance Marketing
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
                 <span className="text-white font-inter font-normal block mb-2">
-                  Track Everything.
+                  Performance Marketing & Brand Growth
                 </span>
                 <span className="text-white font-fraunces italic font-light">
-                  Optimize Anything.
+                  Scaled to Grow.
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
-                Powerful analytics that turn data into actionable insights. Understand your audience, optimize performance, and grow faster.
+                Paid reach + smart targeting = predictable growth. We combine data, creativity, and strategy to deliver ROI-driven paid campaigns and strong brand presence.
               </p>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2 sm:gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Real-Time Tracking</h3>
-                    <p className="text-gray-400 text-sm">Monitor visitors, behavior, and conversions as they happen</p>
+                    <h3 className="text-white font-semibold mb-1">Google & Meta Ads</h3>
+                    <p className="text-gray-400 text-sm">Search, Display, Shopping, YouTube, Facebook & Instagram</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Advanced Reporting</h3>
-                    <p className="text-gray-400 text-sm">Custom dashboards with actionable insights for better decisions</p>
+                    <h3 className="text-white font-semibold mb-1">Social Media Marketing</h3>
+                    <p className="text-gray-400 text-sm">Complete management, influencer marketing & UGC campaigns</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Conversion Optimization</h3>
-                    <p className="text-gray-400 text-sm">Identify bottlenecks and increase conversion rates with data</p>
+                    <h3 className="text-white font-semibold mb-1">Funnel & Retargeting</h3>
+                    <p className="text-gray-400 text-sm">Analytics, tracking, optimization & performance campaigns</p>
                   </div>
                 </div>
               </div>

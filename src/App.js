@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import SEOTools from './pages/SEOTools';
 import MarketingTools from './pages/MarketingTools';
 import Analytics from './pages/Analytics';
-import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
@@ -19,9 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/seo-tools" element={<SEOTools />} />
-          <Route path="/marketing-tools" element={<MarketingTools />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/website-design" element={<MarketingTools />} />
+          <Route path="/performance-marketing" element={<Analytics />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />

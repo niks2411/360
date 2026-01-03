@@ -100,42 +100,42 @@ const SEOTools = () => {
                 }}
               >
                 <Search className="w-4 h-4" />
-                SEO & Performance Optimization
+                Core Expertise ⭐
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
                 <span className="text-white font-inter font-normal block mb-2">
-                  Rank Higher.
+                  SEO & Organic Growth
                 </span>
                 <span className="text-white font-fraunces italic font-light">
-                  Get Found.
+                  Built to Rank.
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
-                We optimize your website to rank #1 on Google. From technical SEO to content strategy, we drive organic traffic that converts.
+                Long-term visibility. Sustainable traffic. Compounding growth. We specialize in advanced, scalable SEO for brands that want consistent, high-intent organic traffic — not vanity rankings.
               </p>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2 sm:gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Technical SEO Optimization</h3>
-                    <p className="text-gray-400 text-sm">Site speed, mobile responsiveness, and crawlability improvements</p>
+                    <h3 className="text-white font-semibold mb-1">Technical SEO & Site Architecture</h3>
+                    <p className="text-gray-400 text-sm">Site audits, speed optimization, Core Web Vitals, indexing</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Content & Keyword Strategy</h3>
-                    <p className="text-gray-400 text-sm">Data-driven keyword research and content optimization</p>
+                    <h3 className="text-white font-semibold mb-1">Ecommerce & SaaS SEO</h3>
+                    <p className="text-gray-400 text-sm">Programmatic SEO, marketplace optimization, coupon SEO</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Link Building & Authority</h3>
-                    <p className="text-gray-400 text-sm">Quality backlinks and brand authority building campaigns</p>
+                    <h3 className="text-white font-semibold mb-1">Authority & Backlink Building</h3>
+                    <p className="text-gray-400 text-sm">Quality backlinks, content optimization, monthly reporting</p>
                   </div>
                 </div>
               </div>
