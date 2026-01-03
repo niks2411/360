@@ -58,8 +58,8 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
     };
 
     return (
-        <div className="w-full max-w-4xl mx-auto">
-            <div className="rounded-3xl p-8 md:p-12 backdrop-blur-xl border" style={{
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur-xl border" style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 borderColor: 'rgba(255, 255, 255, 0.1)'
             }}>
@@ -111,7 +111,7 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
                                     onChange={handleInputChange}
                                     required
                                     disabled={isSubmitting}
-                                    className="w-full px-4 py-3 rounded-lg transition-all duration-300 outline-none disabled:opacity-50"
+                                    className="w-full px-4 py-3 sm:py-4 rounded-lg transition-all duration-300 outline-none disabled:opacity-50 text-base"
                                     style={{
                                         background: 'rgba(255, 255, 255, 0.05)',
                                         border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -202,7 +202,7 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
                                 required
                                 disabled={isSubmitting}
                                 rows={4}
-                                className="w-full px-4 py-3 rounded-lg transition-all duration-300 resize-none outline-none disabled:opacity-50"
+                                className="w-full px-4 py-3 sm:py-4 rounded-lg transition-all duration-300 resize-none outline-none disabled:opacity-50 text-base"
                                 style={{
                                     background: 'rgba(255, 255, 255, 0.05)',
                                     border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -215,7 +215,7 @@ const InlineContactForm = ({ servicePage, defaultService }) => {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                            className="w-full py-4 sm:py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-base sm:text-lg"
                             style={{
                                 background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
                                 boxShadow: '0 10px 40px rgba(71, 191, 114, 0.3)'

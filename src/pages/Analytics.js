@@ -33,7 +33,7 @@ const Analytics = () => {
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       {/* Hero Section with Contact Form */}
       <section
-        className="min-h-screen py-20 relative overflow-hidden flex items-center"
+        className="min-h-screen py-12 sm:py-16 lg:py-20 relative overflow-hidden flex items-center"
         style={{
           background: 'linear-gradient(135deg, rgb(12,33,21) 0%, rgb(20,50,35) 100%)'
         }}
@@ -66,7 +66,7 @@ const Analytics = () => {
                 Advanced Analytics & Insights
               </motion.div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6 tracking-tight">
                 <span className="text-white font-inter font-normal block mb-2">
                   Track Everything.
                 </span>
@@ -75,12 +75,12 @@ const Analytics = () => {
                 </span>
               </h1>
 
-              <p className="text-lg text-gray-300 leading-relaxed font-inter font-light mb-8">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter font-light mb-6 sm:mb-8">
                 Powerful analytics that turn data into actionable insights. Understand your audience, optimize performance, and grow faster.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start gap-2 sm:gap-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-white font-semibold mb-1">Real-Time Tracking</h3>

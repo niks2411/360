@@ -116,7 +116,7 @@ const Navbar = () => {
               <img
                 src="/logo.png"
                 alt="360 Logo"
-                className="h-72 w-72"
+                className="h-48 w-48 sm:h-60 sm:w-60 lg:h-72 lg:w-72"
               />
             </Link>
 
@@ -169,7 +169,7 @@ const Navbar = () => {
                 style={{
                   backgroundColor: '#47BF72',
                   borderRadius: '5px'
-                  
+
                 }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}

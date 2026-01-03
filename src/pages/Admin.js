@@ -249,7 +249,7 @@ const Admin = () => {
 
             {/* Filters and Search */}
             <div className="container-max py-6">
-                <div className="flex flex-col md:flex-row gap-4 mb-6">
+                <div className="flex flex-col gap-4 mb-6">
                     {/* Search */}
                     <div className="flex-1 relative">
                         <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -267,49 +267,52 @@ const Admin = () => {
                         />
                     </div>
 
-                    {/* Status Filter */}
-                    <div className="flex items-center gap-2">
-                        <Filter className="w-5 h-5 text-gray-400" />
-                        <select
-                            value={statusFilter}
-                            onChange={(e) => setStatusFilter(e.target.value)}
-                            className="px-4 py-3 rounded-lg outline-none"
-                            style={{
-                                background: 'rgba(255, 255, 255, 0.05)',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
-                                color: 'white'
-                            }}
-                        >
-                            <option value="all" style={{ background: '#1a1a2e' }}>All Status</option>
-                            <option value="new" style={{ background: '#1a1a2e' }}>New</option>
-                            <option value="contacted" style={{ background: '#1a1a2e' }}>Contacted</option>
-                            <option value="resolved" style={{ background: '#1a1a2e' }}>Resolved</option>
-                        </select>
-                    </div>
+                    {/* Filters Row */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-2">
+                        {/* Status Filter */}
+                        <div className="flex items-center gap-2 flex-1 sm:flex-initial">
+                            <Filter className="w-5 h-5 text-gray-400 hidden sm:block" />
+                            <select
+                                value={statusFilter}
+                                onChange={(e) => setStatusFilter(e.target.value)}
+                                className="px-4 py-3 rounded-lg outline-none"
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                                    color: 'white'
+                                }}
+                            >
+                                <option value="all" style={{ background: '#1a1a2e' }}>All Status</option>
+                                <option value="new" style={{ background: '#1a1a2e' }}>New</option>
+                                <option value="contacted" style={{ background: '#1a1a2e' }}>Contacted</option>
+                                <option value="resolved" style={{ background: '#1a1a2e' }}>Resolved</option>
+                            </select>
+                        </div>
 
-                    {/* Source Page Filter */}
-                    <div className="flex items-center gap-2">
-                        <select
-                            value={sourcePageFilter}
-                            onChange={(e) => setSourcePageFilter(e.target.value)}
-                            className="px-4 py-3 rounded-lg outline-none"
-                            style={{
-                                background: 'rgba(255, 255, 255, 0.05)',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
-                                color: 'white'
-                            }}
-                        >
-                            <option value="all" style={{ background: '#1a1a2e' }}>All Pages</option>
-                            <option value="Contact Page" style={{ background: '#1a1a2e' }}>Contact Page</option>
-                            <option value="SEO Tools" style={{ background: '#1a1a2e' }}>SEO Tools</option>
-                            <option value="Marketing Tools" style={{ background: '#1a1a2e' }}>Marketing Tools</option>
-                            <option value="Analytics" style={{ background: '#1a1a2e' }}>Analytics</option>
-                        </select>
+                        {/* Source Page Filter */}
+                        <div className="flex items-center gap-2 flex-1 sm:flex-initial">
+                            <select
+                                value={sourcePageFilter}
+                                onChange={(e) => setSourcePageFilter(e.target.value)}
+                                className="px-4 py-3 rounded-lg outline-none"
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                                    color: 'white'
+                                }}
+                            >
+                                <option value="all" style={{ background: '#1a1a2e' }}>All Pages</option>
+                                <option value="Contact Page" style={{ background: '#1a1a2e' }}>Contact Page</option>
+                                <option value="SEO Tools" style={{ background: '#1a1a2e' }}>SEO Tools</option>
+                                <option value="Marketing Tools" style={{ background: '#1a1a2e' }}>Marketing Tools</option>
+                                <option value="Analytics" style={{ background: '#1a1a2e' }}>Analytics</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
                     <div className="p-4 rounded-lg" style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
                         <p className="text-gray-400 text-sm mb-1">Total</p>
                         <p className="text-2xl font-bold text-white">{contacts.length}</p>

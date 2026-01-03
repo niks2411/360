@@ -4,76 +4,105 @@ import { Timeline } from "./ui/Timeline";
 export function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "The Beginning",
       content: (
         <div className="max-w-4xl">
           <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/30 p-8 rounded-2xl shadow-xl border border-green-200 dark:border-green-800">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">24</span>
+                <span className="text-white font-bold text-xl">01</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Platform Launch & Growth</h3>
-                <p className="text-green-600 dark:text-green-400 font-medium">Our Breakthrough Year</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">The Foundation</h3>
+                <p className="text-green-600 dark:text-green-400 font-medium">Where It All Started</p>
               </div>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                XD MEDIA was created with a simple belief — <span className="font-semibold text-gray-900 dark:text-white">marketing should drive real business growth, not just impressions and reports.</span>
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                While XD MEDIA is our newest venture, the experience behind it comes from years of building and scaling successful digital businesses. Our foundation is backed by <span className="font-semibold text-green-600">KIXTIX MEDIA Pvt. Ltd.</span>, a media-tech company that has generated ₹35+ crore in revenue and worked with some of the biggest names in the entertainment and digital ecosystem.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl text-white">
+              <h4 className="text-lg font-semibold mb-3">Our Track Record</h4>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center">
+                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
+                  2.5 Billion+ Views Delivered
+                </div>
+                <div className="flex items-center">
+                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
+                  ₹35+ Crore Revenue Generated
+                </div>
+                <div className="flex items-center">
+                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
+                  Millions in Client Business
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "The Demand",
+      content: (
+        <div className="max-w-4xl">
+          <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/30 p-8 rounded-2xl shadow-xl border border-green-200 dark:border-green-800">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
+                <span className="text-white font-bold text-xl">02</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Growing Trust</h3>
+                <p className="text-green-600 dark:text-green-400 font-medium">Brands Started Believing</p>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Over time, brands and agencies — both in <span className="font-semibold text-gray-900 dark:text-white">India and South Africa</span> — began trusting us as their growth and execution partner.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                They started outsourcing critical functions like SEO, performance marketing, website development, and digital strategy. That trust and demand led to the birth of XD MEDIA.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Key Achievements
+                  Services Outsourced
                 </h4>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Active Clients</span>
-                    <span className="font-bold text-green-600">500+</span>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    SEO & Performance
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Client Satisfaction</span>
-                    <span className="font-bold text-green-600">95%</span>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Website Development
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Revenue Growth</span>
-                    <span className="font-bold text-green-600">300%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Team Size</span>
-                    <span className="font-bold text-green-600">25+</span>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Digital Strategy
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  Technology Stack
+                  Global Reach
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">React</span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Node.js</span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">MongoDB</span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">AWS</span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Docker</span>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Redis</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl text-white">
-              <h4 className="text-lg font-semibold mb-3">Major Milestones</h4>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center">
-                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Launched SEO Optimization Suite
-                </div>
-                <div className="flex items-center">
-                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Deployed Analytics Dashboard
-                </div>
-                <div className="flex items-center">
-                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Marketing Automation Platform
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">India</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">South Africa</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">International</span>
                 </div>
               </div>
             </div>
@@ -82,76 +111,87 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "2023",
+      title: "XD MEDIA Born",
       content: (
         <div className="max-w-4xl">
           <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/30 p-8 rounded-2xl shadow-xl border border-green-200 dark:border-green-800">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">23</span>
+                <span className="text-white font-bold text-xl">03</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Foundation & Team Building</h3>
-                <p className="text-green-600 dark:text-green-400 font-medium">Building the Dream Team</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">A Dedicated Agency</h3>
+                <p className="text-green-600 dark:text-green-400 font-medium">Strategy + Creativity + Performance</p>
               </div>
             </div>
-            
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                XD MEDIA was built as a <span className="font-semibold text-gray-900 dark:text-white">dedicated creative and digital marketing company</span>, focused on combining strategy, creativity, and performance.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We help brands grow through proven, data-driven solutions that deliver measurable results.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Team Expansion
+                  Our Services
                 </h4>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Marketing Specialists</span>
-                    <span className="font-bold text-green-600">15+</span>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Search Engine Optimization (SEO)
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Senior Developers</span>
-                    <span className="font-bold text-green-600">8</span>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Performance Marketing (Google & Meta)
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Design Team</span>
-                    <span className="font-bold text-green-600">5</span>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Website & Ecommerce Development
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Customer Success</span>
-                    <span className="font-bold text-green-600">6</span>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Social Media Marketing
+                  </div>
+                  <div className="flex items-center text-gray-700 dark:text-gray-300">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
+                    Growth Consulting & Automation
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Product Development
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  Official Partners
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">MVP SEO Tools</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Analytics Framework</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Marketing Automation</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">User Testing</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Feedback Loop</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Beta Launch</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Google Premium</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Meta Partner</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">Shopify Partner</span>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">WooCommerce</span>
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl text-white">
-              <h4 className="text-lg font-semibold mb-3">Major Milestones</h4>
+              <h4 className="text-lg font-semibold mb-3">Our Approach</h4>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Office Space Expansion
+                  No Shortcuts
                 </div>
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Cloud Infrastructure
+                  Data-Driven Process
                 </div>
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Security Protocols
+                  Long-Term Partnerships
                 </div>
               </div>
             </div>
@@ -160,76 +200,65 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "2022",
+      title: "Currently",
       content: (
         <div className="max-w-4xl">
           <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/30 p-8 rounded-2xl shadow-xl border border-green-200 dark:border-green-800">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
-                <span className="text-white font-bold text-xl">22</span>
+                <span className="text-white font-bold text-xl">04</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Company Inception</h3>
-                <p className="text-green-600 dark:text-green-400 font-medium">The Beginning of Our Journey</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Building Growth Engines</h3>
+                <p className="text-green-600 dark:text-green-400 font-medium">Where We Are Today</p>
               </div>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Market Research
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Websites Analyzed</span>
-                    <span className="font-bold text-green-600">1000+</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Pain Points Identified</span>
-                    <span className="font-bold text-green-600">50+</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Competitors Studied</span>
-                    <span className="font-bold text-green-600">25+</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-700 dark:text-gray-300">Market Validation</span>
-                    <span className="font-bold text-green-600">✓</span>
-                  </div>
-                </div>
+
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
+              <p className="text-lg text-gray-900 dark:text-white font-semibold mb-4">
+                We don't just market brands — we build scalable digital growth engines.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                At XD MEDIA, we don't believe in shortcuts or one-size-fits-all solutions. We believe in <span className="font-semibold text-gray-900 dark:text-white">process, data, and long-term partnerships.</span>
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Working with global standards, advanced tools, and proven frameworks, we help brands achieve sustainable growth through strategic digital marketing and technology.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+                <div className="text-4xl font-bold text-green-600 mb-2">2.5B+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Views Delivered</div>
               </div>
-              
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Company Formation
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {/* <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">EMB Global Inc.</span> */}
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Initial Funding</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Mumbai Office</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Mission Defined</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Values Set</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">Team Hired</span>
-                </div>
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+                <div className="text-4xl font-bold text-green-600 mb-2">₹35+ Cr</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Group Revenue</div>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+                <div className="text-4xl font-bold text-green-600 mb-2">100+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">Brand Partnerships</div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl text-white">
-              <h4 className="text-lg font-semibold mb-3">Major Milestones</h4>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <h4 className="text-lg font-semibold mb-3">What Sets Us Apart</h4>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Market Analysis Complete
+                  Backed by proven ventures
                 </div>
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Business Plan Finalized
+                  Global partner certifications
                 </div>
                 <div className="flex items-center">
                   <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
-                  Legal Structure Setup
+                  Data-driven strategies
+                </div>
+                <div className="flex items-center">
+                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">✓</span>
+                  Scalable growth systems
                 </div>
               </div>
             </div>
