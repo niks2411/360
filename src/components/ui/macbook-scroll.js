@@ -21,7 +21,7 @@ export const MacbookScroll = ({ src = "/linear.webp", showGradient = false, titl
     const rotate = useTransform(scrollYProgress, [0.1, 0.15, 0.4], [-26, -26, 0]);
 
     return (
-        <div ref={ref} className="flex min-h-[80vh] md:min-h-[70vh] shrink-0 transform flex-col items-center justify-start py-6 md:py-16 [perspective:800px]">
+        <div ref={ref} className="flex min-h-[160vh] md:min-h-[140vh] shrink-0 transform flex-col items-center justify-start py-4 md:py-8 [perspective:800px]">
             <Lid src={src} scaleX={scaleX} scaleY={scaleY} rotate={rotate} translate={translate} screenTitle={screenTitle} screenSubtitle={screenSubtitle} screenDescription={screenDescription} />
             <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
                 <div className="relative h-8 w-full">

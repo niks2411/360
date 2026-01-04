@@ -193,20 +193,29 @@ const MarketingTools = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Attractive Gradient Title */}
-              <motion.h2
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 50%, #22d3ee 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Crafting Digital Experiences
-              </motion.h2>
+              {/* Enhanced Title with Letter Animation */}
+              <motion.div className="mb-2 leading-tight">
+                {['Crafting Digital', 'Experiences'].map((line, lineIdx) => (
+                  <div key={lineIdx} className={`${lineIdx === 1 ? 'mt-1 md:mt-2' : ''}`}>
+                    {Array.from(line).map((letter, index) => (
+                      <motion.span
+                        key={`${lineIdx}-${index}`}
+                        className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white"
+                        initial={{ y: 50, opacity: 0, rotateX: -90 }}
+                        animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                        transition={{
+                          delay: index * 0.05 + lineIdx * 0.4,
+                          duration: 0.5,
+                          type: 'spring',
+                          stiffness: 100
+                        }}
+                      >
+                        {letter === ' ' ? '\u00A0' : letter}
+                      </motion.span>
+                    ))}
+                  </div>
+                ))}
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
