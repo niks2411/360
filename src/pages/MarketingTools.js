@@ -1,32 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, TrendingUp, Users, Target, Zap, CheckCircle, ArrowRight, Share2, MessageCircle } from 'lucide-react';
+import { Code, Zap, Users, Target, Monitor, CheckCircle, ArrowRight, Smartphone, Gauge, Layers, Palette, Globe, Sparkles } from 'lucide-react';
 import InlineContactForm from '../components/InlineContactForm';
+import { MacbookScroll } from '../components/ui/macbook-scroll';
+import { BackgroundLines } from '../components/ui/background-lines';
 
 const MarketingTools = () => {
+  // Animation variants
+  const floatingVariants = {
+    float: {
+      y: [-15, 15, -15],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const rotateVariants = {
+    rotate: {
+      rotate: 360,
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    }
+  };
+
+  const pulseVariants = {
+    pulse: {
+      scale: [1, 1.2, 1],
+      opacity: [0.3, 0.6, 0.3],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   const marketingServices = [
     {
-      title: "Social Media Management",
-      description: "Complete social media strategy, content creation, and community engagement across all platforms",
-      features: ["Content Calendar", "Community Management", "Analytics & Reporting", "Influencer Coordination"]
+      title: "Custom Website Design",
+      description: "Beautiful, responsive designs tailored to your brand with modern UI/UX principles",
+      features: ["Custom UI/UX", "Responsive Design", "Brand Integration", "Wireframing & Prototyping"]
     },
     {
-      title: "Performance Marketing",
-      description: "Data-driven ad campaigns on Meta, Google, and YouTube optimized for maximum ROI",
-      features: ["Meta Ads (FB & IG)", "Google Ads", "YouTube Advertising", "Retargeting Campaigns"]
+      title: "Web Development",
+      description: "High-performance websites built with modern frameworks and best practices",
+      features: ["React.js & Next.js", "WordPress & Shopify", "API Integration", "Database Design"]
     },
     {
-      title: "Content & Video Marketing",
-      description: "Compelling content and video production that engages audiences and drives conversions",
-      features: ["Video Production", "Content Writing", "Scriptwriting", "Post-Production"]
+      title: "Performance Optimization",
+      description: "Lightning-fast websites optimized for speed, SEO, and conversions",
+      features: ["Speed Optimization", "Core Web Vitals", "SEO Integration", "CRO Strategies"]
     }
-  ];
-
-  const dashboardMetrics = [
-    { label: "Campaign ROI", value: "450%", change: "+125%", icon: <TrendingUp className="w-5 h-5" /> },
-    { label: "Leads Generated", value: "12.5K", change: "+380%", icon: <Users className="w-5 h-5" /> },
-    { label: "Conversion Rate", value: "8.2%", change: "+92%", icon: <Target className="w-5 h-5" /> },
-    { label: "Engagement Rate", value: "15.8%", change: "+210%", icon: <MessageCircle className="w-5 h-5" /> }
   ];
 
   return (
@@ -62,7 +92,7 @@ const MarketingTools = () => {
                   color: '#47BF72'
                 }}
               >
-                <BarChart3 className="w-4 h-4" />
+                <Code className="w-4 h-4" />
                 Core Expertise ⭐
               </motion.div>
 
@@ -111,156 +141,106 @@ const MarketingTools = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <InlineContactForm
-                servicePage="Marketing Tools"
-                defaultService="Digital Marketing & Analytics"
+                servicePage="Website Design"
+                defaultService="Website Design & Development"
               />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Dashboard Mockup */}
-      <section className="py-24" style={{ background: '#0a0a0a' }}>
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
-              Real-Time Marketing Dashboard
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
-              Monitor all your campaigns in one place with actionable insights
-            </p>
-          </motion.div>
+      {/* Stunning MacbookScroll Showcase Section */}
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgb(12,33,21) 0%, #0a0a0a 50%, rgb(12,33,21) 100%)' }}>
+        {/* Animated Background Elements */}
+        <motion.div
+          className="absolute top-20 left-20 w-32 h-32 rounded-full opacity-20 blur-xl"
+          style={{ background: 'radial-gradient(circle, rgba(71, 191, 114, 0.4) 0%, transparent 70%)' }}
+          variants={pulseVariants}
+          animate="pulse"
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-40 h-40 rounded-full opacity-20 blur-xl"
+          style={{ background: 'radial-gradient(circle, rgba(34, 211, 238, 0.4) 0%, transparent 70%)' }}
+          variants={pulseVariants}
+          animate="pulse"
+        />
 
-          {/* Metrics Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {dashboardMetrics.map((metric, index) => (
-              <motion.div
-                key={index}
+        {/* Floating Decorative Elements */}
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-4 h-4 rounded-full bg-green-400 opacity-60"
+          variants={floatingVariants}
+          animate="float"
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-3 h-3 rounded-full bg-cyan-400 opacity-60"
+          variants={floatingVariants}
+          animate="float"
+        />
+
+        {/* Rotating Ring */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border-2 border-dashed opacity-10 pointer-events-none"
+          style={{ borderColor: 'rgba(71, 191, 114, 0.4)' }}
+          variants={rotateVariants}
+          animate="rotate"
+        />
+
+        <div className="w-full flex-1 flex flex-col items-center justify-center relative z-10 px-4">
+          <BackgroundLines className="relative w-full flex flex-col items-center justify-center px-4 pt-4 pb-4 overflow-hidden">
+            <motion.div
+              className="relative z-10 w-full max-w-4xl flex flex-col items-center text-center space-y-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Attractive Gradient Title */}
+              <motion.h2
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2"
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="group"
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #47BF72 50%, #22d3ee 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
               >
-                <div className="rounded-2xl p-6 backdrop-blur-xl border transition-all duration-300" style={{
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  borderColor: 'rgba(255, 255, 255, 0.1)'
-                }}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{
-                      background: 'rgba(71, 191, 114, 0.2)',
-                      color: '#47BF72'
-                    }}>
-                      {metric.icon}
-                    </div>
-                    <span className="text-green-400 text-sm font-semibold">{metric.change}</span>
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-1">{metric.value}</div>
-                  <div className="text-sm text-gray-400">{metric.label}</div>
-                </div>
+                Crafting Digital Experiences
+              </motion.h2>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+              >
+                <p className="text-lg sm:text-xl md:text-2xl text-green-400 font-medium">
+                  Where Design Meets Performance
+                </p>
               </motion.div>
-            ))}
+
+              <motion.p
+                className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-400"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+              >
+                Premium websites engineered for speed, built for conversions.
+              </motion.p>
+            </motion.div>
+          </BackgroundLines>
+        </div>
+
+        {/* MacbookScroll Section */}
+        <div className="w-full flex justify-center relative">
+          <BackgroundLines className="absolute inset-0 overflow-hidden pointer-events-none" />
+          <div className="relative z-10 w-full flex justify-center">
+            <MacbookScroll
+              showGradient={false}
+              screenTitle="Your Website Here"
+              screenSubtitle="Designed with precision. Built for performance."
+              screenDescription="React.js • Next.js • WordPress • Shopify"
+            />
           </div>
-
-          {/* Dashboard Visual */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden backdrop-blur-xl border" style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              borderColor: 'rgba(255, 255, 255, 0.1)'
-            }}
-          >
-            <div className="p-8">
-              {/* Dashboard Header */}
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">Campaign Performance</h3>
-                  <p className="text-gray-400 text-sm">Last 30 days overview</p>
-                </div>
-                <div className="flex gap-2">
-                  <button className="px-4 py-2 rounded-lg text-sm font-medium text-white" style={{
-                    background: 'rgba(71, 191, 114, 0.2)',
-                    border: '1px solid rgba(71, 191, 114, 0.3)'
-                  }}>
-                    Export Report
-                  </button>
-                </div>
-              </div>
-
-              {/* Chart Placeholder */}
-              <div className="rounded-xl p-8 mb-6" style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.05)'
-              }}>
-                <div className="flex items-end justify-between h-64 gap-4">
-                  {[65, 80, 75, 90, 85, 95, 88, 92, 98, 100, 95, 97].map((height, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ height: 0 }}
-                      whileInView={{ height: `${height}%` }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex-1 rounded-t-lg transition-all duration-300 hover:opacity-80"
-                      style={{
-                        background: `linear-gradient(180deg, #47BF72 0%, #3aa85f 100%)`,
-                        minHeight: '20px'
-                      }}
-                    ></motion.div>
-                  ))}
-                </div>
-                <div className="flex justify-between mt-4 text-xs text-gray-500">
-                  <span>Jan</span>
-                  <span>Feb</span>
-                  <span>Mar</span>
-                  <span>Apr</span>
-                  <span>May</span>
-                  <span>Jun</span>
-                  <span>Jul</span>
-                  <span>Aug</span>
-                  <span>Sep</span>
-                  <span>Oct</span>
-                  <span>Nov</span>
-                  <span>Dec</span>
-                </div>
-              </div>
-
-              {/* Campaign List */}
-              <div className="space-y-3">
-                {[
-                  { name: "Meta Ads - Summer Campaign", status: "Active", performance: "Excellent", spend: "$2,450", roi: "450%" },
-                  { name: "Google Ads - Brand Keywords", status: "Active", performance: "Good", spend: "$1,890", roi: "380%" },
-                  { name: "YouTube Video Campaign", status: "Active", performance: "Excellent", spend: "$3,200", roi: "520%" }
-                ].map((campaign, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 rounded-lg" style={{
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    border: '1px solid rgba(255, 255, 255, 0.05)'
-                  }}>
-                    <div className="flex items-center gap-4">
-                      <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                      <div>
-                        <div className="text-white font-medium">{campaign.name}</div>
-                        <div className="text-sm text-gray-400">{campaign.status} • {campaign.performance}</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-white font-semibold">{campaign.roi} ROI</div>
-                      <div className="text-sm text-gray-400">{campaign.spend} spent</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -277,10 +257,10 @@ const MarketingTools = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
-              Complete Marketing Solutions
+              Complete Web Design Services
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light">
-              From strategy to execution, we handle everything
+              From design to development, we create websites that perform
             </p>
           </motion.div>
 
