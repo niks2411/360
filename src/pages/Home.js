@@ -395,7 +395,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-28 shadow-2xl"
+              className="relative overflow-hidden rounded-2xl p-8 sm:p-10 pb-8 md:pb-48 shadow-2xl"
               style={{
                 background: 'radial-gradient(120% 120% at 0% 0%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 30%, rgba(12,33,21,1) 100%)',
                 backgroundColor: 'rgb(12,33,21)',
@@ -449,7 +449,7 @@ const Home = () => {
                 </Link>
               </motion.div>
               {/* Stats pinned to bottom */}
-              <div className="grid grid-cols-2 md:grid-cols-2 gap-x-16 gap-y-8 absolute left-8 right-8 bottom-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-x-16 md:gap-y-8 mt-8 md:mt-0 md:absolute md:left-8 md:right-8 md:bottom-6">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
