@@ -23,26 +23,25 @@ const Footer = () => {
       <footer
         className="text-white relative overflow-hidden"
         style={{
-          width: '100vw',
-          marginLeft: 'calc(-50vw + 50%)',
+          width: '100%',
           backgroundImage: 'url(/bg1.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="w-full py-3 px-4 sm:px-6 lg:px-8" style={{ width: '100%' }}>
+        <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
           {/* Free Consultancy Section - Now at the top */}
-          <div className=" mt-6 mb-4 pb-3 border-b border-gray-600">
-            <div className="text-center">
-              <h3 className="text-2xl font-light text-white mb-3">
+          <div className="mb-12 pb-8 border-b border-gray-600/30">
+            <div className="text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
                 Ready to Transform Your Digital Presence?
               </h3>
-              <p className="text-gray-300 mb-4 max-w-2xl mx-auto">
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg font-light">
                 Book a free 30-minute consultancy session with our experts to discuss your digital marketing goals and get personalized recommendations.
               </p>
               <button
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold mb-10 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-green-900/20"
                 onClick={() => setIsBookingOpen(true)}
               >
                 Book Free 30-Min Consultancy
@@ -51,14 +50,13 @@ const Footer = () => {
           </div>
 
           {/* Main Footer Content */}
-          <div className="flex flex-col lg:flex-row gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
             {/* Large Logo Section - Left Side */}
-            <div className="lg:w-1/3 flex justify-center lg:justify-start">
+            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full">
               <img
                 src="/logo.png"
                 alt="360 Logo"
-                style={{ width: '600px', height: '600px', display: 'block' }}
-                className="object-cover"
+                className="w-full max-w-[280px] md:max-w-[320px] lg:max-w-md object-contain"
               />
             </div>
 

@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="container-max relative z-10">
+            <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

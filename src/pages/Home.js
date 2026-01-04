@@ -99,7 +99,7 @@ const Home = () => {
             </motion.div>
 
             {/* Right Side Background Image */}
-            <div className="hidden lg:block relative">
+            <div className="block relative mt-8 lg:mt-0">
               <img
                 src="/bgright.png"
                 alt="Background Right"

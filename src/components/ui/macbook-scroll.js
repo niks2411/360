@@ -7,43 +7,41 @@ export const MacbookScroll = ({ src = "/linear.webp", showGradient = false, titl
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
-    const [isMobile, setIsMobile] = useState(false);
-    useEffect(() => {
-        if (typeof window !== 'undefined' && window.innerWidth < 768) {
-            setIsMobile(true);
-        }
-    }, []);
-
-    // Restore animation ranges prior to last change
-    const scaleX = useTransform(scrollYProgress, [0, 0.4], [1.15, isMobile ? 1 : 1.4]);
-    const scaleY = useTransform(scrollYProgress, [0, 0.4], [0.65, isMobile ? 1 : 1.4]);
-    const translate = useTransform(scrollYProgress, [0, 1], [0, 1300]);
-    const rotate = useTransform(scrollYProgress, [0.1, 0.15, 0.4], [-26, -26, 0]);
+    const scaleX = useTransform(scrollYProgress, [0, 0.4], [1.15, 1.5]);
+    const scaleY = useTransform(scrollYProgress, [0, 0.4], [0.65, 1.5]);
+    const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
+    const rotate = useTransform(scrollYProgress, [0.1, 0.15, 0.4], [-28, -28, 0]);
 
     return (
-        <div ref={ref} className="flex min-h-[160vh] md:min-h-[140vh] shrink-0 transform flex-col items-center justify-start py-4 md:py-8 [perspective:800px]">
-            <Lid src={src} scaleX={scaleX} scaleY={scaleY} rotate={rotate} translate={translate} screenTitle={screenTitle} screenSubtitle={screenSubtitle} screenDescription={screenDescription} />
-            <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
-                <div className="relative h-8 w-full">
-                    <div className="absolute inset-x-0 mx-auto h-3 w-[75%] rounded-b-xl bg-[#0b0b0b] shadow-[inset_0_-2px_4px_rgba(0,0,0,0.6)]" />
+        <div ref={ref} className="flex min-h-[120vh] md:min-h-[140vh] shrink-0 transform flex-col items-center justify-start pt-32 pb-4 md:py-8 [perspective:800px]">
+            {/* Scale wrapper for mobile responsiveness with preserve-3d */}
+            <div
+                className="flex flex-col items-center transform scale-[0.6] sm:scale-[0.75] md:scale-100 origin-top"
+                style={{ transformStyle: 'preserve-3d' }}
+            >
+                <Lid src={src} scaleX={scaleX} scaleY={scaleY} rotate={rotate} translate={translate} screenTitle={screenTitle} screenSubtitle={screenSubtitle} screenDescription={screenDescription} />
+                <div className="relative -z-10 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gray-200 dark:bg-[#272729]">
+                    <div className="relative h-8 w-full">
+                        <div className="absolute inset-x-0 mx-auto h-3 w-[75%] rounded-b-xl bg-[#0b0b0b] shadow-[inset_0_-2px_4px_rgba(0,0,0,0.6)]" />
+                    </div>
+                    <div className="relative flex">
+                        <div className="mx-auto h-full w-[10%] overflow-hidden">
+                            <SpeakerGrid />
+                        </div>
+                        <div className="mx-auto h-full w-[80%]">
+                            <Keypad />
+                        </div>
+                        <div className="mx-auto h-full w-[10%] overflow-hidden">
+                            <SpeakerGrid />
+                        </div>
+                    </div>
+                    <Trackpad />
+                    <div className="absolute inset-x-0 bottom-0 mx-auto h-2 w-24 rounded-tl-3xl rounded-tr-3xl bg-gradient-to-t from-[#1f1f1f] to-[#050505]" />
+                    {showGradient && (
+                        <div className="absolute inset-x-0 bottom-0 z-50 h-40 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-black dark:via-black"></div>
+                    )}
+                    {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
                 </div>
-                <div className="relative flex">
-                    <div className="mx-auto h-full w-[10%] overflow-hidden">
-                        <SpeakerGrid />
-                    </div>
-                    <div className="mx-auto h-full w-[80%]">
-                        <Keypad />
-                    </div>
-                    <div className="mx-auto h-full w-[10%] overflow-hidden">
-                        <SpeakerGrid />
-                    </div>
-                </div>
-                <Trackpad />
-                <div className="absolute inset-x-0 bottom-0 mx-auto h-2 w-24 rounded-tl-3xl rounded-tr-3xl bg-gradient-to-t from-[#1f1f1f] to-[#050505]" />
-                {showGradient && (
-                    <div className="absolute inset-x-0 bottom-0 z-50 h-40 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-black dark:via-black"></div>
-                )}
-                {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
             </div>
         </div>
     );

@@ -36,28 +36,28 @@ const PartnerLogos = () => {
   ];
 
   return (
-    <div 
-      className="relative flex h-32 w-full items-center justify-start overflow-hidden transform-gpu"
-      style={{ 
+    <div
+      className="relative flex h-20 md:h-32 w-full items-center justify-start overflow-hidden transform-gpu"
+      style={{
         backgroundColor: 'rgb(12,32,21)',
         willChange: 'transform'
       }}
     >
       {/* Single Marquee */}
-        <Marquee
+      <Marquee
         pauseOnHover
-        className="[--duration:15s]"
+        className="[--duration:20s] md:[--duration:15s]"
       >
         {partners.map((partner, index) => (
           <div
             key={index}
-            className="flex items-center justify-center px-3 py-6 -mx-2 transform-gpu"
+            className="flex items-center justify-center px-4 md:px-8 py-4 -mx-2 transform-gpu"
           >
             <div className="flex items-center justify-center group transform-gpu">
               <img
                 src={partner.logo}
                 alt={partner.alt}
-                className="h-16 w-auto opacity-80 transition-all duration-200 filter grayscale group-hover:grayscale-0 will-change-transform"
+                className="h-8 md:h-16 w-auto opacity-70 hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0 will-change-transform"
                 loading="eager"
                 decoding="async"
               />

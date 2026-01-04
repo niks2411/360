@@ -72,7 +72,7 @@ const TestimonialCards = () => {
         }}
       />
 
-      <div className="container-max relative z-10">
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Title and Navigation */}
           <motion.div
@@ -165,8 +165,8 @@ const TestimonialCards = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                      ? 'bg-green-600 scale-125'
-                      : 'bg-white/30 hover:bg-white/50'
+                    ? 'bg-green-600 scale-125'
+                    : 'bg-white/30 hover:bg-white/50'
                     }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

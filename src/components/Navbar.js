@@ -288,8 +288,8 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path)
-                        ? 'bg-green-700 text-white font-semibold'
-                        : 'text-white hover:bg-green-700 hover:text-white'
+                        ? 'bg-green-600/20 text-green-400 font-semibold border border-green-600/30'
+                        : 'text-gray-100 hover:bg-white/5 hover:text-white'
                         }`}
                       onClick={() => {
                         if (!item.hasDropdown) {
@@ -301,14 +301,14 @@ const Navbar = () => {
                       <span>{item.name}</span>
                     </Link>
                     {item.hasDropdown && item.dropdownItems && (
-                      <div className="ml-8 space-y-1">
+                      <div className="ml-8 space-y-1 mt-2 border-l border-white/10 pl-4">
                         {item.dropdownItems.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
                             to={dropdownItem.path}
-                            className={`flex items-center space-x-3 px-4 py-2 rounded-lg transition-colors text-sm ${isActive(dropdownItem.path)
-                              ? 'bg-gray-100 text-dark-800 font-semibold'
-                              : 'text-gray-500 hover:bg-gray-50 hover:text-dark-800'
+                            className={`flex items-center space-x-3 px-4 py-2.5 rounded-lg transition-colors text-sm ${isActive(dropdownItem.path)
+                              ? 'text-green-400 font-medium bg-green-600/10'
+                              : 'text-gray-300 hover:text-white hover:bg-white/5'
                               }`}
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
