@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Lightbulb, Rocket, TrendingUp } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProcessWorkflow = () => {
+    const navigate = useNavigate();
     const steps = [
         {
             number: "01",
@@ -233,6 +235,7 @@ const ProcessWorkflow = () => {
                         Ready to transform your digital presence?
                     </p>
                     <button
+                        onClick={() => navigate('/contact')}
                         className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                         style={{
                             background: 'linear-gradient(135deg, #47BF72, #3aa85f)',

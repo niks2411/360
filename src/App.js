@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
+import WelcomePopup from './components/WelcomePopup';
 import Home from './pages/Home';
 import SEOTools from './pages/SEOTools';
 import MarketingTools from './pages/MarketingTools';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <WelcomePopup />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

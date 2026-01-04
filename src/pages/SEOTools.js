@@ -262,9 +262,9 @@ const SEOTools = () => {
                             <div className="flex-shrink-0 text-right">
                               <div className="flex items-center gap-1 text-green-400 font-bold text-xl">
                                 <TrendingUp className="w-5 h-5" />
-                                +450%
+                                #1
                               </div>
-                              <span className="text-xs text-gray-400">traffic increase</span>
+                              <span className="text-xs text-gray-400">top ranking</span>
                             </div>
                           )}
                         </div>
@@ -286,10 +286,10 @@ const SEOTools = () => {
                   }}
                 >
                   <p className="text-green-400 font-medium mb-2">
-                    🚀 After 3 months of SEO optimization
+                    🚀 The Power of SEO Optimization
                   </p>
                   <p className="text-gray-300 text-sm">
-                    Your website moved from position #3 to #1, resulting in 450% traffic increase and 5× more leads
+                    With the right strategy, your website can climb the rankings — driving more organic traffic, higher visibility, and better leads
                   </p>
                 </motion.div>
               )}

@@ -14,14 +14,17 @@ import {
   Monitor,
   Cpu,
   Smartphone,
-  Globe
+  Globe,
+  Calendar
 } from 'lucide-react';
+import BookingModal from './BookingModal';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const location = useLocation();
 
   const navigationItems = [
@@ -161,8 +164,14 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* GET STARTED Button */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center gap-3">
+              <button
+                onClick={() => setIsBookingModalOpen(true)}
+                className="flex items-center gap-2 text-white px-4 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 border border-green-500 hover:bg-green-500/20 rounded"
+              >
+                <Calendar className="w-4 h-4" />
+                Book a Slot
+              </button>
               <Link
                 to="/contact"
                 className="text-white px-6 py-3 font-medium uppercase tracking-wide text-sm transition-colors duration-200 shadow-lg"
@@ -316,6 +325,12 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </nav>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </>
   );
 };

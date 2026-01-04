@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const WhyChooseUs = () => {
+    const navigate = useNavigate();
     const features = [
         {
             title: "All-in-One Solution",
@@ -257,6 +259,7 @@ const WhyChooseUs = () => {
                                 {/* CTA Button */}
                                 <div className="flex justify-center mt-10">
                                     <button
+                                        onClick={() => navigate('/contact')}
                                         className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                                         style={{
                                             background: 'linear-gradient(135deg, #47BF72, #3aa85f)',

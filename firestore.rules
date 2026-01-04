@@ -11,5 +11,16 @@ service cloud.firestore {
       // and restrict these operations to authenticated admin users only
       allow read, update, delete: if true;
     }
+
+    // Bookings collection rules
+    match /bookings/{bookingId} {
+      // Allow anyone to create new bookings (for the booking form submission)
+      allow create: if true;
+      
+      // Allow reading, updating, and deleting bookings
+      // NOTE: In production, you should implement proper Firebase Authentication
+      // and restrict these operations to authenticated admin users only
+      allow read, update, delete: if true;
+    }
   }
 }

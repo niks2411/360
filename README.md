@@ -140,4 +140,4 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For support or questions, please contact us at contact@360websitecontrol.com
+For support or questions, please contact us at Connect@xdmedia.in

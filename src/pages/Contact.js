@@ -383,41 +383,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section
-        className="py-24 relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)'
-        }}
-      >
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-inter">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-gray-300 mb-8 font-light">
-              Let's discuss your project and create a strategy that drives real results
-            </p>
-            <button
-              className="px-10 py-5 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
-              style={{
-                background: '#47BF72',
-                boxShadow: '0 10px 30px rgba(71, 191, 114, 0.3)'
-              }}
-            >
-              Schedule a Free Consultation
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
