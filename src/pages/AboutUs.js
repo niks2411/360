@@ -276,7 +276,7 @@ const AboutUs = () => {
             >
               Leadership
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-inter">
+            <h2 className="text-4xl sm:text-5xl text-white mb-4 font-light">
               Meet the Co-Founder
             </h2>
             <div className="w-20 h-1 mx-auto" style={{ background: '#47BF72' }}></div>
