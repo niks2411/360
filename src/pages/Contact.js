@@ -47,6 +47,25 @@ const Contact = () => {
         sourcePage: 'Contact Page'
       });
 
+      // Send email notification via API
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            phone: formData.phone,
+            service: formData.service,
+            message: formData.message
+          })
+        });
+      } catch (emailErr) {
+        console.error('Email notification failed:', emailErr);
+        // Don't fail the submission if email fails
+      }
+
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);

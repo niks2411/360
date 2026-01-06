@@ -83,6 +83,24 @@ const BookingModal = ({ isOpen, onClose }) => {
                 notes: ''
             });
 
+            // Send booking confirmation email via API
+            try {
+                await fetch('/api/booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        bookingDate: formData.bookingDate,
+                        timeSlot: formData.timeSlot
+                    })
+                });
+            } catch (emailErr) {
+                console.error('Email notification failed:', emailErr);
+                // Don't fail the booking if email fails
+            }
+
             setIsSuccess(true);
 
             // Reset form after 3 seconds and close modal
@@ -284,8 +302,8 @@ const BookingModal = ({ isOpen, onClose }) => {
                                                         type="button"
                                                         onClick={() => handleTimeSlotSelect(slot)}
                                                         className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${formData.timeSlot === slot
-                                                                ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
-                                                                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
+                                                            ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
+                                                            : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
                                                             }`}
                                                     >
                                                         {slot.split(' - ')[0]}
