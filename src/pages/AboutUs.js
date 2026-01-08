@@ -65,9 +65,9 @@ const AboutUs = () => {
       </section>
 
       {/* Stats Grid - Dark Background like homepage */}
-      <section className="py-20" style={{ background: '#0a0a0a' }}>
+      <section className="py-20 px-4 sm:px-6" style={{ background: '#0a0a0a' }}>
         <div className="container-max">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -78,13 +78,13 @@ const AboutUs = () => {
                 className="group"
               >
                 <div
-                  className="relative overflow-hidden rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border"
+                  className="relative overflow-hidden rounded-2xl p-4 sm:p-8 text-center transition-all duration-300 hover:shadow-2xl backdrop-blur-xl border h-full min-h-[140px] sm:min-h-[180px] flex flex-col justify-center"
                   style={{
                     background: 'rgba(255, 255, 255, 0.03)',
                     borderColor: 'rgba(255, 255, 255, 0.1)'
                   }}
                 >
-                  <div className="text-5xl font-bold mb-3" style={{
+                  <div className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3" style={{
                     background: 'linear-gradient(135deg, #47BF72 0%, #3aa85f 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -92,7 +92,7 @@ const AboutUs = () => {
                   }}>
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wider font-medium">
+                  <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium leading-tight">
                     {stat.label}
                   </div>
 
@@ -390,7 +390,7 @@ const AboutUs = () => {
                           <div className="text-xs text-gray-400 uppercase tracking-wider">Brands Transformed</div>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold" style={{ color: '#47BF72' }}>3+ Years</div>
+                          <div className="text-2xl font-bold" style={{ color: '#47BF72' }}>5+ Years</div>
                           <div className="text-xs text-gray-400 uppercase tracking-wider">Industry Experience</div>
                         </div>
                       </div>
