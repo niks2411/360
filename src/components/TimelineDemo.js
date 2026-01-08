@@ -65,7 +65,7 @@ export function TimelineDemo() {
 
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                Over time, brands and agencies — both in <span className="font-semibold text-gray-900 dark:text-white">India and South Africa</span> — began trusting us as their growth and execution partner.
+                Over time, brands and agencies both in <span className="font-semibold text-gray-900 dark:text-white">India and South Africa</span>  began trusting us as their growth and execution partner.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 They started outsourcing critical functions like SEO, performance marketing, website development, and digital strategy. That trust and demand led to the birth of XD MEDIA.
