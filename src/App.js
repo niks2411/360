@@ -20,9 +20,11 @@ import GMBOptimization from './pages/GMBOptimization';
 import AIAutomationTools from './pages/AIAutomationTools';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import BookSlot from './pages/BookSlot';
+import DigitalMarketing from './pages/DigitalMarketing';
 import NotFound from './pages/NotFound';
 import BlogIndex from './pages/BlogIndex';
 import BlogDetail from './pages/BlogDetail';
+import TeamMemberDetail from './pages/TeamMemberDetail';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
             <Route path="/web-development-services" element={<WebDevelopmentService />} />
             <Route path="/web-development-company-india" element={<WebDevelopmentService />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/team/:memberId" element={<TeamMemberDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/seo-leads" element={<SEOAdmin />} />
@@ -53,6 +56,7 @@ function App() {
             <Route path="/ai-automation-tools" element={<AIAutomationTools />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/book-a-slot" element={<BookSlot />} />
+            <Route path="/digital-market" element={<DigitalMarketing />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

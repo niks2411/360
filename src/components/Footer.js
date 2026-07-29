@@ -105,104 +105,87 @@ const Footer = () => {
       </section>
 
       <footer
-        className="text-white relative"
+        className="text-white relative bg-[#040d07] pt-16 pb-12"
         style={{
           width: '100%',
-          backgroundImage: 'url(/bg1.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
-          {/* Main Footer Content */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-            {/* Logo Column - Left Side */}
-            <div className="lg:w-1/3 flex justify-center lg:justify-start w-full relative z-20 mt-2 lg:mt-4 lg:pl-8">
-              <img
-                src="/logo2.png"
-                alt="360 Logo"
-                className="w-full max-w-[290px] md:max-w-[350px] lg:max-w-[390px] object-contain"
-              />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1.1fr_0.9fr_0.9fr_1.3fr] gap-6 lg:gap-8 pb-16">
+            
+            {/* Col 1: Brand Info */}
+            <div className="space-y-4 pr-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <img
+                  src="/logo2.png"
+                  alt="XD MEDIA"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Comprehensive digital solutions for SEO, marketing, and analytics. We Build Brands with Tech, Media & Marketing.
+              </p>
+              <div className="pt-2 space-y-1.5 text-sm text-gray-400">
+                <p><span className="text-gray-300 font-medium">Email:</span> connect@xdmedia.in</p>
+                <p><span className="text-gray-300 font-medium">Phone:</span> +91 7901724043</p>
+              </div>
             </div>
 
-            {/* Content Columns - Right Side */}
-            <div className="lg:w-2/3 w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Company Info */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">Our Company</h3>
-                  <p className="text-gray-300 mb-6 text-sm">
-                    Comprehensive digital solutions for SEO, marketing, and analytics.
-                    We Build Brands with Tech, Media & Marketing.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Mail className="w-4 h-4" />
-                      <span className="text-sm">connect@xdmedia.in</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-gray-300">
-                      <Phone className="w-4 h-4" />
-                      <span className="text-sm">+91 7901724043</span>
-                    </div>
-                    <div className="flex items-start space-x-3 text-gray-300">
-                      <MapPin className="w-4 h-4 mt-1 shrink-0" />
-                      <div className="space-y-3">
-                        <div>
-                          <span className="text-xs font-semibold text-white block mb-0.5">Head Office — India</span>
-                          <span className="text-sm text-gray-300 block leading-relaxed">
-                            SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh
-                          </span>
-                        </div>
-                        <div className="border-t border-white/10 pt-2">
-                          <span className="text-xs font-semibold text-white block mb-0.5">Branch Office — South Africa</span>
-                          <span className="text-sm text-gray-300 block leading-relaxed">
-                            Sandton, Johannesburg 2091, South Africa
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Col 2: Services */}
+            <div>
+              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Services</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link to="/affordable-seo-services-in-india" className="hover:text-white transition-colors">SEO Services</Link></li>
+                <li><Link to="/web-development-services" className="hover:text-white transition-colors">Web Development Services</Link></li>
+                <li><Link to="/performance-marketing" className="hover:text-white transition-colors">Performance Marketing</Link></li>
+                <li><Link to="/white-label-seo" className="hover:text-white transition-colors">White Label SEO</Link></li>
+                <li><Link to="/white-label-digital-marketing" className="hover:text-white transition-colors">White Label Marketing</Link></li>
+              </ul>
+            </div>
 
-                {/* Quick Links */}
+            {/* Col 3: Company */}
+            <div>
+              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Company</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link to="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link to="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+                <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Careers</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+
+            {/* Col 4: Legal */}
+            <div>
+              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Legal</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
+              </ul>
+            </div>
+
+            {/* Col 5: Locations */}
+            <div>
+              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Our Offices</h3>
+              <div className="space-y-4 text-xs text-gray-400">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-                  <ul className="space-y-2">
-                    {quickLinks.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.path}
-                          className="text-gray-300 hover:text-white transition-colors text-sm"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <span className="font-semibold text-white block text-sm mb-1">Head Office — India</span>
+                  <span className="leading-relaxed block">SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-white block text-sm mb-1">Branch Office — South Africa</span>
+                  <span className="leading-relaxed block">Sandton, Johannesburg 2091, South Africa</span>
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-dark-700 mt-2 pt-2 w-full" style={{ width: '100%' }}>
-            <div className="flex flex-col md:flex-row justify-between items-center w-full">
-              <p className="text-gray-400 text-sm">
-                © {currentYear} XD MEDIA. All rights reserved.
-              </p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Privacy Policy
-                </Link>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Cookie Policy
-                </a>
-              </div>
-            </div>
+          <div className="border-t border-white/10 pt-8 flex justify-between items-center text-sm text-gray-400">
+            <p>© {currentYear} XD Media. All rights reserved.</p>
           </div>
         </div>
       </footer>
