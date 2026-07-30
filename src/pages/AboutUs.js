@@ -377,7 +377,7 @@ const AboutUs = () => {
             </motion.div>
 
             {/* Core Team Members - SEO Manager & Digital Marketer */}
-            <div className="mt-20">
+            <div className="mt-20" id="core-growth-specialists">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -393,88 +393,69 @@ const AboutUs = () => {
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                {/* Team Member 1: SEO Manager */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                >
-                  <Link to="/team/ritik-rozra" className="block cursor-pointer">
-                    <div
-                      className="relative overflow-hidden rounded-2xl p-4 transition-all duration-300 border hover:border-[#47BF72]/50 hover:shadow-xl hover:shadow-[#47BF72]/10"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.03)',
-                        borderColor: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(12px)'
-                      }}
-                    >
-                      {/* Dashed outer border container like Inspira/Tailwind UI card */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+                {[
+                  {
+                    name: 'Ritik Rozra',
+                    role: 'Sr. SEO Strategist',
+                    image: '/ritik.jpeg',
+                    slug: 'ritik-rozra',
+                    delay: 0.1
+                  },
+                  {
+                    name: 'Aryan Puri',
+                    role: 'Graphics & Packaging Designer',
+                    image: '/Aryan.png',
+                    slug: 'aryan-puri',
+                    delay: 0.2
+                  },
+                  {
+                    name: 'Adil Ali',
+                    role: 'Video Editor & D.O.P',
+                    image: '/adil.heic',
+                    slug: 'adil-ali',
+                    delay: 0.3
+                  }
+                ].map((member) => (
+                  <motion.div
+                    key={member.slug}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: member.delay }}
+                    viewport={{ once: true }}
+                    className="group relative h-full"
+                  >
+                    <Link to={`/team/${member.slug}`} className="block h-full cursor-pointer">
                       <div
-                        className="relative rounded-xl overflow-hidden aspect-[4/3] p-2"
+                        className="relative h-full flex flex-col overflow-hidden rounded-2xl p-4 transition-all duration-300 border hover:border-[#47BF72]/50 hover:shadow-xl hover:shadow-[#47BF72]/10"
                         style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='rgba(255, 255, 255, 0.15)' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E")`,
+                          background: 'rgba(255, 255, 255, 0.03)',
+                          borderColor: 'rgba(255, 255, 255, 0.1)',
+                          backdropFilter: 'blur(12px)'
                         }}
                       >
-                        <img
-                          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=400&fit=crop&crop=face&auto=format"
-                          alt="Ritik Rozra - SEO Manager at XD MEDIA"
-                          className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="pt-4 px-1 pb-1 flex justify-between items-end">
-                        <div>
-                          <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#47BF72] transition-colors">Ritik Rozra</h4>
-                          <p className="text-[#47BF72] text-sm font-medium">SEO Manager</p>
+                        <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-black/40">
+                          <img
+                            src={member.image}
+                            alt={`${member.name} - ${member.role} at Core Growth Specialists`}
+                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          />
                         </div>
-                        <span className="text-xs font-semibold text-gray-400 group-hover:text-white transition-colors underline pb-1">View Profile →</span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                {/* Team Member 2: Digital Marketer */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                >
-                  <Link to="/team/aryan-puri" className="block cursor-pointer">
-                    <div
-                      className="relative overflow-hidden rounded-2xl p-4 transition-all duration-300 border hover:border-[#47BF72]/50 hover:shadow-xl hover:shadow-[#47BF72]/10"
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.03)',
-                        borderColor: 'rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(12px)'
-                      }}
-                    >
-                      {/* Dashed outer border container like Inspira/Tailwind UI card */}
-                      <div
-                        className="relative rounded-xl overflow-hidden aspect-[4/3] p-2"
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='rgba(255, 255, 255, 0.15)' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E")`,
-                        }}
-                      >
-                        <img
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop&crop=face&auto=format"
-                          alt="Aryan Puri - Digital Marketer at XD MEDIA"
-                          className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="pt-4 px-1 pb-1 flex justify-between items-end">
-                        <div>
-                          <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#47BF72] transition-colors">Aryan Puri</h4>
-                          <p className="text-[#47BF72] text-sm font-medium">Digital Marketer</p>
+                        <div className="pt-4 px-1 pb-1 flex flex-col flex-1">
+                          <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#47BF72] transition-colors">
+                            {member.name}
+                          </h4>
+                          <p className="text-[#47BF72] text-sm font-medium min-h-[40px] leading-snug">
+                            {member.role}
+                          </p>
+                          <span className="mt-auto pt-3 text-xs font-semibold text-gray-400 group-hover:text-white transition-colors underline whitespace-nowrap">
+                            View Profile →
+                          </span>
                         </div>
-                        <span className="text-xs font-semibold text-gray-400 group-hover:text-white transition-colors underline pb-1">View Profile →</span>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
+                    </Link>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>

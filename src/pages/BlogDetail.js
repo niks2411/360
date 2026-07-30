@@ -305,13 +305,14 @@ const BlogDetail = ({ slug: propSlug }) => {
       <article className="min-h-screen bg-[#FDFDFD] pb-24 font-sans">
         
         {/* Navigation & Header */}
-        <header className="pt-10 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100 max-w-7xl mx-auto mb-10">
+        <header className="pt-28 sm:pt-32 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100 max-w-7xl mx-auto mb-10">
           <div className="text-left mb-6">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-[#47BF72] hover:text-green-600 transition-colors text-xs font-semibold uppercase tracking-wider"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#47BF72]/40 text-[#16a34a] hover:bg-[#47BF72] hover:text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-sm"
             >
-              <ArrowLeft className="w-4 h-4" /> Back to Articles
+              <ArrowLeft className="w-4 h-4" />
+              Back to Articles
             </Link>
           </div>
           

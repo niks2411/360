@@ -34,7 +34,15 @@
         },
         {
             "source": "/about-us",
-            "destination": "/about-us.html"
+            "destination": "/index.html"
+        },
+        {
+            "source": "/team/:memberId",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/digital-market",
+            "destination": "/index.html"
         },
         {
             "source": "/contact",
@@ -71,6 +79,14 @@
         {
             "source": "/blog/seo-guide-for-businesses",
             "destination": "/blog-seo-guide-for-businesses.html"
+        },
+        {
+            "source": "/seo-vs-aeo-vs-geo",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/blog/seo-vs-aeo-vs-geo-chatgpt-ai-overviews-2026",
+            "destination": "/index.html"
         },
         {
             "source": "/(.*)",

@@ -682,7 +682,7 @@ const Home = () => {
                 className="text-center lg:text-left"
               >
                 <Link
-                  to="/about"
+                  to="/about-us"
                   className="group relative inline-flex items-center justify-center text-white px-6 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider transition-all duration-300 overflow-hidden"
                   style={{
                     backgroundColor: '#47BF72',

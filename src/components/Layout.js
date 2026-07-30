@@ -24,7 +24,8 @@ const Layout = ({ children }) => {
     '/gmb-optimization',
     '/ai-automation-tools',
     '/book-a-slot',
-    '/privacy-policy'
+    '/privacy-policy',
+    '/digital-market'
   ];
 
   const normalizedPath = location.pathname.endsWith('/') && location.pathname.length > 1
@@ -32,7 +33,8 @@ const Layout = ({ children }) => {
     : location.pathname;
 
   const isBlog = normalizedPath === '/blog' || normalizedPath.startsWith('/blog/');
-  const is404 = !validPaths.includes(normalizedPath) && !isBlog;
+  const isTeam = normalizedPath.startsWith('/team/');
+  const is404 = !validPaths.includes(normalizedPath) && !isBlog && !isTeam;
   const hideFooter = location.pathname === '/privacy-policy' || is404;
 
   return (

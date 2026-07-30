@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
+import TestimonialCards from '../components/TestimonialCards';
 
 const CheckIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" /></svg>
@@ -151,9 +152,6 @@ const DigitalMarketing = () => {
       <Helmet>
         <title>Core Growth Specialists | Digital Marketing Agency for SEO, PPC, Web Development & Meta Ads</title>
         <meta name="description" content="Core Growth Specialists is a full-service digital marketing agency helping brands in the USA, UK, Canada & Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "Organization",
           "name": "XD Media", "url": "https://xdmedia.in",
@@ -164,23 +162,35 @@ const DigitalMarketing = () => {
       <Canonical path="/digital-market" />
 
       <style>{`
-        .dm-page { --green: #2ee878; --green-2: #17b85e; --green-soft: rgba(46,232,120,0.12); --bg-dark: #060f0a; --bg-dark-2: #0b1f14; --bg-dark-3: #0e2a1b; --ink: #eafff2; --muted: #9fb8a9; --border-dark: #1d3626; --border-light: #e3ece6; --bg-light-2: #f4f9f6; font-family: 'Inter', sans-serif; }
-        .dm-page h1,.dm-page h2,.dm-page h3,.dm-page h4 { font-family: 'Sora', sans-serif; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+        .dm-page { --green: #2ee878; --green-2: #17b85e; --green-soft: rgba(46,232,120,0.12); --bg-dark: #060f0a; --bg-dark-2: #0b1f14; --bg-dark-3: #0e2a1b; --ink: #eafff2; --muted: #9fb8a9; --border-dark: #1d3626; --border-light: #e3ece6; --bg-light-2: #f4f9f6; font-family: 'DM Sans', sans-serif; }
+        .dm-page h1,.dm-page h2,.dm-page h3,.dm-page h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
         .dm-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-2); margin-bottom: 14px; }
         .dm-eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--green-2); display: inline-block; }
       `}</style>
 
       <div className="dm-page">
         {/* ===== HERO ===== */}
-        <section className="relative overflow-hidden text-[#eafff2] pt-16 sm:pt-20" style={{ background: 'radial-gradient(1200px 600px at 20% -10%, #123322 0%, #060f0a 55%)' }}>
-          <div className="max-w-[1200px] mx-auto px-6 pb-16 sm:pb-20">
+        <section className="relative overflow-hidden text-[#eafff2] pt-16 sm:pt-20">
+          {/* Background image only — same photo as Home; original styling kept */}
+          <div className="absolute inset-0">
+            <img
+              src="/premium_photo-1661696348133-653cb6cc037c.avif"
+              className="w-full h-full object-cover"
+              alt=""
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: 'radial-gradient(1200px 600px at 20% -10%, rgba(18,51,34,0.88) 0%, rgba(6,15,10,0.94) 55%)' }}
+            />
+          </div>
+          <div className="relative z-10 max-w-[1200px] mx-auto px-6 pb-16 sm:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-semibold text-[#2ee878] mb-5" style={{ background: 'rgba(46,232,120,0.12)', border: '1px solid rgba(46,232,120,0.35)' }}>
                   ● Full-Service Digital Marketing Agency
                 </span>
                 <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-bold mb-5 leading-[1.12]">
-                  One Growth Partner. <span className="text-[#2ee878]">Every Channel.</span> 3X The Results.
+                  One Growth Partner. <span className="text-[#2ee878] font-fraunces italic">Every Channel.</span> 3X The Results.
                 </h1>
                 <p className="text-lg text-[#9fb8a9] max-w-[560px] mb-7">
                   XD Media is a performance-driven digital marketing agency helping brands across the USA, UK, Canada and Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation — all under one roof.
@@ -249,12 +259,12 @@ const DigitalMarketing = () => {
           </div>
 
           {/* Trust Strip */}
-          <div className="border-t border-b border-[#1d3626]" style={{ background: '#0b1f14' }}>
+          <div className="relative z-10 border-t border-b border-[#1d3626]" style={{ background: '#0b1f14' }}>
             <div className="max-w-[1200px] mx-auto px-6 py-7 flex items-center justify-between flex-wrap gap-6">
               <span className="text-[12.5px] text-[#9fb8a9] uppercase tracking-widest font-semibold whitespace-nowrap">Trusted by growing brands in</span>
               <div className="flex gap-10 flex-wrap opacity-75">
                 {['USA', 'UK', 'Canada', 'Australia', '+ 100 Global Clients'].map((s, i) => (
-                  <span key={i} className="font-bold text-[16px] text-[#9fb8a9]" style={{ fontFamily: "'Sora', sans-serif" }}>{s}</span>
+                  <span key={i} className="font-bold text-[16px] text-[#9fb8a9]">{s}</span>
                 ))}
               </div>
             </div>
@@ -349,7 +359,7 @@ const DigitalMarketing = () => {
             <p className="text-[#9fb8a9] text-[15.5px] mb-7">XD Media was built on a simple frustration: businesses were hiring five different vendors for SEO, ads, design and web — and getting five different, disconnected strategies. We built one team that plans and executes every channel together, so nothing works in a silo.</p>
             <div className="grid grid-cols-3 gap-5 mb-7">
               {[{ n: '100+', l: 'Brands served globally' }, { n: '4', l: 'Tier-1 markets served (US, UK, CA, AU)' }, { n: '7', l: 'Services under one roof' }].map((s, i) => (
-                <div key={i}><b className="text-[32px] text-[#2ee878] block" style={{ fontFamily: "'Sora', sans-serif" }}>{s.n}</b><span className="text-[12.5px] text-[#9fb8a9]">{s.l}</span></div>
+                <div key={i}><b className="text-[32px] text-[#2ee878] block">{s.n}</b><span className="text-[12.5px] text-[#9fb8a9]">{s.l}</span></div>
               ))}
             </div>
             <a href="/about-us" className="inline-flex w-fit px-7 py-3.5 rounded-full font-semibold text-[15px] bg-[#2ee878] text-[#052012] hover:bg-[#17b85e] transition-all">Learn More About Us</a>
@@ -378,7 +388,7 @@ const DigitalMarketing = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {processSteps.map((s, i) => (
                 <div key={i} className="rounded-[14px] p-6 border border-[#1d3626]" style={{ background: '#0b1f14' }}>
-                  <div className="text-[13px] text-[#2ee878] font-bold mb-3.5" style={{ fontFamily: "'Sora', sans-serif" }}>Step {s.num}</div>
+                  <div className="text-[13px] text-[#2ee878] font-bold mb-3.5">Step {s.num}</div>
                   <h4 className="text-[17px] font-bold mb-2">{s.title}</h4>
                   <p className="text-[13.5px] text-[#9fb8a9]">{s.desc}</p>
                 </div>
@@ -387,35 +397,10 @@ const DigitalMarketing = () => {
           </div>
         </section>
 
-        {/* ===== RESULTS / CASE STUDY ===== */}
-        <section id="results" className="py-24 bg-white">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="text-center max-w-[720px] mx-auto mb-14">
-              <span className="dm-eyebrow">Proof, Not Promises</span>
-              <h2 className="text-[38px] mb-3.5 text-gray-900">The Impact We Deliver</h2>
-              <p className="text-gray-500 text-[17px]">Our clients don't just work with us — they grow with us.</p>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-[22px] border border-[#e3ece6] overflow-hidden">
-              <div className="flex items-center justify-center text-xs text-[#9fb8a9] min-h-[300px]" style={{ background: 'linear-gradient(135deg,#123322,#081b12)' }}>
-                <span className="opacity-40 tracking-widest uppercase">Client Image</span>
-              </div>
-              <div className="p-10 sm:p-12">
-                <p className="text-[19px] font-bold text-gray-900 mb-5 leading-snug" style={{ fontFamily: "'Sora', sans-serif" }}>
-                  "XD Media didn't just run our ads — they rebuilt our entire funnel. Our cost per lead dropped and our organic traffic finally started compounding instead of flatlining."
-                </p>
-                <div className="flex flex-wrap gap-8 my-6">
-                  {[{ n: '+186%', l: 'Organic traffic (6 months)' }, { n: '-42%', l: 'Cost per lead' }, { n: '3.1x', l: 'Return on ad spend' }].map((m, i) => (
-                    <div key={i}><b className="text-[26px] text-[#17b85e] block" style={{ fontFamily: "'Sora', sans-serif" }}>{m.n}</b><span className="text-[12.5px] text-gray-500">{m.l}</span></div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 mt-5">
-                  <div className="w-11 h-11 rounded-full bg-[#e3ece6]" />
-                  <div><b className="text-sm block text-gray-900">Client Name</b><span className="text-[12.5px] text-gray-500">Marketing Director, E-commerce Brand — USA</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ===== TESTIMONIALS SECTION ===== */}
+        <div id="results">
+          <TestimonialCards />
+        </div>
 
         {/* ===== INDUSTRIES ===== */}
         <section id="industries" className="py-24 bg-[#f4f9f6]">

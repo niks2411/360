@@ -38,6 +38,7 @@ function App() {
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/seo-guide-for-businesses" element={<BlogDetail slug="seo-guide-for-businesses" />} />
+            <Route path="/seo-vs-aeo-vs-geo" element={<BlogDetail slug="seo-vs-aeo-vs-geo-chatgpt-ai-overviews-2026" />} />
             <Route path="/website-design" element={<MarketingTools />} />
             <Route path="/performance-marketing" element={<Analytics />} />
             <Route path="/white-label-seo" element={<WhiteLabelSEO />} />
