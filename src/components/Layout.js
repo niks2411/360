@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
     '/white-label-digital-marketing',
     '/seo-service',
     '/affordable-seo-services-in-india',
+    '/affordable-seo-services-south-africa',
     '/web-development-services',
     '/web-development-company-india',
     '/about-us',

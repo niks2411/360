@@ -25,6 +25,7 @@ import NotFound from './pages/NotFound';
 import BlogIndex from './pages/BlogIndex';
 import BlogDetail from './pages/BlogDetail';
 import TeamMemberDetail from './pages/TeamMemberDetail';
+import SouthAfricaSEO from './pages/SouthAfricaSEO';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/white-label-digital-marketing" element={<WhiteLabelMarketing />} />
             <Route path="/seo-service" element={<SEOService />} />
             <Route path="/affordable-seo-services-in-india" element={<SEOService />} />
+            <Route path="/affordable-seo-services-south-africa" element={<SouthAfricaSEO />} />
             <Route path="/web-development-services" element={<WebDevelopmentService />} />
             <Route path="/web-development-company-india" element={<WebDevelopmentService />} />
             <Route path="/about-us" element={<AboutUs />} />
