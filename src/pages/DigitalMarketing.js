@@ -300,27 +300,44 @@ const DigitalMarketing = () => {
               <p className="text-gray-500 text-[17px]">Every engagement starts with your business goal — leads, bookings, or sales — and works backward into the channel mix that gets there fastest.</p>
             </div>
             <div className="space-y-0">
-              {deepDives.map((dd, i) => (
-                <div key={dd.id} id={dd.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-14 items-center py-12 border-b border-[#e3ece6] last:border-b-0 ${i % 2 !== 0 ? 'direction-rtl' : ''}`}>
-                  <div className={`aspect-[4/3] rounded-[22px] flex items-center justify-center text-sm text-[#9fb8a9] ${i % 2 !== 0 ? 'lg:order-2' : ''}`} style={{ background: 'linear-gradient(135deg,#0e2a1b,#123322)' }}>
-                    <span className="opacity-40 text-xs tracking-widest uppercase">Image Placeholder</span>
+              {deepDives.map((dd, i) => {
+                const imageMap = {
+                  'seo': '/SEO.png',
+                  'webdev': '/Custom Web Devops.png',
+                  'ppc': '/GOOGLE ADS.png',
+                  'meta-ads': '/Meta Ads.png',
+                  'design': '/Design.png',
+                  'video': '/Video Editing.png',
+                  'whatsapp': '/Whatsapp Marketing Automation.png'
+                };
+                const imageSrc = imageMap[dd.id];
+
+                return (
+                  <div key={dd.id} id={dd.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-14 items-center py-12 border-b border-[#e3ece6] last:border-b-0 ${i % 2 !== 0 ? 'direction-rtl' : ''}`}>
+                    <div className={`rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                      {imageSrc ? (
+                        <img src={imageSrc} alt={dd.title} className="w-full h-auto object-contain rounded-[22px]" />
+                      ) : (
+                        <span className="opacity-40 text-xs tracking-widest uppercase text-[#9fb8a9]">Image Placeholder</span>
+                      )}
+                    </div>
+                    <div className={i % 2 !== 0 ? 'lg:order-1' : ''}>
+                      <span className="inline-block text-[12px] font-bold px-3 py-1 rounded-full text-[#17b85e] mb-3.5" style={{ background: 'rgba(46,232,120,0.12)' }}>{dd.tag}</span>
+                      <h3 className="text-[28px] font-bold text-gray-900 mb-3.5">{dd.title}</h3>
+                      <p className="text-gray-500 text-[15.5px] mb-4">{dd.desc}</p>
+                      <ul className="space-y-2.5 mb-5">
+                        {dd.items.map((item, j) => (
+                          <li key={j} className="flex gap-2.5 items-start text-[14.5px] text-gray-800">
+                            <span className="mt-0.5 text-[#17b85e] flex-shrink-0"><CheckIcon /></span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <button onClick={scrollToForm} className="px-7 py-3.5 rounded-full font-semibold text-[15px] border-[1.5px] border-[#e3ece6] text-gray-800 hover:border-[#17b85e] hover:text-[#17b85e] transition-all">{dd.cta}</button>
+                    </div>
                   </div>
-                  <div className={i % 2 !== 0 ? 'lg:order-1' : ''}>
-                    <span className="inline-block text-[12px] font-bold px-3 py-1 rounded-full text-[#17b85e] mb-3.5" style={{ background: 'rgba(46,232,120,0.12)' }}>{dd.tag}</span>
-                    <h3 className="text-[28px] font-bold text-gray-900 mb-3.5">{dd.title}</h3>
-                    <p className="text-gray-500 text-[15.5px] mb-4">{dd.desc}</p>
-                    <ul className="space-y-2.5 mb-5">
-                      {dd.items.map((item, j) => (
-                        <li key={j} className="flex gap-2.5 items-start text-[14.5px] text-gray-800">
-                          <span className="mt-0.5 text-[#17b85e] flex-shrink-0"><CheckIcon /></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <button onClick={scrollToForm} className="px-7 py-3.5 rounded-full font-semibold text-[15px] border-[1.5px] border-[#e3ece6] text-gray-800 hover:border-[#17b85e] hover:text-[#17b85e] transition-all">{dd.cta}</button>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
