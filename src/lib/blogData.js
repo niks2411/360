@@ -633,7 +633,7 @@ Treating SEO as a one-time project instead of an ongoing system — technical de
     date: "July 30, 2026",
     readTime: "18 Min Read",
     excerpt: "SEO, AEO and GEO explained side by side — how ChatGPT and Google AI Overviews choose sources, and what to do to get your brand cited in 2026.",
-    image: "/12.png",
+    image: "/77.png",
     sections: [
       {
         id: "introduction",
