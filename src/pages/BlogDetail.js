@@ -288,11 +288,20 @@ const BlogDetail = ({ slug: propSlug }) => {
       <Helmet>
         <title>{post.metaTitle || `${post.title} - XD MEDIA Blog`}</title>
         <meta name="description" content={post.metaDescription || post.excerpt} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.metaTitle || post.title} />
         <meta property="og:description" content={post.metaDescription || post.excerpt} />
         <meta property="og:url" content={`https://www.xdmedia.in/blog/${post.slug || slug}`} />
+        <meta property="og:image" content={post.image ? (post.image.startsWith('http') ? post.image : `https://www.xdmedia.in${post.image}`) : 'https://www.xdmedia.in/og-image.png'} />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={post.metaTitle || post.title} />
         <meta property="twitter:description" content={post.metaDescription || post.excerpt} />
+        <meta property="twitter:image" content={post.image ? (post.image.startsWith('http') ? post.image : `https://www.xdmedia.in${post.image}`) : 'https://www.xdmedia.in/og-image.png'} />
+        
         {post.schema && (
           <script type="application/ld+json">
             {typeof post.schema === 'string' ? post.schema : JSON.stringify(post.schema)}
@@ -475,20 +484,20 @@ const BlogDetail = ({ slug: propSlug }) => {
               <div className="hidden lg:block bg-slate-950 border border-white/5 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl">
                 <div className="absolute -top-16 -right-16 w-32 h-32 bg-[#47BF72]/10 rounded-full blur-2xl"></div>
                 <div className="relative z-10 space-y-6">
-                  <div className="inline-flex items-center gap-1 bg-[#47BF72]/15 text-[#47BF72] text-[10px] font-bold px-2 py-1 rounded tracking-wider uppercase">
-                    <Sparkles className="w-3 h-3" /> Growth Campaign
+                  <div className="inline-flex items-center gap-1 bg-[#47BF72]/15 text-[#47BF72] text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                    <Sparkles className="w-3 h-3" /> {post.sidebarCta?.tag || 'Growth Campaign'}
                   </div>
                   <h4 className="text-lg font-semibold leading-snug">
-                    Ready to grow your channel?
+                    {post.sidebarCta?.title || 'Ready to grow your channel?'}
                   </h4>
                   <p className="text-xs text-gray-400 leading-relaxed">
-                    Start your YouTube promotion today and reach millions of targeted viewers. We scale subscribers, watch hours, and sales.
+                    {post.sidebarCta?.description || 'Start your promotion today and reach millions of targeted viewers. We scale subscribers, watch hours, and sales.'}
                   </p>
                   <Link
-                    to="/contact"
+                    to="/"
                     className="block text-center text-white bg-[#47BF72] hover:bg-[#3aa85f] font-semibold text-xs py-3.5 px-6 rounded-lg uppercase tracking-wider transition-colors duration-200 shadow-md shadow-[#47BF72]/10 active:scale-[0.98]"
                   >
-                    Promote Now
+                    {post.sidebarCta?.buttonText || 'Promote Now'}
                   </Link>
                 </div>
               </div>

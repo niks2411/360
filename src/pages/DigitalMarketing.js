@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import TestimonialCards from '../components/TestimonialCards';
+import GmbBadge from '../components/GmbBadge';
+import { countries } from '../lib/countries';
 
 const CheckIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" /></svg>
@@ -11,7 +13,7 @@ const DigitalMarketing = () => {
   const [openFaq, setOpenFaq] = useState(0);
 
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', country: '', service: ''
+    name: '', email: '', phone: '', countryCode: '+1', service: ''
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -26,16 +28,15 @@ const DigitalMarketing = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phoneNumber: formData.phone,
-          companyName: formData.country,
-          budgetRange: formData.service,
+          phoneNumber: `${formData.countryCode} ${formData.phone}`,
+          service: formData.service,
           sourcePage: 'Digital Marketing',
           formType: 'Digital Marketing Proposal'
         })
       });
       if (!response.ok) throw new Error('Submission failed');
       setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', country: '', service: '' });
+      setFormData({ name: '', email: '', phone: '', countryCode: '+1', service: '' });
     } catch {
       alert('Something went wrong. Please try again.');
     } finally {
@@ -186,9 +187,9 @@ const DigitalMarketing = () => {
           <div className="relative z-10 max-w-[1200px] mx-auto px-6 pb-16 sm:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
               <div>
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[13px] font-semibold text-[#2ee878] mb-5" style={{ background: 'rgba(46,232,120,0.12)', border: '1px solid rgba(46,232,120,0.35)' }}>
-                  ● Full-Service Digital Marketing Agency
-                </span>
+                <div className="mb-5">
+                  <GmbBadge />
+                </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-bold mb-5 leading-[1.12]">
                   One Growth Partner. <span className="text-[#2ee878] font-fraunces italic">Every Channel.</span> 3X The Results.
                 </h1>
@@ -210,49 +211,118 @@ const DigitalMarketing = () => {
               </div>
 
               {/* Lead Form */}
-              <div id="lead-form" className="bg-white rounded-[22px] p-7 shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+              <div id="lead-form" className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-100 relative shadow-2xl overflow-hidden text-slate-900">
+                <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-green-500/10 rounded-full blur-[80px] pointer-events-none"></div>
                 {submitted ? (
-                  <div className="text-center py-10">
+                  <div className="text-center py-10 relative z-10">
                     <div className="w-16 h-16 bg-[#f0fdf4] rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✅</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Proposal Request Received!</h3>
-                    <p className="text-gray-500 text-sm mb-6">We'll reply within 24 hours with a custom growth plan.</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Proposal Request Received!</h3>
+                    <p className="text-slate-500 text-sm mb-6">We'll reply within 24 hours with a custom growth plan.</p>
                     <button onClick={() => setSubmitted(false)} className="text-[#17b85e] font-semibold hover:underline text-sm">Submit another request</button>
                   </div>
                 ) : (
-                  <>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">Get a Free Digital Marketing Proposal</h3>
-                    <p className="text-[13.5px] text-gray-500 mb-5">Tell us about your business — we'll reply within 24 hours with a custom growth plan.</p>
-                    <form onSubmit={handleSubmit} className="space-y-3">
-                      <input type="text" required placeholder="Full Name" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full px-3.5 py-3 rounded-[10px] border-[1.5px] border-[#e3ece6] text-sm bg-[#fbfdfc] outline-none focus:border-[#17b85e] transition-colors" />
-                      <input type="email" required placeholder="Business Email" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full px-3.5 py-3 rounded-[10px] border-[1.5px] border-[#e3ece6] text-sm bg-[#fbfdfc] outline-none focus:border-[#17b85e] transition-colors" />
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="tel" placeholder="Phone Number" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className="px-3.5 py-3 rounded-[10px] border-[1.5px] border-[#e3ece6] text-sm bg-[#fbfdfc] outline-none focus:border-[#17b85e] transition-colors" />
-                        <select value={formData.country} onChange={e => setFormData({ ...formData, country: e.target.value })} className="px-3.5 py-3 rounded-[10px] border-[1.5px] border-[#e3ece6] text-sm bg-[#fbfdfc] outline-none focus:border-[#17b85e] transition-colors text-gray-600">
-                          <option value="">Country</option>
-                          <option>United States</option>
-                          <option>United Kingdom</option>
-                          <option>Canada</option>
-                          <option>Australia</option>
-                          <option>Other</option>
+                  <div className="relative z-10">
+                    <h3 className="text-xl sm:text-2xl text-slate-900 mb-6 text-center leading-tight font-inter">
+                      Get A Free <span className="font-fraunces italic text-[#16a34a]">Growth Proposal</span> & Estimate
+                    </h3>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <input
+                          type="text"
+                          required
+                          disabled={submitting}
+                          placeholder="Your Full Name"
+                          value={formData.name}
+                          onChange={e => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          required
+                          disabled={submitting}
+                          placeholder="Email Address"
+                          value={formData.email}
+                          onChange={e => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <select
+                          value={formData.countryCode}
+                          onChange={e => setFormData({ ...formData, countryCode: e.target.value })}
+                          disabled={submitting}
+                          className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all text-sm"
+                        >
+                          {countries.map((c, idx) => (
+                            <option key={`${c.name}-${c.code}-${idx}`} value={c.code}>
+                              {c.name} ({c.code})
+                            </option>
+                          ))}
+                        </select>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                          disabled={submitting}
+                          placeholder="Phone Number (optional)"
+                          className="sm:col-span-2 px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                        />
+                      </div>
+                      <div>
+                        <select
+                          value={formData.service}
+                          onChange={e => setFormData({ ...formData, service: e.target.value })}
+                          required
+                          disabled={submitting}
+                          className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm disabled:opacity-50 appearance-none cursor-pointer bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                          style={{
+                            color: formData.service ? '#0f172a' : 'rgba(15, 23, 42, 0.4)'
+                          }}
+                        >
+                          <option value="" disabled style={{ background: 'white', color: 'rgba(15, 23, 42, 0.4)' }}>
+                            Select Service Interested In
+                          </option>
+                          <option value="SEO & Search Growth" style={{ background: 'white', color: '#0f172a' }}>
+                            SEO & Search Growth
+                          </option>
+                          <option value="Website Development" style={{ background: 'white', color: '#0f172a' }}>
+                            Website Development
+                          </option>
+                          <option value="PPC / Google Ads" style={{ background: 'white', color: '#0f172a' }}>
+                            PPC / Google Ads
+                          </option>
+                          <option value="Meta Ads (Facebook & Instagram)" style={{ background: 'white', color: '#0f172a' }}>
+                            Meta Ads (Facebook & Instagram)
+                          </option>
+                          <option value="Graphic Designing" style={{ background: 'white', color: '#0f172a' }}>
+                            Graphic Designing
+                          </option>
+                          <option value="Video Editing" style={{ background: 'white', color: '#0f172a' }}>
+                            Video Editing
+                          </option>
+                          <option value="WhatsApp Marketing & Automation" style={{ background: 'white', color: '#0f172a' }}>
+                            WhatsApp Marketing & Automation
+                          </option>
+                          <option value="Full Growth Package" style={{ background: 'white', color: '#0f172a' }}>
+                            Full Growth Package
+                          </option>
                         </select>
                       </div>
-                      <select value={formData.service} onChange={e => setFormData({ ...formData, service: e.target.value })} className="w-full px-3.5 py-3 rounded-[10px] border-[1.5px] border-[#e3ece6] text-sm bg-[#fbfdfc] outline-none focus:border-[#17b85e] transition-colors text-gray-600">
-                        <option value="">Service Interested In</option>
-                        <option>SEO & Search Growth</option>
-                        <option>Website Development</option>
-                        <option>PPC / Google Ads</option>
-                        <option>Meta Ads (Facebook & Instagram)</option>
-                        <option>Graphic Designing</option>
-                        <option>Video Editing</option>
-                        <option>WhatsApp Marketing & Automation</option>
-                        <option>Full Growth Package</option>
-                      </select>
-                      <button type="submit" disabled={submitting} className="w-full py-3.5 rounded-full font-semibold text-[15px] bg-[#2ee878] text-[#052012] hover:bg-[#17b85e] transition-all disabled:opacity-50">
+                      <button
+                        type="submit"
+                        disabled={submitting}
+                        className="w-full py-4 rounded-xl font-medium text-white transition-all duration-200 shadow-lg text-base uppercase tracking-wide disabled:opacity-50"
+                        style={{ backgroundColor: '#47a858' }}
+                        onMouseEnter={(e) => e.target.style.backgroundColor = '#47BF72'}
+                        onMouseLeave={(e) => e.target.style.backgroundColor = '#47a858'}
+                      >
                         {submitting ? 'Sending...' : 'Get My Free Proposal →'}
                       </button>
                     </form>
-                    <p className="text-center text-[11.5px] text-gray-400 mt-3">No spam. No obligation. Just a real strategy call.</p>
-                  </>
+                    <p className="text-center text-[11.5px] text-slate-400 mt-3">No spam. No obligation. Just a real strategy call.</p>
+                  </div>
                 )}
               </div>
             </div>
@@ -352,12 +422,12 @@ const DigitalMarketing = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {[
-                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name — a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility' },
-                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS — WordPress, Shopify, Webflow or custom — for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit' },
+                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name — a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility', image: '/AI Search Optimization.png' },
+                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS — WordPress, Shopify, Webflow or custom — for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit', image: '/CMS Optimizaton.png' },
               ].map((card, i) => (
                 <div key={i} className="rounded-[22px] p-8 border border-[#1d3626]" style={{ background: '#0b1f14' }}>
-                  <div className="aspect-video rounded-xl mb-5 flex items-center justify-center text-xs text-[#9fb8a9]" style={{ background: 'linear-gradient(135deg,#123322,#081b12)' }}>
-                    <span className="opacity-40 tracking-widest uppercase">Image Placeholder</span>
+                  <div className="rounded-xl mb-5 overflow-hidden">
+                    <img src={card.image} alt={card.title} className="w-full h-auto object-contain rounded-xl" />
                   </div>
                   <h3 className="text-[21px] font-bold mb-2.5">{card.title}</h3>
                   <p className="text-[#9fb8a9] text-[14.5px] mb-4">{card.desc}</p>
@@ -382,8 +452,8 @@ const DigitalMarketing = () => {
             <a href="/about-us" className="inline-flex w-fit px-7 py-3.5 rounded-full font-semibold text-[15px] bg-[#2ee878] text-[#052012] hover:bg-[#17b85e] transition-all">Learn More About Us</a>
           </div>
           <div className="p-12 sm:p-16 bg-[#f4f9f6] flex flex-col items-center justify-center text-center">
-            <div className="w-full max-w-[320px] aspect-square rounded-full flex items-center justify-center text-xs text-[#17b85e] mb-6" style={{ background: 'linear-gradient(135deg,#e8f7ee,#c9f0d8)' }}>
-              <span className="opacity-60 tracking-widest uppercase">Team Photo</span>
+            <div className="w-full max-w-[320px] aspect-square rounded-full overflow-hidden shadow-lg border-4 border-white mb-6">
+              <img src="/growth_team_photo.jpg" alt="XD Media Growth Team" className="w-full h-full object-cover" />
             </div>
             <p className="text-[13px] text-gray-500 uppercase tracking-widest font-semibold mb-4">Certified Partners</p>
             <div className="flex gap-4 flex-wrap justify-center">

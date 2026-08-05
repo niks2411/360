@@ -2,6 +2,7 @@
   "name": "360-website-control",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://www.xdmedia.in",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && node postbuild.js",

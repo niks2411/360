@@ -26,7 +26,8 @@ const Layout = ({ children }) => {
     '/ai-automation-tools',
     '/book-a-slot',
     '/privacy-policy',
-    '/digital-market'
+    '/digital-market',
+    '/2'
   ];
 
   const normalizedPath = location.pathname.endsWith('/') && location.pathname.length > 1

@@ -95,6 +95,12 @@ export const blogPosts = [
     readTime: "15 Min Read",
     excerpt: "The SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
     image: "/cover.png",
+    sidebarCta: {
+      tag: "SEO Growth Campaign",
+      title: "Ready to Scale Your Organic Traffic?",
+      description: "Get a comprehensive technical SEO audit & custom strategy. We scale search rankings, AI citations, and organic revenue.",
+      buttonText: "Get Free SEO Proposal"
+    },
     sections: [
       {
         id: "introduction",
@@ -633,7 +639,13 @@ Treating SEO as a one-time project instead of an ongoing system — technical de
     date: "July 30, 2026",
     readTime: "18 Min Read",
     excerpt: "SEO, AEO and GEO explained side by side — how ChatGPT and Google AI Overviews choose sources, and what to do to get your brand cited in 2026.",
-    image: "/77.png",
+    image: "/BLOG COVER 2 Resized.png",
+    sidebarCta: {
+      tag: "AI Search Optimization",
+      title: "Ready to Get Cited by ChatGPT & AI Overviews?",
+      description: "Optimize your brand for Next-Gen Search. We structure your content & schema so AI answer engines recommend your business by name.",
+      buttonText: "Check Your AI Visibility"
+    },
     sections: [
       {
         id: "introduction",

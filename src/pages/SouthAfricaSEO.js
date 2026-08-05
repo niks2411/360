@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import Canonical from '../components/SEO/Canonical';
 import TestimonialCards from '../components/TestimonialCards';
+import GmbBadge from '../components/GmbBadge';
 import { CheckCircle, ChevronDown, HelpCircle, Send } from 'lucide-react';
 import { countries } from '../lib/countries';
 
@@ -532,7 +533,9 @@ const SouthAfricaSEO = () => {
           </div>
           <div className="hero-grid relative z-10">
             <div>
-              <span className="hero-badge">● SEO for South African Businesses, Nationwide</span>
+              <div className="mb-5">
+                <GmbBadge />
+              </div>
               <h1>
                 Affordable SEO Services in South Africa — <span>Real Rankings</span>, Without the Big Agency Price Tag
               </h1>
@@ -565,11 +568,10 @@ const SouthAfricaSEO = () => {
               </div>
             </div>
 
-            <div className="lead-card" id="lead-form">
-              <h3>Get a Free SEO Audit &amp; Pricing Quote</h3>
-              <p>Tell us about your business — a real strategist replies within 24 hours, not a bot.</p>
+            <div id="lead-form" className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-100 relative shadow-2xl overflow-hidden text-slate-900">
+              <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-green-500/10 rounded-full blur-[80px] pointer-events-none"></div>
               {isSubmitted ? (
-                <div style={{ textAlign: 'center', padding: '20px 0' }}>
+                <div className="text-center py-10 relative z-10">
                   <CheckCircle size={48} color="var(--green-2)" style={{ margin: '0 auto 12px' }} />
                   <h4 style={{ fontSize: '18px', marginBottom: '8px' }}>Quote Request Sent!</h4>
                   <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
@@ -577,77 +579,107 @@ const SouthAfricaSEO = () => {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleFormSubmit}>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                  <input
-                    type="email"
-                    placeholder="Business Email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                  <input
-                    type="text"
-                    placeholder="Website URL"
-                    value={formData.website}
-                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                  />
-                  <div className="phone-row" style={{ marginBottom: '12px' }}>
-                    <select
-                      value={formData.countryCode}
-                      onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                      style={{ marginBottom: 0 }}
+                <div className="relative z-10">
+                  <h3 className="text-xl sm:text-2xl text-slate-900 mb-6 text-center leading-tight font-inter">
+                    Get A Free <span className="font-fraunces italic text-[#16a34a]">Growth Proposal</span> & Estimate
+                  </h3>
+                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Your Full Name"
+                        required
+                        disabled={isSubmitting}
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        required
+                        disabled={isSubmitting}
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Website URL (optional)"
+                        disabled={isSubmitting}
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                        className="w-full px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <select
+                        value={formData.countryCode}
+                        onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                        disabled={isSubmitting}
+                        className="sm:col-span-1 bg-slate-50 border border-slate-200 text-slate-600 px-3 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all text-sm"
+                      >
+                        {countries.map((c, idx) => (
+                          <option key={`${c.name}-${c.code}-${idx}`} value={c.code}>
+                            {c.name} ({c.code})
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        disabled={isSubmitting}
+                        value={formData.phoneNumber}
+                        onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                        className="sm:col-span-2 px-4 py-3.5 rounded-xl transition-all duration-300 outline-none text-sm placeholder-slate-400 disabled:opacity-50 bg-slate-50 border border-slate-200 text-slate-900 focus:border-[#47BF72] focus:bg-white"
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <select
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        disabled={isSubmitting}
+                        className="bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all text-sm cursor-pointer"
+                      >
+                        <option value="Sandton">Sandton</option>
+                        <option value="Rosebank">Rosebank</option>
+                        <option value="Cape Town">Cape Town</option>
+                        <option value="Johannesburg">Johannesburg</option>
+                        <option value="Pretoria">Pretoria</option>
+                        <option value="Midrand">Midrand</option>
+                        <option value="Other — South Africa">Other — South Africa</option>
+                      </select>
+                      <select
+                        value={formData.serviceNeed}
+                        onChange={(e) => setFormData({ ...formData, serviceNeed: e.target.value })}
+                        disabled={isSubmitting}
+                        className="bg-slate-50 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-xl focus:border-[#47BF72] focus:bg-white outline-none transition-all text-sm cursor-pointer"
+                      >
+                        <option value="Local SEO">Local SEO</option>
+                        <option value="Ecommerce SEO">Ecommerce SEO</option>
+                        <option value="Full SEO Package">Full SEO Package</option>
+                        <option value="White-Label / Outsourced SEO (Agencies)">White-Label / Outsourced SEO (Agencies)</option>
+                      </select>
+                    </div>
+                    {error && <p style={{ color: '#d9573f', fontSize: '13px', marginTop: '8px' }}>{error}</p>}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-xl font-medium text-white transition-all duration-200 shadow-lg text-base uppercase tracking-wide disabled:opacity-50"
+                      style={{ backgroundColor: '#47a858' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = '#47BF72'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = '#47a858'}
                     >
-                      {countries.map((c) => (
-                        <option key={`${c.code}-${c.dial_code}`} value={c.dial_code}>
-                          {c.flag} {c.dial_code}
-                        </option>
-                      ))}
-                    </select>
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      value={formData.phoneNumber}
-                      onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                      style={{ marginBottom: 0 }}
-                    />
-                  </div>
-                  <div className="row2">
-                    <select
-                      value={formData.city}
-                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    >
-                      <option value="Sandton">Sandton</option>
-                      <option value="Rosebank">Rosebank</option>
-                      <option value="Cape Town">Cape Town</option>
-                      <option value="Johannesburg">Johannesburg</option>
-                      <option value="Pretoria">Pretoria</option>
-                      <option value="Midrand">Midrand</option>
-                      <option value="Other — South Africa">Other — South Africa</option>
-                    </select>
-                    <select
-                      value={formData.serviceNeed}
-                      onChange={(e) => setFormData({ ...formData, serviceNeed: e.target.value })}
-                    >
-                      <option value="Local SEO">Local SEO</option>
-                      <option value="Ecommerce SEO">Ecommerce SEO</option>
-                      <option value="Full SEO Package">Full SEO Package</option>
-                      <option value="White-Label / Outsourced SEO (Agencies)">White-Label / Outsourced SEO (Agencies)</option>
-                    </select>
-                  </div>
-                  {error && <p style={{ color: '#d9573f', fontSize: '13px', marginTop: '8px' }}>{error}</p>}
-                  <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : 'Get My Free Quote →'}
-                  </button>
-                </form>
+                      {isSubmitting ? 'Sending...' : 'Get My Free Quote →'}
+                    </button>
+                  </form>
+                  <p className="text-center text-[11.5px] text-slate-400 mt-3">No spam. No obligation. Just an honest pricing conversation.</p>
+                </div>
               )}
-              <p className="fineprint">No spam. No obligation. Just an honest pricing conversation.</p>
             </div>
           </div>
 
@@ -707,7 +739,9 @@ const SouthAfricaSEO = () => {
                   See What's Included
                 </a>
               </div>
-              <div className="media"></div>
+              <div className="media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
+                <img src="/SA PAGE_Remote First SEO Team.png" alt="Remote First SEO Team" className="w-full h-auto object-contain rounded-[22px]" />
+              </div>
             </div>
 
             <div className="compare-wrap">
@@ -946,7 +980,9 @@ const SouthAfricaSEO = () => {
             </div>
 
             <div className="dd-row">
-              <div className="dd-media"></div>
+              <div className="dd-media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
+                <img src="/SA PAGE_Local SEO Services.png" alt="Local SEO Services" className="w-full h-auto object-contain rounded-[22px]" />
+              </div>
               <div className="dd-text">
                 <span className="tag">Local SEO</span>
                 <h3>Local SEO Services for South African Small Businesses</h3>
@@ -983,7 +1019,9 @@ const SouthAfricaSEO = () => {
             </div>
 
             <div className="dd-row reverse">
-              <div className="dd-media"></div>
+              <div className="dd-media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
+                <img src="/SA PAGE_Technical and E-Commerce SEO.png" alt="Technical and E-Commerce SEO" className="w-full h-auto object-contain rounded-[22px]" />
+              </div>
               <div className="dd-text">
                 <span className="tag">Technical &amp; Ecommerce SEO</span>
                 <h3>Technical SEO That Fixes What's Actually Costing You Rankings</h3>
@@ -1020,7 +1058,9 @@ const SouthAfricaSEO = () => {
             </div>
 
             <div className="dd-row">
-              <div className="dd-media"></div>
+              <div className="dd-media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
+                <img src="/SA PAGE_Search Intent Content.png" alt="Search Intent Content & Link Building" className="w-full h-auto object-contain rounded-[22px]" />
+              </div>
               <div className="dd-text">
                 <span className="tag">Content &amp; Link Building</span>
                 <h3>Search-Intent Content and White-Hat Link Building, Not Filler</h3>
@@ -1057,7 +1097,9 @@ const SouthAfricaSEO = () => {
             </div>
 
             <div className="dd-row reverse">
-              <div className="dd-media"></div>
+              <div className="dd-media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
+                <img src="/SA PAGE_Outsource or White Label SEO.png" alt="Outsource or White Label SEO" className="w-full h-auto object-contain rounded-[22px]" />
+              </div>
               <div className="dd-text">
                 <span className="tag">For Agencies</span>
                 <h3>Outsource or White-Label SEO to Our Specialist Remote Team</h3>

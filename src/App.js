@@ -35,7 +35,8 @@ function App() {
         <WelcomePopup />
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<DigitalMarketing />} />
+            <Route path="/2" element={<Home />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/seo-guide-for-businesses" element={<BlogDetail slug="seo-guide-for-businesses" />} />
