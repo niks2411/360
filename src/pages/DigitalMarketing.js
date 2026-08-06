@@ -453,7 +453,7 @@ const DigitalMarketing = () => {
           </div>
           <div className="p-12 sm:p-16 bg-[#f4f9f6] flex flex-col items-center justify-center text-center">
             <div className="w-full max-w-[320px] aspect-square rounded-full overflow-hidden shadow-lg border-4 border-white mb-6">
-              <img src="/growth_team_photo.jpg" alt="XD Media Growth Team" className="w-full h-full object-cover" />
+              <img src="/88.png" alt="XD Media Growth Team" className="w-full h-full object-cover" />
             </div>
             <p className="text-[13px] text-gray-500 uppercase tracking-widest font-semibold mb-4">Certified Partners</p>
             <div className="flex gap-4 flex-wrap justify-center">

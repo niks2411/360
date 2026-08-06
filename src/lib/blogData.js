@@ -695,7 +695,7 @@ GEO is less about answering one narrow question and more about being the kind of
 
 Why is generative engine optimization important right now specifically? Because the underlying behavior shift is already measurable, not theoretical.
 
-Multiple independent studies on search behavior (SparkToro's zero-click research is the most commonly cited) have shown that a majority of searches on Google itself now end without a click, and that's before accounting for the volume of queries that skip Google entirely and go straight to a chat interface.
+Multiple independent studies on search behavior ([SparkToro's zero-click research](https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/) is the most commonly cited) have shown that a majority of searches on Google itself now end without a click, and that's before accounting for the volume of queries that skip Google entirely and go straight to a chat interface.
 
 The businesses treating this as a 2027 problem are giving up two years of head start to the ones treating it as a today problem.
 
