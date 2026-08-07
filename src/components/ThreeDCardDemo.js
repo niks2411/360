@@ -12,7 +12,7 @@ export function ThreeDCardDemo() {
         },
         {
             title: "GMB #1 Optimization",
-            description: "Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most — on Google Maps and local search.",
+            description: "Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most , on Google Maps and local search.",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
             buttonText: "Rank #1",
             link: "/services"

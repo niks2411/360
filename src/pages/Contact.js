@@ -98,13 +98,13 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: 'Head Office — India',
+      title: 'Head Office , India',
       detail: 'SCO-40, HLP Galleria\nSAS Nagar Mohali, 160062\nChandigarh',
       action: '#'
     },
     {
       icon: MapPin,
-      title: 'Branch Office — South Africa',
+      title: 'Branch Office , South Africa',
       detail: 'Sandton\nJohannesburg 2091\nSouth Africa',
       action: '#'
     }

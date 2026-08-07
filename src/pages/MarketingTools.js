@@ -105,7 +105,7 @@ const MarketingTools = () => {
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
-                High-performance websites built for speed, scale, and conversions. We design and develop websites that don't just look good — they perform. SEO-first, mobile-first, and conversion-focused.
+                High-performance websites built for speed, scale, and conversions. We design and develop websites that don't just look good , they perform. SEO-first, mobile-first, and conversion-focused.
               </p>
 
               <div className="space-y-3 sm:space-y-4">

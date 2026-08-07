@@ -20,7 +20,7 @@ export function TimelineDemo() {
 
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                XD MEDIA was created with a simple belief — <span className="font-semibold text-gray-900 dark:text-white">marketing should drive real business growth, not just impressions and reports.</span>
+                XD MEDIA was created with a simple belief , <span className="font-semibold text-gray-900 dark:text-white">marketing should drive real business growth, not just impressions and reports.</span>
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 While XD MEDIA is our newest venture, the experience behind it comes from years of building and scaling successful digital businesses. Our foundation is backed by <span className="font-semibold text-green-600">KIXTIX MEDIA Pvt. Ltd.</span>, a media-tech company that has generated ₹35+ crore in revenue and worked with some of the biggest names in the entertainment and digital ecosystem.
@@ -216,7 +216,7 @@ export function TimelineDemo() {
 
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg mb-6">
               <p className="text-lg text-gray-900 dark:text-white font-semibold mb-4">
-                We don't just market brands — we build scalable digital growth engines.
+                We don't just market brands , we build scalable digital growth engines.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                 At XD MEDIA, we don't believe in shortcuts or one-size-fits-all solutions. We believe in <span className="font-semibold text-gray-900 dark:text-white">process, data, and long-term partnerships.</span>

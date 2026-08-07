@@ -158,7 +158,7 @@ const Services = () => {
             </h1>
 
             <p className="text-lg text-gray-400 leading-relaxed font-inter mb-8">
-              From digital marketing to technology and creative solutions—everything you need to build, grow, and scale your brand. <span className="text-white font-medium">All services delivered in-house, not outsourced.</span>
+              From digital marketing to technology and creative solutions,everything you need to build, grow, and scale your brand. <span className="text-white font-medium">All services delivered in-house, not outsourced.</span>
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -287,7 +287,7 @@ const Services = () => {
 
                       {/* Link at bottom */}
                       {service.path ? (
-                        <Link 
+                        <Link
                           to={service.path}
                           className="mt-auto flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all duration-300"
                           style={{ color: category.color }}

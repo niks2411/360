@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Canonical from '../components/SEO/Canonical';
 import TestimonialCards from '../components/TestimonialCards';
 import GmbBadge from '../components/GmbBadge';
-import { CheckCircle, ChevronDown, HelpCircle, Send } from 'lucide-react';
+import { CheckCircle, ChevronDown, HelpCircle, Send, TrendingUp } from 'lucide-react';
 import { countries } from '../lib/countries';
 
 const SouthAfricaSEO = () => {
@@ -22,6 +22,76 @@ const SouthAfricaSEO = () => {
   const [error, setError] = useState(null);
 
   const [activeFaq, setActiveFaq] = useState(0);
+  const [activeResultTab, setActiveResultTab] = useState(0);
+
+  const resultsData = [
+    {
+      category: "AI Search Visibility",
+      smallLabel: "AI SEO / Generative Engine Optimization",
+      heading: "Significant Growth in AI Citations & AI-Cited Pages",
+      challenge: "Improving the website’s visibility across AI-powered search systems by strengthening semantic SEO, topical authority, and content relevance.",
+      resultValue: "+70.1K",
+      resultDesc: "AI citations increased from 120 to 942, significantly improving visibility across AI-generated search responses and answer engines.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "AI Citations", value: "942", growth: "+70.1K" },
+        { label: "AI-Cited Pages", value: "75", growth: "+188%" },
+        { label: "Total AI Citations", value: "70.1K", growth: "Growth" }
+      ],
+      chartTitle: "AI Visibility Report",
+      image: "/Weelee Performance Dashboard.png"
+    },
+    {
+      category: "Organic SEO Growth",
+      smallLabel: "Organic Search Performance",
+      heading: "Improved Rankings, Impressions & Organic Traffic",
+      challenge: "Implemented a strategic SEO campaign focused on keyword rankings, search visibility, technical SEO improvements, and content optimization.",
+      resultValue: "328K",
+      resultDesc: "Organic clicks increased from 299K to 328K, with total impressions reaching 6.96M within the last 3 months.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "Total Clicks", value: "328K", growth: "+26K" },
+        { label: "Total Impressions", value: "6.96M", growth: "+830K" },
+        { label: "Average Position", value: "7.2", growth: "9.6 Prev" },
+        { label: "Average CTR", value: "4.7%", growth: "Stable" }
+      ],
+      chartTitle: "Google Search Console",
+      image: "/Weelee Organic Performance New.png"
+    },
+    {
+      category: "AI Citation Growth",
+      smallLabel: "AI Search Optimization",
+      heading: "Improved AI Citations & Content Recognition",
+      challenge: "Focused on improving content relevance, semantic SEO, topical authority, and crawlable content structure to strengthen visibility.",
+      resultValue: "+8.4K",
+      resultDesc: "AI citations increased significantly from 20 to 168, showing substantial growth in AI search visibility and answer engine recognition.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "AI Citations", value: "168", growth: "+8.4K" },
+        { label: "AI-Cited Pages", value: "30", growth: "+275%" },
+        { label: "Total AI Citations", value: "8.4K", growth: "Improved" }
+      ],
+      chartTitle: "AI Citation Dashboard",
+      image: "/Onegolf Performance Dashboard.png"
+    },
+    {
+      category: "Organic Clicks Growth",
+      smallLabel: "Google Search Console Performance",
+      heading: "Strong Increase in Total Clicks & Impressions",
+      challenge: "Optimizing overall search engine visibility, raising keyword rankings, and capturing more organic search traffic.",
+      resultValue: "+100.7%",
+      resultDesc: "Total clicks increased from 1.41K to 2.83K, and impressions grew from 27.9K to 63.1K, alongside a massive average position improvement from 26.3 to 9.7.",
+      tableTitle: "Metric",
+      tableRows: [
+        { label: "Total Clicks (Last 3m)", value: "2.83K", growth: "+100.7%" },
+        { label: "Total Impressions (Last 3m)", value: "63.1K", growth: "+126.2%" },
+        { label: "Average CTR", value: "4.5%", growth: "5.1% Prev" },
+        { label: "Average Position", value: "9.7", growth: "Improved" }
+      ],
+      chartTitle: "GSC Performance Report",
+      image: "/seo-page.jpeg"
+    }
+  ];
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -68,7 +138,7 @@ const SouthAfricaSEO = () => {
   const faqItems = [
     {
       q: 'Why does XD Media cost less than a big Sandton or Cape Town agency?',
-      a: 'The gap comes from overhead, not quality of work. A traditional office-based agency retainer carries the cost of a city-centre lease and multiple layers of account management. XD Media runs a lean, remote-first team of certified specialists working directly on your account — the same technical audits, content and link building, without the overhead markup.'
+      a: 'The gap comes from overhead, not quality of work. A traditional office-based agency retainer carries the cost of a city-centre lease and multiple layers of account management. XD Media runs a lean, remote-first team of certified specialists working directly on your account , the same technical audits, content and link building, without the overhead markup.'
     },
     {
       q: 'Is outsourcing SEO to a remote team safe, or will quality suffer?',
@@ -80,7 +150,7 @@ const SouthAfricaSEO = () => {
     },
     {
       q: 'Can marketing agencies white-label or outsource SEO fulfillment to your team?',
-      a: 'Yes. We provide fully white-labeled SEO — audits, content, link building and reporting — under your agency\'s brand, with NDA-backed confidentiality. Your clients interact only with your brand; we work behind the scenes as your fulfillment team.'
+      a: 'Yes. We provide fully white-labeled SEO , audits, content, link building and reporting , under your agency\'s brand, with NDA-backed confidentiality. Your clients interact only with your brand; we work behind the scenes as your fulfillment team.'
     },
     {
       q: 'How long does it take to see SEO results?',
@@ -88,7 +158,7 @@ const SouthAfricaSEO = () => {
     },
     {
       q: 'Do you guarantee first-page rankings?',
-      a: 'No — and any agency that guarantees specific rankings in writing should be treated as a red flag, since no agency controls Google\'s algorithm. What we do commit to is the process: technical fixes, quality content and white-hat links, delivered on schedule and reported transparently every month.'
+      a: 'No , and any agency that guarantees specific rankings in writing should be treated as a red flag, since no agency controls Google\'s algorithm. What we do commit to is the process: technical fixes, quality content and white-hat links, delivered on schedule and reported transparently every month.'
     },
     {
       q: 'Do you offer month-to-month contracts?',
@@ -96,7 +166,7 @@ const SouthAfricaSEO = () => {
     },
     {
       q: 'Which parts of South Africa and which industries do you work with?',
-      a: 'We serve small businesses, ecommerce brands and marketing agencies across Sandton, Rosebank, Cape Town, Johannesburg, Pretoria and Midrand — across industries such as home services, healthcare, legal, real estate, hospitality and SaaS.'
+      a: 'We serve small businesses, ecommerce brands and marketing agencies across Sandton, Rosebank, Cape Town, Johannesburg, Pretoria and Midrand , across industries such as home services, healthcare, legal, real estate, hospitality and SaaS.'
     }
   ];
 
@@ -217,14 +287,6 @@ const SouthAfricaSEO = () => {
           text-transform: uppercase;
           color: var(--green-2);
           margin-bottom: 14px;
-        }
-
-        .sa-seo-page .eyebrow::before {
-          content: "";
-          width: 18px;
-          height: 2px;
-          background: var(--green-2);
-          display: inline-block;
         }
 
         .sa-seo-page .section-head {
@@ -537,14 +599,14 @@ const SouthAfricaSEO = () => {
                 <GmbBadge />
               </div>
               <h1>
-                Affordable SEO Services in South Africa — <span>Real Rankings</span>, Without the Big Agency Price Tag
+                Affordable SEO Services in South Africa, <span>Real Rankings</span>, Without the Big Agency Price Tag
               </h1>
               <p className="lead">
                 XD Media helps small businesses, ecommerce brands and marketing agencies across Sandton, Rosebank, Cape Town, Johannesburg, Pretoria and Midrand rank higher on Google without paying premium big-agency retainers. Same technical rigor, same white-hat process, same reporting standards. Just a leaner, remote-first cost structure, passed on to you.
               </p>
               <div className="hero-actions">
-                <a href="#lead-form" className="btn btn-primary">Get My Free SEO Audit &amp; Quote</a>
-                <a href="#pricing" className="btn btn-outline">See Our Packages</a>
+                <button onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-primary">Get My Free SEO Audit &amp; Quote</button>
+                <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-outline">See Our Packages</button>
               </div>
               <div className="hero-trust">
                 <div>
@@ -651,7 +713,7 @@ const SouthAfricaSEO = () => {
                         <option value="Johannesburg">Johannesburg</option>
                         <option value="Pretoria">Pretoria</option>
                         <option value="Midrand">Midrand</option>
-                        <option value="Other — South Africa">Other — South Africa</option>
+                        <option value="Other , South Africa">Other , South Africa</option>
                       </select>
                       <select
                         value={formData.serviceNeed}
@@ -730,14 +792,14 @@ const SouthAfricaSEO = () => {
                   How a Remote-First SEO Team Charges Less Without Cutting Corners
                 </h2>
                 <p>
-                  A traditional agency retainer in Sandton, Rosebank or Cape Town CBD comes loaded with overhead you never see on the invoice — office leases, layers of account managers, and city-centre premiums. XD Media runs lean: a remote-first team of certified specialists working directly on your account, without the office overhead baked into every rand you spend.
+                  A traditional agency retainer in Sandton, Rosebank or Cape Town CBD comes loaded with overhead you never see on the invoice , office leases, layers of account managers, and city-centre premiums. XD Media runs lean: a remote-first team of certified specialists working directly on your account, without the office overhead baked into every rand you spend.
                 </p>
                 <p>
-                  What it isn't: spun content, private blog network (PBN) backlinks, keyword-stuffed pages, or guaranteed #1 rankings sold to whoever pays first. We turn away those requests. XD Media runs the same technical audits, search-intent content mapping and white-hat link building process you'd get from a premium agency retainer — priced for what it actually costs to deliver, not what a city-centre lease demands you charge.
+                  What it isn't: spun content, private blog network (PBN) backlinks, keyword-stuffed pages, or guaranteed #1 rankings sold to whoever pays first. We turn away those requests. XD Media runs the same technical audits, search-intent content mapping and white-hat link building process you'd get from a premium agency retainer , priced for what it actually costs to deliver, not what a city-centre lease demands you charge.
                 </p>
-                <a href="#pricing" className="btn btn-primary" style={{ width: 'fit-content' }}>
+                <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-primary" style={{ width: 'fit-content' }}>
                   See What's Included
-                </a>
+                </button>
               </div>
               <div className="media rounded-[22px] overflow-hidden shadow-lg border border-[#e3ece6] bg-white flex items-center justify-center">
                 <img src="/SA PAGE_Remote First SEO Team.png" alt="Remote First SEO Team" className="w-full h-auto object-contain rounded-[22px]" />
@@ -769,7 +831,7 @@ const SouthAfricaSEO = () => {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <path d="M5 13l4 4L19 7" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
-                    Realistic timelines — 3 to 6 months to see traction
+                    Realistic timelines , 3 to 6 months to see traction
                   </li>
                   <li>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -824,12 +886,12 @@ const SouthAfricaSEO = () => {
               <span className="eyebrow">Transparent Pricing</span>
               <h2>SEO Packages for South African Businesses and Agencies</h2>
               <p>
-                No setup fees hidden in the fine print, no surprise invoices. Pick a starting point — we'll tailor scope to your market and competition on the free audit call.
+                No setup fees hidden in the fine print, no surprise invoices. Pick a starting point , we'll tailor scope to your market and competition on the free audit call.
               </p>
             </div>
             <div className="pricing-grid">
               <div className="price-card">
-                <h3>Starter — Local SEO</h3>
+                <h3>Starter , Local SEO</h3>
                 <p className="sub">For single-location small businesses that need to win the local map pack and organic results.</p>
                 <div className="amount">
                   R4,999 <span>/ month</span>
@@ -866,14 +928,14 @@ const SouthAfricaSEO = () => {
                     Monthly plain-English report
                   </li>
                 </ul>
-                <a href="#lead-form" className="btn btn-outline-light btn-block">
+                <button onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-outline-light btn-block">
                   Get Started
-                </a>
+                </button>
               </div>
 
               <div className="price-card featured">
                 <span className="badge">Most Popular</span>
-                <h3>Growth — Full SEO</h3>
+                <h3>Growth , Full SEO</h3>
                 <p className="sub">For growing SMBs and ecommerce stores that need content, technical fixes and links working together.</p>
                 <div className="amount">
                   R11,999 <span>/ month</span>
@@ -916,9 +978,9 @@ const SouthAfricaSEO = () => {
                     Monthly strategy call
                   </li>
                 </ul>
-                <a href="#lead-form" className="btn btn-primary btn-block">
+                <button onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-primary btn-block">
                   Get Started
-                </a>
+                </button>
               </div>
 
               <div className="price-card">
@@ -965,7 +1027,7 @@ const SouthAfricaSEO = () => {
               </div>
             </div>
             <p className="pricing-note">
-              *Final pricing depends on your market, competition and current site health — packages shown are common starting points, confirmed on your free audit call. Prices in ZAR, excl. VAT.
+              *Final pricing depends on your market, competition and current site health , packages shown are common starting points, confirmed on your free audit call. Prices in ZAR, excl. VAT.
             </p>
           </div>
         </section>
@@ -976,7 +1038,7 @@ const SouthAfricaSEO = () => {
             <div className="section-head">
               <span className="eyebrow">What's Included</span>
               <h2>A Lean Budget Doesn't Mean Limited Scope</h2>
-              <p>Every package is built on the same four disciplines — we just scale the depth of execution to your budget and goals.</p>
+              <p>Every package is built on the same four disciplines , we just scale the depth of execution to your budget and goals.</p>
             </div>
 
             <div className="dd-row">
@@ -987,7 +1049,7 @@ const SouthAfricaSEO = () => {
                 <span className="tag">Local SEO</span>
                 <h3>Local SEO Services for South African Small Businesses</h3>
                 <p>
-                  If your customers find you by searching "near me" or a suburb and city name, local SEO is where a modest spend returns the fastest results. We optimize your Google Business Profile, clean up inconsistent NAP citations across South African directories, and build location-specific pages that actually rank — the same playbook agencies charge R15,000+/month for.
+                  If your customers find you by searching "near me" or a suburb and city name, local SEO is where a modest spend returns the fastest results. We optimize your Google Business Profile, clean up inconsistent NAP citations across South African directories, and build location-specific pages that actually rank , the same playbook agencies charge R15,000+/month for.
                 </p>
                 <ul>
                   <li>
@@ -1026,7 +1088,7 @@ const SouthAfricaSEO = () => {
                 <span className="tag">Technical &amp; Ecommerce SEO</span>
                 <h3>Technical SEO That Fixes What's Actually Costing You Rankings</h3>
                 <p>
-                  Most "cheap SEO" skips the technical layer because it's slower and less flashy than link packages. We start there instead — crawlability, indexation, Core Web Vitals, and product/category structure for Shopify and WooCommerce stores — because no amount of content fixes a site Google can't properly crawl.
+                  Most "cheap SEO" skips the technical layer because it's slower and less flashy than link packages. We start there instead , crawlability, indexation, Core Web Vitals, and product/category structure for Shopify and WooCommerce stores , because no amount of content fixes a site Google can't properly crawl.
                 </p>
                 <ul>
                   <li>
@@ -1065,7 +1127,7 @@ const SouthAfricaSEO = () => {
                 <span className="tag">Content &amp; Link Building</span>
                 <h3>Search-Intent Content and White-Hat Link Building, Not Filler</h3>
                 <p>
-                  Content is mapped to what your buyers are actually searching, not stuffed with keywords for a bot to read. Links are earned through guest posts, digital PR and resource outreach — never bought in bulk from a link farm, which is the fastest way a "cheap" SEO package gets a site penalized.
+                  Content is mapped to what your buyers are actually searching, not stuffed with keywords for a bot to read. Links are earned through guest posts, digital PR and resource outreach , never bought in bulk from a link farm, which is the fastest way a "cheap" SEO package gets a site penalized.
                 </p>
                 <ul>
                   <li>
@@ -1104,7 +1166,7 @@ const SouthAfricaSEO = () => {
                 <span className="tag">For Agencies</span>
                 <h3>Outsource or White-Label SEO to Our Specialist Remote Team</h3>
                 <p>
-                  Plenty of South African agencies already outsource SEO fulfillment to protect margins — the question is finding a team that reports cleanly and keeps work in-house. We deliver fully white-labeled SEO (audits, content, link building, reporting) under your agency's brand, with your client never seeing our name.
+                  Plenty of South African agencies already outsource SEO fulfillment to protect margins , the question is finding a team that reports cleanly and keeps work in-house. We deliver fully white-labeled SEO (audits, content, link building, reporting) under your agency's brand, with your client never seeing our name.
                 </p>
                 <ul>
                   <li>
@@ -1152,12 +1214,12 @@ const SouthAfricaSEO = () => {
               <div className="step">
                 <div className="num">Step 01</div>
                 <h4>Free Audit</h4>
-                <p>A 30-minute call plus a full technical, content and backlink audit of your current site — no cost, no obligation.</p>
+                <p>A 30-minute call plus a full technical, content and backlink audit of your current site , no cost, no obligation.</p>
               </div>
               <div className="step">
                 <div className="num">Step 02</div>
                 <h4>Custom Plan</h4>
-                <p>A scoped plan mapped to your budget, market and competitors — not a generic package pulled off a shelf.</p>
+                <p>A scoped plan mapped to your budget, market and competitors , not a generic package pulled off a shelf.</p>
               </div>
               <div className="step">
                 <div className="num">Step 03</div>
@@ -1167,53 +1229,143 @@ const SouthAfricaSEO = () => {
               <div className="step">
                 <div className="num">Step 04</div>
                 <h4>Earn Links</h4>
-                <p>White-hat outreach and digital PR build authority gradually — no bulk-bought links that put your site at risk.</p>
+                <p>White-hat outreach and digital PR build authority gradually , no bulk-bought links that put your site at risk.</p>
               </div>
               <div className="step">
                 <div className="num">Step 05</div>
                 <h4>Report &amp; Scale</h4>
-                <p>A monthly, plain-English report shows what moved and why — then we double down on what's working.</p>
+                <p>A monthly, plain-English report shows what moved and why , then we double down on what's working.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* RESULTS */}
-        <section className="results" id="results">
-          <div className="wrap">
-            <div className="section-head">
-              <span className="eyebrow">Proof, Not Promises</span>
-              <h2>What a Leaner SEO Spend Actually Delivers</h2>
-              <p>Lower cost doesn't mean lower expectations — here's what a typical engagement looks like.</p>
+        {/* Recent Results Section */}
+        <section id="recent-results" className="py-20 bg-slate-100 border-t border-slate-100 text-slate-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6 font-bold leading-tight">Recent Results in Google & AI Search Engines.</h2>
+              <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                We go beyond words and get the job done. We have generated over 1 million leads and achieved more than 1,000 successes which highlights our success. Since we rank highly for countless keywords, when you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
+              </p>
             </div>
-            <div className="case-card">
-              <div className="case-media"></div>
-              <div className="case-content">
-                <div className="quote">
-                  "We were paying a Sandton-based agency R28,000/month and got vague reports. XD Media costs less than half that and we actually understand what they're doing every month — our organic leads have nearly doubled."
-                </div>
-                <div className="case-metrics">
-                  <div>
-                    <b>+164%</b>
-                    <span>Organic traffic (5 months)</span>
-                  </div>
-                  <div>
-                    <b>-55%</b>
-                    <span>Monthly SEO spend vs. previous agency</span>
-                  </div>
-                  <div>
-                    <b>19</b>
-                    <span>Keywords moved to page 1</span>
-                  </div>
-                </div>
-                <div className="case-author">
-                  <div className="avatar"></div>
-                  <div>
-                    <b>Client Name</b>
-                    <span>Owner, Home Services Company — Midrand, South Africa</span>
-                  </div>
-                </div>
-              </div>
+
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+              {resultsData.map((tab, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveResultTab(idx)}
+                  className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeResultTab === idx
+                    ? 'bg-[#16a34a] text-white'
+                    : 'bg-slate-200 text-slate-600 hover:bg-slate-300'
+                    }`}
+                >
+                  {tab.category}
+                </button>
+              ))}
+            </div>
+
+            <div className="max-w-6xl mx-auto">
+              {resultsData.map((data, idx) => (
+                activeResultTab === idx && (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative"
+                  >
+                    {/* Card Header/Badge */}
+                    <div className="flex justify-between items-start p-4 sm:p-6">
+                      <div className="bg-[#1e73be] text-white px-4 py-1.5 rounded-lg text-xs font-medium">
+                        {data.category}
+                      </div>
+                    </div>
+
+                    <div className="px-4 sm:px-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                      {/* Left Side: Case Study Details */}
+                      <div>
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-base font-bold text-slate-900 mb-1">Challenge</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">{data.challenge}</p>
+                          </div>
+
+                          <div>
+                            <h4 className="text-base font-bold text-slate-900 mb-1">Results</h4>
+                            <div className="text-4xl font-bold text-[#1e73be] mb-2 flex items-center gap-1.5">
+                              {data.resultValue}
+                              <TrendingUp className="w-7 h-7 text-[#1e73be]" />
+                            </div>
+                            <p className="text-slate-800 font-bold text-sm leading-tight">
+                              {data.resultDesc}
+                            </p>
+                          </div>
+
+                          {/* Keywords Table */}
+                          <div className="mt-4">
+                            <table className="w-full text-left text-sm">
+                              <thead>
+                                <tr className="border-b border-slate-100">
+                                  <th className="pb-2 font-bold text-slate-900">{data.tableTitle}</th>
+                                  <th className="pb-2 font-bold text-slate-900 text-right">Value</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-50">
+                                {data.tableRows.map((item, i) => (
+                                  <tr key={i} className="group hover:bg-slate-50 transition-colors">
+                                    <td className="py-2 text-slate-600">{item.label}</td>
+                                    <td className="py-2 text-[#1e73be] font-bold text-right">
+                                      <div className="inline-flex items-center justify-end gap-1">
+                                        <span className="flex items-center gap-0.5">
+                                          {item.value}
+                                          {item.value.includes('8.4') && (
+                                            <TrendingUp className="w-3.5 h-3.5 text-[#1e73be]" />
+                                          )}
+                                        </span>
+                                        <span className="text-[10px] opacity-70 ml-1 flex items-center gap-0.5">
+                                          ({item.growth})
+                                          {(item.growth.includes('+') || item.growth.includes('8.4') || item.growth.toLowerCase() === 'growth' || item.growth.toLowerCase() === 'improved') && (
+                                            <TrendingUp className="w-3.5 h-3.5 text-[#1e73be]" />
+                                          )}
+                                        </span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right Side: Analytics & Image */}
+                      <div className="flex flex-col">
+                        <h4 className="text-base font-bold text-slate-900 mb-3">{data.chartTitle}</h4>
+                        <div className="bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center overflow-hidden min-h-[280px] max-h-[320px]">
+                          {data.image ? (
+                            <img src={data.image} alt={data.chartTitle} className="w-full h-auto object-contain rounded-lg" />
+                          ) : (
+                            <div className="text-slate-300 text-xs italic">Analytics Visual Pending</div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-white px-10 py-4 font-medium uppercase tracking-wide text-sm transition-all duration-200 shadow-lg active:scale-95"
+                style={{ backgroundColor: '#47BF72', borderRadius: '5px' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#3aa85f'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#47BF72'}
+              >
+                Get Free Audit
+              </button>
             </div>
           </div>
         </section>
@@ -1233,7 +1385,7 @@ const SouthAfricaSEO = () => {
                   </svg>
                 </div>
                 <h3>In-House, Not Subcontracted</h3>
-                <p>Your account is worked on by our own certified team — never handed off to a third freelancer chain you have no visibility into.</p>
+                <p>Your account is worked on by our own certified team , never handed off to a third freelancer chain you have no visibility into.</p>
               </div>
               <div className="why-card">
                 <div className="ic">
@@ -1242,7 +1394,7 @@ const SouthAfricaSEO = () => {
                   </svg>
                 </div>
                 <h3>Certified &amp; Google Partner</h3>
-                <p>Our specialists hold current Google and industry certifications — the same qualifications you'd expect from a big agency retainer.</p>
+                <p>Our specialists hold current Google and industry certifications , the same qualifications you'd expect from a big agency retainer.</p>
               </div>
               <div className="why-card">
                 <div className="ic">
@@ -1251,7 +1403,7 @@ const SouthAfricaSEO = () => {
                   </svg>
                 </div>
                 <h3>SAST Hours, Same-Day Replies</h3>
-                <p>Calls and reports are scheduled in South African business hours — no waiting overnight for a reply from an overseas time zone.</p>
+                <p>Calls and reports are scheduled in South African business hours , no waiting overnight for a reply from an overseas time zone.</p>
               </div>
               <div className="why-card">
                 <div className="ic">
@@ -1260,7 +1412,7 @@ const SouthAfricaSEO = () => {
                   </svg>
                 </div>
                 <h3>You See Everything</h3>
-                <p>A live dashboard shows rankings, traffic and every task completed — nothing about your account is a black box.</p>
+                <p>A live dashboard shows rankings, traffic and every task completed , nothing about your account is a black box.</p>
               </div>
               <div className="why-card">
                 <div className="ic">
@@ -1269,7 +1421,7 @@ const SouthAfricaSEO = () => {
                   </svg>
                 </div>
                 <h3>No Ranking Guarantees</h3>
-                <p>Anyone guaranteeing #1 rankings is either lying or using tactics that get sites penalized. We commit to process, transparency and effort — not promises no one can control.</p>
+                <p>Anyone guaranteeing #1 rankings is either lying or using tactics that get sites penalized. We commit to process, transparency and effort , not promises no one can control.</p>
               </div>
               <div className="why-card">
                 <div className="ic">
@@ -1380,9 +1532,9 @@ const SouthAfricaSEO = () => {
           <div className="cta-banner">
             <h2>Ready for SEO That Fits Your Budget, Not Just Your Competitor's?</h2>
             <div className="actions">
-              <a href="#lead-form" className="btn btn-primary">
+              <button onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-primary">
                 Get My Free Audit
-              </a>
+              </button>
               <a href="/contact" className="btn btn-outline">
                 Book a Strategy Call
               </a>
@@ -1395,7 +1547,7 @@ const SouthAfricaSEO = () => {
           <div className="wrap">
             <div className="section-head">
               <span className="eyebrow">Frequently Asked Questions</span>
-              <h2>South African SEO Pricing &amp; Process — FAQs</h2>
+              <h2>South African SEO Pricing &amp; Process , FAQs</h2>
               <p>What business owners and agency founders ask us before signing up.</p>
             </div>
             <div className="faq-list">

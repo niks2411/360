@@ -9,13 +9,13 @@ const WhyChooseUs = () => {
         {
             title: "All-in-One Solution",
             subtitle: "Strategy, Tech & Marketing under one roof",
-            description: "No more juggling multiple agencies. From UX research and wireframes to custom development and performance marketing, our cross-functional teams work seamlessly together. We handle everything—branding, web development, SEO, paid ads, and content creation—so you can focus on running your business.",
+            description: "No more juggling multiple agencies. From UX research and wireframes to custom development and performance marketing, our cross-functional teams work seamlessly together. We handle everything,branding, web development, SEO, paid ads, and content creation,so you can focus on running your business.",
             color: "#47BF72"
         },
         {
             title: "Result-Oriented Approach",
             subtitle: "We focus on performance, not vanity metrics",
-            description: "Every decision is backed by conversion data, heatmaps, and user insights. We obsess over KPIs that move revenue—not just pretty mockups. Our data-driven strategies ensure measurable ROI, with transparent reporting that shows exactly how your investment translates into growth.",
+            description: "Every decision is backed by conversion data, heatmaps, and user insights. We obsess over KPIs that move revenue,not just pretty mockups. Our data-driven strategies ensure measurable ROI, with transparent reporting that shows exactly how your investment translates into growth.",
             color: "#8B5CF6"
         },
         {
@@ -81,7 +81,7 @@ const WhyChooseUs = () => {
                     </h2>
 
                     <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed font-inter">
-                        We don't just deliver services—we craft experiences that transform businesses and drive measurable success.
+                        We don't just deliver services,we craft experiences that transform businesses and drive measurable success.
                     </p>
                 </motion.div>
 
@@ -249,7 +249,7 @@ const WhyChooseUs = () => {
                                 </h2>
 
                                 <p className="text-lg text-gray-300 leading-relaxed mb-6 text-center">
-                                    At XDMEDIA, we believe every business deserves a powerful digital presence. Our mission is to democratize access to world-class technology, creative media, and performance marketing—helping brands of all sizes compete, grow, and succeed in an increasingly digital world.
+                                    At XDMEDIA, we believe every business deserves a powerful digital presence. Our mission is to democratize access to world-class technology, creative media, and performance marketing,helping brands of all sizes compete, grow, and succeed in an increasingly digital world.
                                 </p>
 
                                 <p className="text-base text-gray-400 leading-relaxed text-center">

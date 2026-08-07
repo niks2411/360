@@ -9,9 +9,9 @@ const teamData = {
   'ritik-rozra': {
     name: 'Ritik Rozra',
     role: 'Sr. SEO Strategist',
-    tagline: 'Making Brands Easier to Discover — on Google, AI, and Whatever Comes Next',
+    tagline: 'Making Brands Easier to Discover , on Google, AI, and Whatever Comes Next',
     avatar: '/ritik.jpeg',
-    bio: `I got into SEO because I wanted to understand one simple thing: why does Google choose one website over another? Four years and hundreds of projects later, I'm still asking that question — I've just gotten considerably better at finding the answer. From technical SEO and content strategy to site architecture, topical authority and AI search, I love figuring out what's stopping a website from growing and turning that into a strategy that actually moves the needle.\n\nAt XD Media, I work on building SEO strategies that go beyond rankings and traffic. Because getting 100,000 visitors looks great in a report, but if none of them become customers, we haven't really won. My approach combines search behaviour, data, content, technical SEO and business goals to make brands easier to discover, whether someone is searching through Google, an AI assistant or whatever search looks like next.\n\nI'm also slightly obsessed with where SEO is heading. AEO, GEO, AI Overviews, LLM visibility, entities, information gain — I test, learn and experiment with all of it. But underneath the fancy terminology, my philosophy stays pretty simple: create something genuinely worth finding, make it ridiculously easy to understand, and give search engines a good reason to trust it.\n\nAnd yes, after all these years, I still refresh Search Console after publishing something good. Some habits are difficult to lose.`,
+    bio: `I got into SEO because I wanted to understand one simple thing: why does Google choose one website over another? Four years and hundreds of projects later, I'm still asking that question , I've just gotten considerably better at finding the answer. From technical SEO and content strategy to site architecture, topical authority and AI search, I love figuring out what's stopping a website from growing and turning that into a strategy that actually moves the needle.\n\nAt XD Media, I work on building SEO strategies that go beyond rankings and traffic. Because getting 100,000 visitors looks great in a report, but if none of them become customers, we haven't really won. My approach combines search behaviour, data, content, technical SEO and business goals to make brands easier to discover, whether someone is searching through Google, an AI assistant or whatever search looks like next.\n\nI'm also slightly obsessed with where SEO is heading. AEO, GEO, AI Overviews, LLM visibility, entities, information gain , I test, learn and experiment with all of it. But underneath the fancy terminology, my philosophy stays pretty simple: create something genuinely worth finding, make it ridiculously easy to understand, and give search engines a good reason to trust it.\n\nAnd yes, after all these years, I still refresh Search Console after publishing something good. Some habits are difficult to lose.`,
     experience: '4+ Years',
     specialties: ['Technical SEO & Site Architecture', 'Topical Authority & Content Strategy', 'AEO, GEO & AI Search Optimisation', 'LLM Visibility & Entity SEO'],
     achievements: [
@@ -49,9 +49,9 @@ const teamData = {
   'adil-ali': {
     name: 'Adil Ali',
     role: 'Video Editor & D.O.P',
-    tagline: 'I Don\'t Just Make Videos — I Tell Stories',
+    tagline: 'I Don\'t Just Make Videos , I Tell Stories',
     avatar: '/adil.heic',
-    bio: `I don't just make videos — I tell stories. For me, filmmaking has never been about pressing the record button. It's about finding the emotion behind every frame, the purpose behind every shot, and the story that deserves to be remembered.\n\nOver the past five years, I've been working as a Director, Director of Photography (D.O.P.), and Video Editor, constantly learning, experimenting, and refining my craft with every project I take on.\n\nCurrently, I work as a Video Editor at XD Media, where I collaborate with talented creatives to produce content that is engaging, visually compelling, and purpose-driven. Every project challenges me to think differently, solve creative problems, and push my storytelling further.\n\nMy journey hasn't been about chasing titles — it's been about chasing better stories. I've directed shoots, operated cameras, built visual concepts, crafted cinematic edits, and spent countless hours perfecting the smallest details because I believe those details are what separate good content from unforgettable films.`,
+    bio: `I don't just make videos , I tell stories. For me, filmmaking has never been about pressing the record button. It's about finding the emotion behind every frame, the purpose behind every shot, and the story that deserves to be remembered.\n\nOver the past five years, I've been working as a Director, Director of Photography (D.O.P.), and Video Editor, constantly learning, experimenting, and refining my craft with every project I take on.\n\nCurrently, I work as a Video Editor at XD Media, where I collaborate with talented creatives to produce content that is engaging, visually compelling, and purpose-driven. Every project challenges me to think differently, solve creative problems, and push my storytelling further.\n\nMy journey hasn't been about chasing titles , it's been about chasing better stories. I've directed shoots, operated cameras, built visual concepts, crafted cinematic edits, and spent countless hours perfecting the smallest details because I believe those details are what separate good content from unforgettable films.`,
     experience: '5+ Years',
     specialties: ['Cinematic Video Editing', 'Direction & D.O.P', 'Visual Storytelling', 'Content Production & Post-Production'],
     achievements: [
@@ -88,7 +88,7 @@ const TeamMemberDetail = () => {
       <main className="min-h-screen bg-slate-50 text-slate-900 pt-28 sm:pt-32 pb-24 font-sans">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Back link — high z-index + extra top space so navbar logo cannot intercept clicks */}
+          {/* Back link , high z-index + extra top space so navbar logo cannot intercept clicks */}
           <div className="relative z-[60] mb-8">
             <a
               href="/about-us"

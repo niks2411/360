@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <>
-      {/* CTA Banner — Let's Build Your Growth Engine */}
+      {/* CTA Banner , Let's Build Your Growth Engine */}
       <section
         className="py-28 md:py-40 flex items-center relative overflow-hidden"
         style={{
@@ -113,7 +113,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1.1fr_0.9fr_0.9fr_1.3fr] gap-6 lg:gap-8 pb-16">
-            
+
             {/* Col 1: Brand Info */}
             <div className="space-y-4 pr-2">
               <div className="flex items-center space-x-3 mb-6">
@@ -171,11 +171,11 @@ const Footer = () => {
               <h3 className="text-base font-bold text-white mb-5 tracking-wide">Our Offices</h3>
               <div className="space-y-4 text-xs text-gray-400">
                 <div>
-                  <span className="font-semibold text-white block text-sm mb-1">Head Office — India</span>
+                  <span className="font-semibold text-white block text-sm mb-1">Head Office , India</span>
                   <span className="leading-relaxed block">SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block text-sm mb-1">Branch Office — South Africa</span>
+                  <span className="font-semibold text-white block text-sm mb-1">Branch Office , South Africa</span>
                   <span className="leading-relaxed block">Sandton, Johannesburg 2091, South Africa</span>
                 </div>
               </div>

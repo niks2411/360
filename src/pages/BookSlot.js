@@ -222,7 +222,7 @@ const BookSlot = () => {
                 Book Your Free Strategy Session
               </h1>
               <p className="text-gray-500 text-sm mt-1">
-                No fluff, no pressure — just a focused conversation on growing your brand.
+                No fluff, no pressure , just a focused conversation on growing your brand.
               </p>
             </div>
           </motion.div>
@@ -296,13 +296,13 @@ const BookSlot = () => {
                                       background: isDone
                                         ? '#47BF72'
                                         : isActive
-                                        ? 'rgba(71,191,114,0.2)'
-                                        : 'rgba(255,255,255,0.05)',
+                                          ? 'rgba(71,191,114,0.2)'
+                                          : 'rgba(255,255,255,0.05)',
                                       border: isActive
                                         ? '2px solid #47BF72'
                                         : isDone
-                                        ? '2px solid #47BF72'
-                                        : '2px solid rgba(255,255,255,0.1)',
+                                          ? '2px solid #47BF72'
+                                          : '2px solid rgba(255,255,255,0.1)',
                                       color: isDone ? 'white' : isActive ? '#47BF72' : '#555',
                                     }}
                                   >

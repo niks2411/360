@@ -31,7 +31,7 @@ const Home = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const [activeStep, setActiveStep] = useState(0);
   const [visiblePaths, setVisiblePaths] = useState([]);
 
@@ -539,102 +539,102 @@ const Home = () => {
             </motion.h2>
 
           </motion.div>
- 
-           {/* Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-6 md:px-0 mt-4">
-             {/* Card 1 */}
-             <Link to="/list-your-business-on-chatgpt" className="block group">
-               <motion.div
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, delay: 0.1 }}
-                 viewport={{ once: true }}
-                 className="relative rounded-2xl overflow-hidden h-[420px] cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
-                 style={{
-                   boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
-                 }}
-                 onMouseEnter={(e) => {
-                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(71, 191, 114, 0.3)';
-                 }}
-                 onMouseLeave={(e) => {
-                   e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-                 }}
-               >
-                 <div
-                   className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
-                   style={{
-                     backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop)'
-                   }}
-                 ></div>
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
-                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                   <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
-                     List Your Business on ChatGPT
-                   </h3>
-                   <p className="text-gray-200 text-sm leading-relaxed mb-6">
-                     Be discoverable where people are searching next. We help list and integrate your business on ChatGPT and AI platforms, making your brand ready for the future of search.
-                   </p>
-                   <div
-                     className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
-                     style={{
-                       background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
-                       boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
-                     }}
-                   >
-                     Get Listed on ChatGPT
-                   </div>
-                 </div>
-               </motion.div>
-             </Link>
- 
-             {/* Card 2 */}
-             <Link to="/gmb-optimization" className="block group">
-               <motion.div
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, delay: 0.2 }}
-                 viewport={{ once: true }}
-                 className="relative rounded-2xl overflow-hidden h-[420px] cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
-                 style={{
-                   boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
-                 }}
-                 onMouseEnter={(e) => {
-                   e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(71, 191, 114, 0.3)';
-                 }}
-                 onMouseLeave={(e) => {
-                   e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-                 }}
-               >
-                 <div
-                   className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
-                   style={{
-                     backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop)'
-                   }}
-                 ></div>
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
-                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
-                 <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                   <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
-                     GMB #1 Optimization
-                   </h3>
-                   <p className="text-gray-200 text-sm leading-relaxed mb-6">
-                     Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most — on Google Maps and local search.
-                   </p>
-                   <div
-                     className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
-                     style={{
-                       background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
-                       boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
-                     }}
-                   >
-                     Optimize My GMB
-                   </div>
-                 </div>
-               </motion.div>
-             </Link>
 
-           </div>
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-6 md:px-0 mt-4">
+            {/* Card 1 */}
+            <Link to="/list-your-business-on-chatgpt" className="block group">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="relative rounded-2xl overflow-hidden h-[420px] cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
+                style={{
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(71, 191, 114, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+                }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                  style={{
+                    backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop)'
+                  }}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
+                    List Your Business on ChatGPT
+                  </h3>
+                  <p className="text-gray-200 text-sm leading-relaxed mb-6">
+                    Be discoverable where people are searching next. We help list and integrate your business on ChatGPT and AI platforms, making your brand ready for the future of search.
+                  </p>
+                  <div
+                    className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
+                    style={{
+                      background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                      boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
+                    }}
+                  >
+                    Get Listed on ChatGPT
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Card 2 */}
+            <Link to="/gmb-optimization" className="block group">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative rounded-2xl overflow-hidden h-[420px] cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
+                style={{
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(71, 191, 114, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+                }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                  style={{
+                    backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop)'
+                  }}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
+                    GMB #1 Optimization
+                  </h3>
+                  <p className="text-gray-200 text-sm leading-relaxed mb-6">
+                    Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most , on Google Maps and local search.
+                  </p>
+                  <div
+                    className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
+                    style={{
+                      background: 'linear-gradient(135deg, #47BF72, #3aa85f)',
+                      boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
+                    }}
+                  >
+                    Optimize My GMB
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+
+          </div>
         </div>
       </section>
 
@@ -759,7 +759,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* HOW WE WORK — Zig-Zag Flow */}
+      {/* HOW WE WORK , Zig-Zag Flow */}
       <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#06130b' }}>
         {/* Background Effects */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[150px] pointer-events-none"></div>
@@ -832,20 +832,20 @@ const Home = () => {
                     <div
                       className="w-[52%] rounded-2xl p-1 cursor-pointer transition-all duration-500"
                       style={{
-                        background: isActive 
+                        background: isActive
                           ? 'linear-gradient(135deg, rgba(34,197,94,0.3), rgba(22,163,74,0.1), rgba(34,197,94,0.15))'
                           : 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))',
                       }}
                       onClick={() => setActiveStep(i)}
                       onMouseEnter={() => setActiveStep(i)}
                     >
-                      <div 
+                      <div
                         className="rounded-[14px] p-7 h-full transition-all duration-500"
-                        style={{ 
+                        style={{
                           backgroundColor: 'rgba(6, 19, 11, 0.92)',
                           backdropFilter: 'blur(12px)',
-                          boxShadow: isActive 
-                            ? '0 0 40px rgba(34,197,94,0.12), inset 0 1px 0 rgba(255,255,255,0.05)' 
+                          boxShadow: isActive
+                            ? '0 0 40px rgba(34,197,94,0.12), inset 0 1px 0 rgba(255,255,255,0.05)'
                             : 'inset 0 1px 0 rgba(255,255,255,0.03)'
                         }}
                       >
@@ -853,14 +853,14 @@ const Home = () => {
                           {/* Step Number + Icon */}
                           <div className="flex-shrink-0 relative">
                             {/* Icon container */}
-                            <div 
+                            <div
                               className="relative w-16 h-16 rounded-xl flex items-center justify-center mt-2 transition-all duration-500"
                               style={{
-                                background: isActive 
+                                background: isActive
                                   ? 'linear-gradient(135deg, rgba(34,197,94,0.2) 0%, rgba(22,163,74,0.1) 100%)'
                                   : 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
-                                border: isActive 
-                                  ? '1px solid rgba(74,222,128,0.3)' 
+                                border: isActive
+                                  ? '1px solid rgba(74,222,128,0.3)'
                                   : '1px solid rgba(255,255,255,0.06)',
                                 boxShadow: isActive ? '0 0 25px rgba(34,197,94,0.15)' : 'none'
                               }}
@@ -872,7 +872,7 @@ const Home = () => {
                           {/* Content */}
                           <div className="flex-1 pt-1">
                             <div className="flex items-center gap-3 mb-2">
-                              <span 
+                              <span
                                 className="text-[10px] font-bold uppercase tracking-[0.25em] transition-colors duration-500"
                                 style={{ color: isActive ? '#4ade80' : '#a3a3a3' }}
                               >
@@ -905,7 +905,7 @@ const Home = () => {
                       <svg className="w-full h-full overflow-visible" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet">
                         {/* Glow trail behind the arrow */}
                         <motion.path
-                          d={isLeft 
+                          d={isLeft
                             ? "M 300 8 C 480 8, 520 88, 700 88"
                             : "M 700 8 C 520 8, 480 88, 300 88"
                           }
@@ -919,7 +919,7 @@ const Home = () => {
                         />
                         {/* Main animated path */}
                         <motion.path
-                          d={isLeft 
+                          d={isLeft
                             ? "M 300 8 C 480 8, 520 88, 700 88"
                             : "M 700 8 C 520 8, 480 88, 300 88"
                           }
@@ -939,7 +939,7 @@ const Home = () => {
                             <animateMotion
                               dur="3s"
                               repeatCount="indefinite"
-                              path={isLeft 
+                              path={isLeft
                                 ? "M 300 8 C 480 8, 520 88, 700 88"
                                 : "M 700 8 C 520 8, 480 88, 300 88"
                               }
@@ -948,7 +948,7 @@ const Home = () => {
                         )}
                         {/* Faint dashed guide path */}
                         <path
-                          d={isLeft 
+                          d={isLeft
                             ? "M 300 8 C 480 8, 520 88, 700 88"
                             : "M 700 8 C 520 8, 480 88, 300 88"
                           }
@@ -975,7 +975,7 @@ const Home = () => {
                 className="w-full bg-gradient-to-b from-green-500/50 to-transparent origin-top"
               />
             </div>
-            
+
             <div className="space-y-12 relative">
               {[
                 { step: "Audit", desc: "Performance review of database query latencies, API payloads, and response metrics.", icon: Search },
@@ -992,7 +992,7 @@ const Home = () => {
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="flex gap-6 items-start"
                 >
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 z-10 relative"
                     style={{
                       background: 'linear-gradient(135deg, rgba(9,13,22,0.95) 0%, rgba(6,19,11,0.95) 100%)',

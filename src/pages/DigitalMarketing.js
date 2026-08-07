@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Canonical from '../components/SEO/Canonical';
 import TestimonialCards from '../components/TestimonialCards';
@@ -10,6 +11,8 @@ const CheckIcon = () => (
 );
 
 const DigitalMarketing = () => {
+  const location = useLocation();
+  const isDigitalMarketPath = location.pathname === '/digital-market';
   const [openFaq, setOpenFaq] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -45,21 +48,21 @@ const DigitalMarketing = () => {
   };
 
   const services = [
-    { title: 'SEO & Search Growth', desc: 'Technical SEO, content strategy and link building built to win organic rankings and long-term compounding traffic — not short-lived spikes.', id: 'seo' },
-    { title: 'Website Development', desc: 'Fast, conversion-focused websites and landing pages built on modern stacks — designed to turn traffic into leads, not just look good.', id: 'webdev' },
+    { title: 'SEO & Search Growth', desc: 'Technical SEO, content strategy and link building built to win organic rankings and long-term compounding traffic , not short-lived spikes.', id: 'seo' },
+    { title: 'Website Development', desc: 'Fast, conversion-focused websites and landing pages built on modern stacks , designed to turn traffic into leads, not just look good.', id: 'webdev' },
     { title: 'PPC & Google Ads Management', desc: 'Google Search, Shopping and Performance Max campaigns engineered to lower cost per acquisition while scaling ad spend profitably.', id: 'ppc' },
-    { title: 'Meta Ads (Facebook & Instagram)', desc: 'Full-funnel Facebook and Instagram advertising — from scroll-stopping creative to retargeting sequences that recover abandoned buyers.', id: 'meta-ads' },
+    { title: 'Meta Ads (Facebook & Instagram)', desc: 'Full-funnel Facebook and Instagram advertising , from scroll-stopping creative to retargeting sequences that recover abandoned buyers.', id: 'meta-ads' },
     { title: 'Graphic Designing', desc: 'Brand identity, social media creatives and marketing collateral that keep your brand consistent and instantly recognizable everywhere it shows up.', id: 'design' },
-    { title: 'Video Editing', desc: 'Short-form and long-form video editing for YouTube, Reels, Shorts and TikTok — built for retention, watch time and shares.', id: 'video' },
-    { title: 'WhatsApp Marketing & Automation', desc: 'Automated WhatsApp flows for abandoned carts, order updates and re-engagement — turning a messaging app into a retention channel.', id: 'whatsapp' },
-    { title: 'White-Label Marketing', desc: 'Fulfillment for agencies — white-label SEO, PPC and design delivered under your brand, backed by our reporting and QA.', id: 'white-label' },
+    { title: 'Video Editing', desc: 'Short-form and long-form video editing for YouTube, Reels, Shorts and TikTok , built for retention, watch time and shares.', id: 'video' },
+    { title: 'WhatsApp Marketing & Automation', desc: 'Automated WhatsApp flows for abandoned carts, order updates and re-engagement , turning a messaging app into a retention channel.', id: 'whatsapp' },
+    { title: 'White-Label Marketing', desc: 'Fulfillment for agencies , white-label SEO, PPC and design delivered under your brand, backed by our reporting and QA.', id: 'white-label' },
   ];
 
   const deepDives = [
     {
       id: 'seo', tag: 'SEO & Search Growth',
       title: 'Search Engine Optimization Services Built for Long-Term Organic Growth',
-      desc: 'We combine technical SEO audits, search-intent-mapped content, and white-hat link building to help small and mid-size businesses in the US, UK, Canada and Australia rank for the keywords their customers are actually searching. No keyword-stuffed content, no shortcut backlinks — just a system that compounds month over month.',
+      desc: 'We combine technical SEO audits, search-intent-mapped content, and white-hat link building to help small and mid-size businesses in the US, UK, Canada and Australia rank for the keywords their customers are actually searching. No keyword-stuffed content, no shortcut backlinks , just a system that compounds month over month.',
       items: ['Technical SEO audits & Core Web Vitals fixes', 'Local SEO & Google Business Profile optimization', 'Content and topical authority strategy', 'AI search & AI Overview optimization (GEO)'],
       cta: 'Get a Free SEO Audit'
     },
@@ -80,28 +83,28 @@ const DigitalMarketing = () => {
     {
       id: 'meta-ads', tag: 'Meta Ads',
       title: 'Facebook & Instagram Advertising Agency for Lead Generation and Sales',
-      desc: 'From scroll-stopping creative to lookalike audiences and retargeting sequences, our Meta Ads team builds full-funnel campaigns that turn cold audiences into customers — and recover the ones who almost bought.',
+      desc: 'From scroll-stopping creative to lookalike audiences and retargeting sequences, our Meta Ads team builds full-funnel campaigns that turn cold audiences into customers , and recover the ones who almost bought.',
       items: ['Creative strategy & ad production', 'Audience research & lookalike targeting', 'Retargeting & abandoned-cart recovery', 'Pixel & Conversions API setup'],
       cta: 'Get a Free Meta Ads Audit'
     },
     {
       id: 'design', tag: 'Graphic Designing',
       title: 'Professional Graphic Design Services for Brand Identity and Social Media',
-      desc: 'Inconsistent branding quietly erodes trust. Our design team builds a visual identity system — logo, colors, templates — and applies it consistently across your website, ads and social media so your brand looks credible everywhere a customer finds it.',
+      desc: 'Inconsistent branding quietly erodes trust. Our design team builds a visual identity system , logo, colors, templates , and applies it consistently across your website, ads and social media so your brand looks credible everywhere a customer finds it.',
       items: ['Logo & brand identity design', 'Social media creative & ad banners', 'Brochures, presentations & sales collateral', 'Packaging & print-ready design'],
       cta: 'See Design Packages'
     },
     {
       id: 'video', tag: 'Video Editing',
       title: 'Video Editing Services for YouTube, Instagram Reels and TikTok Growth',
-      desc: 'Raw footage is only half the job. Our editors cut, caption and pace videos specifically for how each platform\'s algorithm rewards watch time — so your content gets seen, not just uploaded.',
+      desc: 'Raw footage is only half the job. Our editors cut, caption and pace videos specifically for how each platform\'s algorithm rewards watch time , so your content gets seen, not just uploaded.',
       items: ['Short-form editing for Reels, Shorts & TikTok', 'Long-form YouTube editing & thumbnails', 'Captioning, motion graphics & sound design', 'Ad-ready video variants for testing'],
       cta: 'Get a Video Sample Edit'
     },
     {
       id: 'whatsapp', tag: 'WhatsApp Marketing & Automation',
       title: 'WhatsApp Marketing Automation Agency for Customer Retention and Repeat Sales',
-      desc: 'Email open rates keep falling — WhatsApp open rates don\'t. We build automated WhatsApp flows for order confirmations, abandoned-cart recovery, appointment reminders and re-engagement campaigns, turning a messaging app your customers already use into a dependable revenue channel.',
+      desc: 'Email open rates keep falling , WhatsApp open rates don\'t. We build automated WhatsApp flows for order confirmations, abandoned-cart recovery, appointment reminders and re-engagement campaigns, turning a messaging app your customers already use into a dependable revenue channel.',
       items: ['WhatsApp Business API setup & verification', 'Automated cart-recovery & order-update flows', 'Broadcast campaigns & segmented lists', 'Chatbot & CRM integration'],
       cta: 'See WhatsApp Automation Demo'
     },
@@ -109,10 +112,10 @@ const DigitalMarketing = () => {
 
   const processSteps = [
     { num: '01', title: 'Audit', desc: 'Full-funnel audit of your website, SEO, ad accounts and analytics to find what\'s actually costing you conversions.' },
-    { num: '02', title: 'Strategy', desc: 'A channel-mix plan mapped to your budget and goals — not a generic package pulled off a shelf.' },
+    { num: '02', title: 'Strategy', desc: 'A channel-mix plan mapped to your budget and goals , not a generic package pulled off a shelf.' },
     { num: '03', title: 'Build & Launch', desc: 'Website, creative, campaigns and automations built and shipped on a fixed timeline with clear milestones.' },
     { num: '04', title: 'Optimize', desc: 'Continuous A/B testing, conversion-rate optimization and budget reallocation toward what\'s working.' },
-    { num: '05', title: 'Scale', desc: 'Once a channel proves ROI, we scale spend and output — backed by reporting you can actually read.' },
+    { num: '05', title: 'Scale', desc: 'Once a channel proves ROI, we scale spend and output , backed by reporting you can actually read.' },
   ];
 
   const industries = [
@@ -127,22 +130,22 @@ const DigitalMarketing = () => {
   ];
 
   const whyUs = [
-    { title: 'One Team, Every Channel', desc: 'SEO, PPC, design, video and web development planned together — so campaigns reinforce each other instead of competing for the same budget.' },
-    { title: 'Transparent, Real-Time Reporting', desc: 'Live dashboards and plain-English reporting — you always know exactly what was done and what it returned.' },
+    { title: 'One Team, Every Channel', desc: 'SEO, PPC, design, video and web development planned together , so campaigns reinforce each other instead of competing for the same budget.' },
+    { title: 'Transparent, Real-Time Reporting', desc: 'Live dashboards and plain-English reporting , you always know exactly what was done and what it returned.' },
     { title: 'No Long-Term Lock-In', desc: 'We earn renewals with results, not restrictive contracts. Month-to-month flexibility on every engagement.' },
-    { title: 'Dedicated Account Manager', desc: 'A single point of contact who knows your business — not a rotating cast of account reps.' },
+    { title: 'Dedicated Account Manager', desc: 'A single point of contact who knows your business , not a rotating cast of account reps.' },
     { title: 'Certified & Compliant', desc: 'Google Partner and Meta Business Partner certified, with ad accounts and tracking set up to current privacy standards.' },
-    { title: 'Built for Speed to Market', desc: 'Fixed-timeline delivery on websites, creative and campaign launches — growth doesn\'t wait for internal delays.' },
+    { title: 'Built for Speed to Market', desc: 'Fixed-timeline delivery on websites, creative and campaign launches , growth doesn\'t wait for internal delays.' },
   ];
 
   const faqs = [
-    { q: 'What does a full-service digital marketing agency actually do?', a: 'A full-service digital marketing agency like XD Media plans and executes multiple growth channels — SEO, paid advertising, website development, content, design and messaging automation — as one connected strategy instead of separate, disconnected projects. Instead of hiring a freelance SEO consultant, a separate PPC manager and a separate web developer, you get one team that coordinates all of it toward a single goal: more qualified leads and sales.' },
-    { q: 'How much does it cost to hire a digital marketing agency in the US, UK, Canada or Australia?', a: 'Costs vary by scope, but most small-to-mid-size businesses in Tier-1 markets invest between a few hundred and a few thousand dollars per month depending on which services are included and current ad spend. We build custom packages rather than one-size-fits-all pricing, so you only pay for the channels that make sense for your budget and goals — ask for a free proposal to get exact numbers for your business.' },
-    { q: 'How long does it take to see results from SEO and paid ads?', a: 'Paid advertising (Google Ads, Meta Ads) can generate leads within the first 1–2 weeks of launch once tracking and targeting are dialed in. SEO is a longer-horizon investment — most businesses see meaningful organic ranking movement within 3–6 months, with compounding returns after that as content and authority build up. We run both in parallel so you get short-term leads while long-term organic growth is being built.' },
-    { q: 'Can one agency really manage SEO, PPC, Meta Ads, web development and content together?', a: 'Yes — that\'s the core reason XD Media exists. Each channel we run is staffed by a specialist, but all specialists work off one shared strategy and reporting dashboard for your account, so your website, ad campaigns and organic content are always aligned instead of working against each other.' },
-    { q: 'Do you offer month-to-month contracts, or are we locked into a long-term agreement?', a: 'All of our engagements are month-to-month. We believe results should earn your renewal, not a contract clause — so you can scale up, pause, or adjust services as your business needs change.' },
+    { q: 'What does a full-service digital marketing agency actually do?', a: 'A full-service digital marketing agency like XD Media plans and executes multiple growth channels , SEO, paid advertising, website development, content, design and messaging automation , as one connected strategy instead of separate, disconnected projects. Instead of hiring a freelance SEO consultant, a separate PPC manager and a separate web developer, you get one team that coordinates all of it toward a single goal: more qualified leads and sales.' },
+    { q: 'How much does it cost to hire a digital marketing agency in the US, UK, Canada or Australia?', a: 'Costs vary by scope, but most small-to-mid-size businesses in Tier-1 markets invest between a few hundred and a few thousand dollars per month depending on which services are included and current ad spend. We build custom packages rather than one-size-fits-all pricing, so you only pay for the channels that make sense for your budget and goals , ask for a free proposal to get exact numbers for your business.' },
+    { q: 'How long does it take to see results from SEO and paid ads?', a: 'Paid advertising (Google Ads, Meta Ads) can generate leads within the first 1–2 weeks of launch once tracking and targeting are dialed in. SEO is a longer-horizon investment , most businesses see meaningful organic ranking movement within 3–6 months, with compounding returns after that as content and authority build up. We run both in parallel so you get short-term leads while long-term organic growth is being built.' },
+    { q: 'Can one agency really manage SEO, PPC, Meta Ads, web development and content together?', a: 'Yes , that\'s the core reason XD Media exists. Each channel we run is staffed by a specialist, but all specialists work off one shared strategy and reporting dashboard for your account, so your website, ad campaigns and organic content are always aligned instead of working against each other.' },
+    { q: 'Do you offer month-to-month contracts, or are we locked into a long-term agreement?', a: 'All of our engagements are month-to-month. We believe results should earn your renewal, not a contract clause , so you can scale up, pause, or adjust services as your business needs change.' },
     { q: 'Do you work with businesses outside your home country?', a: 'Yes. XD Media works with clients across the United States, United Kingdom, Canada and Australia, in addition to other markets. Our team operates across time zones and reports in your local business hours and currency preferences.' },
-    { q: 'Do you provide white-label digital marketing services for other agencies?', a: 'Yes — we offer white-label SEO, PPC and design fulfillment for marketing agencies and consultants who want to expand their service offering without hiring an in-house team. Work is delivered under your brand with the same reporting and QA standards used on our direct client accounts.' },
+    { q: 'Do you provide white-label digital marketing services for other agencies?', a: 'Yes , we offer white-label SEO, PPC and design fulfillment for marketing agencies and consultants who want to expand their service offering without hiring an in-house team. Work is delivered under your brand with the same reporting and QA standards used on our direct client accounts.' },
     { q: 'How do you report results and prove ROI?', a: 'Every client gets access to a live reporting dashboard covering rankings, traffic, ad spend and conversions, plus a monthly plain-English summary call. We track cost per lead, cost per acquisition and revenue attribution wherever possible, so results are measured in business outcomes, not vanity metrics.' },
   ];
 
@@ -153,6 +156,7 @@ const DigitalMarketing = () => {
       <Helmet>
         <title>Core Growth Specialists | Digital Marketing Agency for SEO, PPC, Web Development & Meta Ads</title>
         <meta name="description" content="Core Growth Specialists is a full-service digital marketing agency helping brands in the USA, UK, Canada & Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation." />
+        {isDigitalMarketPath && <meta name="robots" content="noindex, nofollow" />}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "Organization",
           "name": "XD Media", "url": "https://xdmedia.in",
@@ -160,19 +164,18 @@ const DigitalMarketing = () => {
           "areaServed": ["United States", "United Kingdom", "Canada", "Australia"]
         })}</script>
       </Helmet>
-      <Canonical path="/digital-market" />
+      <Canonical path={isDigitalMarketPath ? "/digital-market" : "/"} />
 
       <style>{`
         .dm-page { --green: #2ee878; --green-2: #17b85e; --green-soft: rgba(46,232,120,0.12); --bg-dark: #060f0a; --bg-dark-2: #0b1f14; --bg-dark-3: #0e2a1b; --ink: #eafff2; --muted: #9fb8a9; --border-dark: #1d3626; --border-light: #e3ece6; --bg-light-2: #f4f9f6; font-family: 'DM Sans', sans-serif; }
         .dm-page h1,.dm-page h2,.dm-page h3,.dm-page h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
         .dm-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-2); margin-bottom: 14px; }
-        .dm-eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--green-2); display: inline-block; }
       `}</style>
 
       <div className="dm-page">
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden text-[#eafff2] pt-16 sm:pt-20">
-          {/* Background image only — same photo as Home; original styling kept */}
+          {/* Background image only , same photo as Home; original styling kept */}
           <div className="absolute inset-0">
             <img
               src="/premium_photo-1661696348133-653cb6cc037c.avif"
@@ -194,11 +197,11 @@ const DigitalMarketing = () => {
                   One Growth Partner. <span className="text-[#2ee878] font-fraunces italic">Every Channel.</span> 3X The Results.
                 </h1>
                 <p className="text-lg text-[#9fb8a9] max-w-[560px] mb-7">
-                  XD Media is a performance-driven digital marketing agency helping brands across the USA, UK, Canada and Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation — all under one roof.
+                  XD Media is a performance-driven digital marketing agency helping brands across the USA, UK, Canada and Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation , all under one roof.
                 </p>
                 <div className="flex flex-wrap gap-4 mb-9">
                   <button onClick={scrollToForm} className="px-7 py-3.5 rounded-full font-semibold text-[15px] bg-[#2ee878] text-[#052012] hover:bg-[#17b85e] transition-all hover:-translate-y-0.5">Get My Free Growth Plan</button>
-                  <a href="#services" className="px-7 py-3.5 rounded-full font-semibold text-[15px] border-[1.5px] border-[#1d3626] text-[#eafff2] hover:border-[#2ee878] hover:text-[#2ee878] transition-all">Explore Our Services</a>
+                  <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="px-7 py-3.5 rounded-full font-semibold text-[15px] border-[1.5px] border-[#1d3626] text-[#eafff2] hover:border-[#2ee878] hover:text-[#2ee878] transition-all">Explore Our Services</button>
                 </div>
                 <div className="flex flex-wrap gap-6 text-[13.5px] text-[#9fb8a9]">
                   {['Transparent, no-jargon reporting', 'No long-term lock-in contracts', 'Dedicated account manager'].map((t, i) => (
@@ -347,7 +350,7 @@ const DigitalMarketing = () => {
             <div className="text-center max-w-[720px] mx-auto mb-14">
               <span className="dm-eyebrow">Our Services</span>
               <h2 className="text-[38px] mb-3.5 text-gray-900">A Full-Service Digital Marketing Agency, Not a One-Trick SEO Shop</h2>
-              <p className="text-gray-500 text-[17px]">Most agencies specialize in one channel and hope the rest falls into place. We run SEO, paid ads, web development, design, video and messaging as one connected growth engine — so every channel compounds the others instead of competing for budget.</p>
+              <p className="text-gray-500 text-[17px]">Most agencies specialize in one channel and hope the rest falls into place. We run SEO, paid ads, web development, design, video and messaging as one connected growth engine , so every channel compounds the others instead of competing for budget.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {services.map((s, i) => (
@@ -367,7 +370,7 @@ const DigitalMarketing = () => {
             <div className="text-center max-w-[720px] mx-auto mb-14">
               <span className="dm-eyebrow">Services In Depth</span>
               <h2 className="text-[38px] mb-3.5 text-gray-900">How Each Service Is Built to Move Revenue, Not Just Metrics</h2>
-              <p className="text-gray-500 text-[17px]">Every engagement starts with your business goal — leads, bookings, or sales — and works backward into the channel mix that gets there fastest.</p>
+              <p className="text-gray-500 text-[17px]">Every engagement starts with your business goal , leads, bookings, or sales , and works backward into the channel mix that gets there fastest.</p>
             </div>
             <div className="space-y-0">
               {deepDives.map((dd, i) => {
@@ -417,13 +420,13 @@ const DigitalMarketing = () => {
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center max-w-[720px] mx-auto mb-14">
               <span className="dm-eyebrow" style={{ color: '#2ee878' }}>Next-Gen Visibility</span>
-              <h2 className="text-[38px] mb-3.5">Get Found on Google, ChatGPT and AI Overviews — Not Just the Old Search Results</h2>
-              <p className="text-[#9fb8a9] text-[17px]">Search behavior has changed. We optimize your brand's presence for AI-powered search — Google AI Overviews, ChatGPT, and Perplexity — alongside traditional rankings, so you show up wherever your next customer is asking the question.</p>
+              <h2 className="text-[38px] mb-3.5">Get Found on Google, ChatGPT and AI Overviews, Not Just the Old Search Results</h2>
+              <p className="text-[#9fb8a9] text-[17px]">Search behavior has changed. We optimize your brand's presence for AI-powered search , Google AI Overviews, ChatGPT, and Perplexity , alongside traditional rankings, so you show up wherever your next customer is asking the question.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {[
-                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name — a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility', image: '/AI Search Optimization.png' },
-                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS — WordPress, Shopify, Webflow or custom — for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit', image: '/CMS Optimizaton.png' },
+                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name , a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility', image: '/AI Search Optimization.png' },
+                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS , WordPress, Shopify, Webflow or custom , for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit', image: '/CMS Optimizaton.png' },
               ].map((card, i) => (
                 <div key={i} className="rounded-[22px] p-8 border border-[#1d3626]" style={{ background: '#0b1f14' }}>
                   <div className="rounded-xl mb-5 overflow-hidden">
@@ -443,7 +446,7 @@ const DigitalMarketing = () => {
           <div className="p-12 sm:p-16 flex flex-col justify-center text-[#eafff2]" style={{ background: 'linear-gradient(160deg,#0b2418,#123322)' }}>
             <span className="dm-eyebrow" style={{ color: '#2ee878' }}>Who We Are</span>
             <h2 className="text-[34px] font-bold mb-4">A Growth Team, Not a Vendor List</h2>
-            <p className="text-[#9fb8a9] text-[15.5px] mb-7">XD Media was built on a simple frustration: businesses were hiring five different vendors for SEO, ads, design and web — and getting five different, disconnected strategies. We built one team that plans and executes every channel together, so nothing works in a silo.</p>
+            <p className="text-[#9fb8a9] text-[15.5px] mb-7">XD Media was built on a simple frustration: businesses were hiring five different vendors for SEO, ads, design and web , and getting five different, disconnected strategies. We built one team that plans and executes every channel together, so nothing works in a silo.</p>
             <div className="grid grid-cols-3 gap-5 mb-7">
               {[{ n: '100+', l: 'Brands served globally' }, { n: '4', l: 'Tier-1 markets served (US, UK, CA, AU)' }, { n: '7', l: 'Services under one roof' }].map((s, i) => (
                 <div key={i}><b className="text-[32px] text-[#2ee878] block">{s.n}</b><span className="text-[12.5px] text-[#9fb8a9]">{s.l}</span></div>
@@ -469,7 +472,7 @@ const DigitalMarketing = () => {
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center max-w-[720px] mx-auto mb-14">
               <span className="dm-eyebrow" style={{ color: '#2ee878' }}>Execution Engine</span>
-              <h2 className="text-[38px] mb-3.5">How We Build Growth — Step by Step</h2>
+              <h2 className="text-[38px] mb-3.5">How We Build Growth , Step by Step</h2>
               <p className="text-[#9fb8a9] text-[17px]">We fix the foundation, connect the channels, then scale performance. Most agencies guess. We engineer.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">

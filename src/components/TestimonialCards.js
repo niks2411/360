@@ -89,7 +89,7 @@ const TestimonialCards = () => {
           </p>
         </motion.div>
 
-        {/* Testimonial Slider — Inspira UI style */}
+        {/* Testimonial Slider , Inspira UI style */}
         <div className="mx-auto w-full max-w-3xl text-center">
 
           {/* Testimonial Avatar */}
@@ -156,7 +156,7 @@ const TestimonialCards = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Row: Prev — Name & Role — Next */}
+          {/* Navigation Row: Prev , Name & Role , Next */}
           <div className="mt-4 flex w-full items-center justify-between gap-4 pt-8 sm:pt-0">
             <button
               onClick={handlePrev}
