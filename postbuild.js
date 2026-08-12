@@ -83,13 +83,13 @@ if (fs.existsSync(indexPath)) {
       description: 'Scale your agency catalog with white label Google Ads, Meta Ads, SEO, and email marketing. 100% invisible fulfillment and wholesale agency margins.'
     },
     {
-      fileName: 'list-your-business-on-chatgpt.html',
-      title: 'List Your Business on ChatGPT & AI Engines | XD Media',
-      description: 'Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media.'
+      fileName: 'ai-search-visibility.html',
+      title: 'AI Search Engine Optimization & Visibility | XD Media',
+      description: 'Get your brand indexed and recommended by AI engines and chatbots like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media.'
     },
     {
       fileName: 'gmb-optimization.html',
-      title: 'Google My Business Optimization | Rank #1 Local Map Pack | XD Media',
+      title: 'Google My Business Optimization | Local Map Pack Optimization | XD Media',
       description: 'Dominate local search rankings with XD Media\'s GMB Optimization services. Drive high-intent phone calls, foot traffic, and leads with top 3 Map Pack rankings.'
     },
     {

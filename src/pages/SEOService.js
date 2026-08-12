@@ -161,8 +161,8 @@ const SEOService = () => {
   ];
 
   const stats = [
-    { number: '10K+', label: 'Websites Optimized' },
-    { number: '95%', label: 'Client Satisfaction' },
+    { number: '100+', label: 'Brands Served' },
+    { number: '7+', label: 'Services Offered' },
     { number: '50+', label: 'Countries Served' },
     { number: '24/7', label: 'Support Available' }
   ];
@@ -656,8 +656,8 @@ const SEOService = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto px-4 sm:px-8 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Shape your business with the <span className="font-fraunces italic text-[#16a34a]">Leading SEO Company</span> in India!</h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">If you are looking for an SEO company to rank your website on #1 page of Google, you have come to the right place! XD Media, the leading SEO company in India, follows an integrated approach to mark your presence in the worldwide online market.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Shape your business with <span className="font-fraunces italic text-[#16a34a]">SEO Experts</span> in India!</h2>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">If you are looking for an SEO company to help improve your website's visibility on search results, you have come to the right place! XD Media, a performance-driven SEO company, follows an integrated approach to build your presence in the online market.</p>
             <div className="flex justify-center">
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -888,7 +888,7 @@ const SEOService = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6">Recent Results in Google & AI Search Engines.</h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                We go beyond words and get the job done. We have generated over 1 million leads and achieved more than 1,000 successes which highlights our success. Since we rank highly for countless keywords, when you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
+                We go beyond words and get the job done. Our clients consistently see improvements in organic traffic, keyword rankings, and qualified leads through a disciplined, white-hat SEO process. When you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
               </p>
             </div>
 

@@ -28,17 +28,17 @@ const ChatGPTListing = () => {
   return (
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Helmet>
-        <title>List Your Business on ChatGPT & AI Engines | XD Media</title>
+        <title>AI Search Engine Optimization & Visibility | XD Media</title>
         <meta
           name="description"
-          content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media."
+          content="Get your brand indexed and recommended by AI engines and chatbots like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media."
         />
-        <meta property="og:title" content="List Your Business on ChatGPT & AI Engines | XD Media" />
-        <meta property="og:description" content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
-        <meta property="twitter:title" content="List Your Business on ChatGPT & AI Engines | XD Media" />
-        <meta property="twitter:description" content="Get your brand indexed and recommended by AI assistants like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
+        <meta property="og:title" content="AI Search Engine Optimization & Visibility | XD Media" />
+        <meta property="og:description" content="Get your brand indexed and recommended by AI engines and chatbots like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
+        <meta property="twitter:title" content="AI Search Engine Optimization & Visibility | XD Media" />
+        <meta property="twitter:description" content="Get your brand indexed and recommended by AI engines and chatbots like ChatGPT, Claude, and Gemini. Optimize your business for conversational AI search with XD Media." />
       </Helmet>
-      <Canonical path="/list-your-business-on-chatgpt" />
+      <Canonical path="/ai-search-visibility" />
       
       {/* Hero Section */}
       <section
@@ -65,7 +65,7 @@ const ChatGPTListing = () => {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 sm:mb-6 tracking-tight">
-                List Your Business on <br className="hidden sm:block" /> ChatGPT & AI Engines.
+                Get Found on AI Search <br className="hidden sm:block" /> Engines & Chatbots.
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-inter mb-6 sm:mb-8">
@@ -104,8 +104,8 @@ const ChatGPTListing = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <InlineContactForm
-                servicePage="ChatGPT Listing"
-                defaultService="List Your Business on ChatGPT"
+                servicePage="AI Search Visibility"
+                defaultService="AI Search Engine Optimization"
               />
             </motion.div>
           </div>

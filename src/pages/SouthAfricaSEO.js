@@ -1246,7 +1246,7 @@ const SouthAfricaSEO = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-6 font-bold leading-tight">Recent Results in Google & AI Search Engines.</h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                We go beyond words and get the job done. We have generated over 1 million leads and achieved more than 1,000 successes which highlights our success. Since we rank highly for countless keywords, when you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
+                We go beyond words and get the job done. Our clients consistently see improvements in organic traffic, keyword rankings, and qualified leads through a disciplined, white-hat SEO process. When you work with us, you can expect professional support that will lift your business. Let's make sure we succeed together!
               </p>
             </div>
 

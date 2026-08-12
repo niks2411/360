@@ -45,7 +45,7 @@ const Navbar = () => {
     },
     {
       name: 'Services',
-      path: '/services',
+      path: null,
       icon: null,
       preview: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
       description: 'Comprehensive digital solutions',
@@ -167,27 +167,42 @@ const Navbar = () => {
                     // Don't close on mouse leave - keep it open until user clicks elsewhere
                   }}
                 >
-                  <Link
-                    to={item.path}
-                    className={`relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group ${isActive(item.path)
-                      ? 'text-white '
-                      : 'text-white hover:text-green-200'
-                      }`}
-                    onClick={(e) => {
-                      if (item.hasDropdown) {
-                        e.preventDefault();
-                        setIsDropdownOpen(!isDropdownOpen);
-                        setActiveDropdown(item.name);
-                      }
-                    }}
-                  >
-                    {item.icon && <item.icon className="w-4 h-4" />}
-                    <span className="uppercase tracking-wide text-sm">{item.name}</span>
-                    {item.hasDropdown && <ChevronDown className="w-3 h-3 text-white" />}
-
-                    {/* Animated Line */}
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></div>
-                  </Link>
+                  {item.path ? (
+                    <Link
+                      to={item.path}
+                      className={`relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group ${isActive(item.path)
+                        ? 'text-white '
+                        : 'text-white hover:text-green-200'
+                        }`}
+                      onClick={(e) => {
+                        if (item.hasDropdown) {
+                          e.preventDefault();
+                          setIsDropdownOpen(!isDropdownOpen);
+                          setActiveDropdown(item.name);
+                        }
+                      }}
+                    >
+                      {item.icon && <item.icon className="w-4 h-4" />}
+                      <span className="uppercase tracking-wide text-sm">{item.name}</span>
+                      {item.hasDropdown && <ChevronDown className="w-3 h-3 text-white" />}
+                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></div>
+                    </Link>
+                  ) : (
+                    <button
+                      className="relative flex items-center space-x-2 px-4 py-3 transition-all duration-300 group text-white hover:text-green-200 bg-transparent border-none cursor-pointer"
+                      onClick={() => {
+                        if (item.hasDropdown) {
+                          setIsDropdownOpen(!isDropdownOpen);
+                          setActiveDropdown(item.name);
+                        }
+                      }}
+                    >
+                      {item.icon && <item.icon className="w-4 h-4" />}
+                      <span className="uppercase tracking-wide text-sm">{item.name}</span>
+                      {item.hasDropdown && <ChevronDown className="w-3 h-3 text-white" />}
+                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 transition-all duration-300 group-hover:w-full"></div>
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -291,21 +306,28 @@ const Navbar = () => {
               <div className="px-4 py-6 space-y-2">
                 {navigationItems.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      to={item.path}
-                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path)
-                        ? 'bg-green-600/20 text-green-400 font-semibold border border-green-600/30'
-                        : 'text-gray-100 hover:bg-white/5 hover:text-white'
-                        }`}
-                      onClick={() => {
-                        if (!item.hasDropdown) {
-                          setIsMobileMenuOpen(false);
-                        }
-                      }}
-                    >
-                      {item.icon && <item.icon className="w-5 h-5" />}
-                      <span>{item.name}</span>
-                    </Link>
+                    {item.path ? (
+                      <Link
+                        to={item.path}
+                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path)
+                          ? 'bg-green-600/20 text-green-400 font-semibold border border-green-600/30'
+                          : 'text-gray-100 hover:bg-white/5 hover:text-white'
+                          }`}
+                        onClick={() => {
+                          if (!item.hasDropdown) {
+                            setIsMobileMenuOpen(false);
+                          }
+                        }}
+                      >
+                        {item.icon && <item.icon className="w-5 h-5" />}
+                        <span>{item.name}</span>
+                      </Link>
+                    ) : (
+                      <div className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-100">
+                        {item.icon && <item.icon className="w-5 h-5" />}
+                        <span>{item.name}</span>
+                      </div>
+                    )}
                     {item.hasDropdown && item.dropdownItems && (
                       <div className="ml-8 space-y-1 mt-2 border-l border-white/10 pl-4">
                         {item.dropdownItems.map((dropdownItem) => (

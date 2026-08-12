@@ -123,8 +123,8 @@ const WhiteLabelSEO = () => {
   };
 
   const stats = [
-    { number: '10K+', label: 'Projects Delivered' },
-    { number: '200%', label: 'Average Client ROI' },
+    { number: '500+', label: 'Projects Delivered' },
+    { number: '7+', label: 'SEO Services Covered' },
     { number: '100+', label: 'Agency Partners' },
     { number: '24/7', label: 'Dedicated Support' }
   ];

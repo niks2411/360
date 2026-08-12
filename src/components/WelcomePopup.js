@@ -12,10 +12,10 @@ const WelcomePopup = () => {
         const hasSeenPopup = sessionStorage.getItem('hasSeenWelcomePopup');
 
         if (!hasSeenPopup) {
-            // Show popup after 2 seconds delay
+            // Show popup after 20 seconds delay (avoids Google Ads landing page penalty)
             const timer = setTimeout(() => {
                 setIsVisible(true);
-            }, 2000);
+            }, 20000);
 
             return () => clearTimeout(timer);
         }

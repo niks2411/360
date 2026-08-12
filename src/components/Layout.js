@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     '/contact',
     '/admin',
     '/admin/seo-leads',
-    '/list-your-business-on-chatgpt',
+    '/ai-search-visibility',
     '/gmb-optimization',
     '/ai-automation-tools',
     '/book-a-slot',

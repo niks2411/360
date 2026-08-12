@@ -194,7 +194,7 @@ const DigitalMarketing = () => {
                   <GmbBadge />
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-bold mb-5 leading-[1.12]">
-                  One Growth Partner. <span className="text-[#2ee878] font-fraunces italic">Every Channel.</span> 3X The Results.
+                  One Growth Partner. <span className="text-[#2ee878] font-fraunces italic">Every Channel.</span> Measurable Results.
                 </h1>
                 <p className="text-lg text-[#9fb8a9] max-w-[560px] mb-7">
                   XD Media is a performance-driven digital marketing agency helping brands across the USA, UK, Canada and Australia grow with SEO, PPC, web development, Meta Ads, graphic design, video editing and WhatsApp marketing automation , all under one roof.
@@ -420,13 +420,13 @@ const DigitalMarketing = () => {
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center max-w-[720px] mx-auto mb-14">
               <span className="dm-eyebrow" style={{ color: '#2ee878' }}>Next-Gen Visibility</span>
-              <h2 className="text-[38px] mb-3.5">Get Found on Google, ChatGPT and AI Overviews, Not Just the Old Search Results</h2>
-              <p className="text-[#9fb8a9] text-[17px]">Search behavior has changed. We optimize your brand's presence for AI-powered search , Google AI Overviews, ChatGPT, and Perplexity , alongside traditional rankings, so you show up wherever your next customer is asking the question.</p>
+              <h2 className="text-[38px] mb-3.5">Get Found on Google, AI Search Engines, and Chatbots, Not Just the Old Search Results</h2>
+              <p className="text-[#9fb8a9] text-[17px]">Search behavior has changed. We optimize your brand's presence for AI-powered search (including Google AI Overviews, chatbots, and Perplexity) alongside traditional rankings, so you show up wherever your next customer is asking the question.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {[
-                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name , a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility', image: '/AI Search Optimization.png' },
-                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS , WordPress, Shopify, Webflow or custom , for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit', image: '/CMS Optimizaton.png' },
+                { title: 'AI Search Optimization (AEO/GEO)', desc: 'We structure your content and schema so AI answer engines can cite your business by name; a growing share of buying research now starts in a chat window, not a search bar.', cta: 'Check My AI Visibility', image: '/AI Search Optimization.png' },
+                { title: 'Core Web Vitals & CMS Optimization', desc: 'Slow sites lose both rankings and customers. We audit and optimize your CMS (WordPress, Shopify, Webflow or custom) for speed, stability and mobile usability.', cta: 'Get a Free Speed Audit', image: '/CMS Optimizaton.png' },
               ].map((card, i) => (
                 <div key={i} className="rounded-[22px] p-8 border border-[#1d3626]" style={{ background: '#0b1f14' }}>
                   <div className="rounded-xl mb-5 overflow-hidden">
@@ -460,8 +460,13 @@ const DigitalMarketing = () => {
             </div>
             <p className="text-[13px] text-gray-500 uppercase tracking-widest font-semibold mb-4">Certified Partners</p>
             <div className="flex gap-4 flex-wrap justify-center">
-              {['Google Partner', 'Meta Business Partner', 'Semrush Certified', 'HubSpot Certified'].map((p, i) => (
-                <span key={i} className="text-[13px] font-semibold text-gray-500 border border-[#e3ece6] px-3.5 py-2 rounded-lg">{p}</span>
+              {[
+                { name: 'Google Partner', url: 'https://www.google.com/partners/agency?id=7262541988' },
+                { name: 'Meta Business Partner', url: 'https://www.facebook.com/business/partner-directory/search?solution_type=campaign_management&id=376702044921498&section=overview' },
+                { name: 'Semrush Certified', url: 'https://www.semrush.com/agencies/' },
+                { name: 'HubSpot Certified', url: 'https://ecosystem.hubspot.com/marketplace/solutions' },
+              ].map((p, i) => (
+                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="text-[13px] font-semibold text-gray-500 border border-[#e3ece6] px-3.5 py-2 rounded-lg hover:border-green-400 hover:text-green-700 transition-colors">{p.name}</a>
               ))}
             </div>
           </div>

@@ -131,8 +131,8 @@ const Home = () => {
 
 
   const stats = [
-    { number: '10K+', label: 'Websites Optimized' },
-    { number: '95%', label: 'Client Satisfaction' },
+    { number: '100+', label: 'Brands Served' },
+    { number: '7+', label: 'Services Offered' },
     { number: '50+', label: 'Countries Served' },
     { number: '24/7', label: 'Support Available' }
   ];
@@ -543,7 +543,7 @@ const Home = () => {
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-6 md:px-0 mt-4">
             {/* Card 1 */}
-            <Link to="/list-your-business-on-chatgpt" className="block group">
+            <Link to="/ai-search-visibility" className="block group">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -570,10 +570,10 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-green-500/5 transition-all duration-500"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-all duration-500 group-hover:translate-y-[-8px]">
                   <h3 className="text-2xl font-bold text-white mb-4 transition-all duration-300 group-hover:text-green-400">
-                    List Your Business on ChatGPT
+                    AI Search Engine Optimization
                   </h3>
                   <p className="text-gray-200 text-sm leading-relaxed mb-6">
-                    Be discoverable where people are searching next. We help list and integrate your business on ChatGPT and AI platforms, making your brand ready for the future of search.
+                    Be discoverable where users are searching next. We optimize your brand for LLMs, answer engines, and AI search assistants to get you recommended.
                   </p>
                   <div
                     className="inline-flex items-center justify-center text-white px-5 py-2.5 rounded font-semibold text-xs transition-all duration-300"
@@ -582,7 +582,7 @@ const Home = () => {
                       boxShadow: '0 4px 15px rgba(71, 191, 114, 0.2)'
                     }}
                   >
-                    Get Listed on ChatGPT
+                    Get AI Visibility
                   </div>
                 </div>
               </motion.div>

@@ -61,8 +61,12 @@
             "destination": "/white-label-digital-marketing.html"
         },
         {
+            "source": "/ai-search-visibility",
+            "destination": "/ai-search-visibility.html"
+        },
+        {
             "source": "/list-your-business-on-chatgpt",
-            "destination": "/list-your-business-on-chatgpt.html"
+            "destination": "/ai-search-visibility.html"
         },
         {
             "source": "/gmb-optimization",

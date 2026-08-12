@@ -4,25 +4,25 @@ import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 export function ThreeDCardDemo() {
     const cards = [
         {
-            title: "List Your Business on ChatGPT",
-            description: "Be discoverable where people are searching next. We help list and integrate your business on ChatGPT and AI platforms, making your brand ready for the future of search.",
+            title: "AI Search Engine Optimization",
+            description: "Be discoverable where users are searching next. We optimize your brand for AI search engines and chatbots, making your business ready for the future of search.",
             image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2560&auto=format&fit=crop",
-            buttonText: "Get Listed",
-            link: "/services"
+            buttonText: "Get AI Visibility",
+            link: "/ai-search-visibility"
         },
         {
-            title: "GMB #1 Optimization",
-            description: "Dominate local search with Google Business Profile optimization. From keywords to reviews, we make sure your business ranks #1 where it matters most , on Google Maps and local search.",
+            title: "GMB Optimization",
+            description: "Dominate local search with Google Business Profile optimization. From keywords to reviews, we help your business stand out on Google Maps and local search.",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-            buttonText: "Rank #1",
-            link: "/services"
+            buttonText: "Optimize Now",
+            link: "/gmb-optimization"
         },
         {
             title: "AI & Automation Tools",
             description: "Work smarter, not harder. We set up custom AI and automation solutions to streamline workflows, generate leads, and enhance customer engagement 24/7.",
             image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2560&auto=format&fit=crop",
             buttonText: "Automate Now",
-            link: "/services"
+            link: "/ai-automation-tools"
         }
     ];
 

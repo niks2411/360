@@ -55,7 +55,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/seo-leads" element={<SEOAdmin />} />
-            <Route path="/list-your-business-on-chatgpt" element={<ChatGPTListing />} />
+            <Route path="/ai-search-visibility" element={<ChatGPTListing />} />
             <Route path="/gmb-optimization" element={<GMBOptimization />} />
             <Route path="/ai-automation-tools" element={<AIAutomationTools />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
