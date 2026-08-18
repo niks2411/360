@@ -99,6 +99,21 @@
     ],
     "headers": [
         {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "(.*)xdmedia\\.agency"
+                }
+            ],
+            "headers": [
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex, nofollow, noarchive"
+                }
+            ]
+        },
+        {
             "source": "/(.*)\\.(jpg|jpeg|gif|png|svg|ico|webp|json|css|js|woff|woff2|ttf|otf|eot)$",
             "headers": [
                 {

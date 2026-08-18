@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
@@ -28,8 +28,15 @@ import TeamMemberDetail from './pages/TeamMemberDetail';
 import SouthAfricaSEO from './pages/SouthAfricaSEO';
 
 function App() {
+  const isNoIndexDomain = typeof window !== 'undefined' && window.location.hostname.includes('xdmedia.agency');
+
   return (
     <HelmetProvider>
+      {isNoIndexDomain && (
+        <Helmet>
+          <meta name="robots" content="noindex, nofollow, noarchive" />
+        </Helmet>
+      )}
       <Router>
         <ScrollToTop />
         <WelcomePopup />
