@@ -1,7 +1,7 @@
 export const blogPosts = [
   {
     slug: "seo-guide-for-businesses",
-    title: "The SEO Guide For Businesses You'll Need in 2026 (WhyMost 'Experts' Are Still Stuck in 2015)",
+    title: "The SEO Guide For Businesses You'll Need in 2026 (Why Most 'Experts' Are Still Stuck in 2015)",
     metaTitle: "The Complete SEO Guide for 2026: SEO, AEO & GEO",
     metaDescription: "The SEO guide you need in 2026. Technical SEO, content authority, AEO & GEO explained with real examples. For any industry, any market.",
     schema: {
@@ -121,7 +121,7 @@ Grab a coffee. This is the long version, on purpose.`
       },
       {
         id: "what-seo-means-today",
-        title: "1. What SEO Actually Means Today",
+        title: "1. Let's Get One Thing Straight, What SEO Actually Means Today",
         content: `So, what is SEO, really, in a world this fragmented? And more specifically, what does SEO mean for businesses today when half your customers ask a chatbot before they ever open Google? Let's untangle that properly.
 
 **SEO Isn't Just Google Anymore**
@@ -545,7 +545,7 @@ Treating SEO as a one-time project instead of an ongoing system , technical debt
     ]
   },
   {
-    slug: "seo-vs-aeo-vs-geo-chatgpt-ai-overviews-2026",
+    slug: "seo-vs-aeo-vs-geo-chatgpt-ai-overviews",
     title: "SEO vs AEO vs GEO: How to Actually Get Cited by ChatGPT and AI Overviews in 2026",
     metaTitle: "SEO vs AEO vs GEO: Get Cited by ChatGPT & AI Overviews in 2026",
     metaDescription: "Learn the difference between SEO, AEO and GEO, how ChatGPT and Google AI Overviews choose sources, and practical steps to get your brand cited in AI answers.",
@@ -676,7 +676,7 @@ One honest caveat before we start: nobody, including the AI labs themselves, has
       },
       {
         id: "what-is-aeo-what-is-geo",
-        title: "What Is AEO? What Is GEO? (Plain-English Definitions)",
+        title: "What Is AEO? What Is GEO?",
         content: `Strip away the acronyms and both concepts are simpler than they sound, but they solve genuinely different problems, and mixing them up is where most confusion starts.
 
 **What Is AEO in SEO Terms?**

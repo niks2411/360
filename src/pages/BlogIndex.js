@@ -20,7 +20,7 @@ const BlogIndex = () => {
       <Canonical path="/blog" />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-white text-slate-900 overflow-hidden border-b border-slate-100">
+      <section className="relative pt-6 pb-6 sm:pt-8 sm:pb-8 bg-white text-slate-900 overflow-hidden border-b border-slate-100">
         {/* Subtle grid and gradient overlays */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-70"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
@@ -41,7 +41,7 @@ const BlogIndex = () => {
       </section>
 
       {/* Blog Post Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {blogPosts.map((post) => (

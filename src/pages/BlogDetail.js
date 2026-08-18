@@ -29,8 +29,15 @@ const parseInlineMarkdown = (text) => {
       const closeBracketIdx = matchStr.indexOf(']');
       const linkText = matchStr.slice(1, closeBracketIdx);
       const url = matchStr.slice(closeBracketIdx + 2, -1);
+      const isExternal = url.startsWith('http');
       parts.push(
-        <a key={matchIndex} href={url} target={url.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer" className="text-[#47BF72] hover:underline font-medium">
+        <a 
+          key={matchIndex} 
+          href={url} 
+          target={isExternal ? '_blank' : '_self'} 
+          rel={isExternal ? 'nofollow noopener noreferrer' : undefined} 
+          className="text-[#47BF72] hover:underline font-medium"
+        >
           {linkText}
         </a>
       );
@@ -314,7 +321,7 @@ const BlogDetail = ({ slug: propSlug }) => {
       <article className="min-h-screen bg-[#FDFDFD] pb-24 font-sans">
         
         {/* Navigation & Header */}
-        <header className="pt-28 sm:pt-32 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100 max-w-7xl mx-auto mb-10">
+        <header className="pt-8 sm:pt-10 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gray-100 max-w-7xl mx-auto mb-10">
           <div className="text-left mb-6">
             <Link
               to="/blog"
@@ -354,7 +361,7 @@ const BlogDetail = ({ slug: propSlug }) => {
                 Table of Contents
               </h4>
               <nav className="space-y-1">
-                {post.sections.map((section) => {
+                {post.sections.filter((section) => section.id !== 'introduction').map((section) => {
                   const isActive = activeSection === section.id;
                   return (
                     <button
@@ -389,15 +396,18 @@ const BlogDetail = ({ slug: propSlug }) => {
               <main className="prose prose-slate prose-green max-w-none">
                 {post.sections.map((section) => {
                   const isFaq = section.id === 'frequently-asked-questions';
+                  const isIntro = section.id === 'introduction';
                   const sectionEl = (
                     <section
                       key={section.id}
                       id={section.id}
                       className="mb-8 sm:mb-10 scroll-mt-28"
                     >
-                      <h2 className="text-2xl sm:text-3xl text-slate-900 font-bold mt-0 mb-4 tracking-tight font-sans">
-                        {section.title}
-                      </h2>
+                      {!isIntro && (
+                        <h2 className="text-2xl sm:text-3xl text-slate-900 font-bold mt-0 mb-4 tracking-tight font-sans">
+                          {section.title.replace(/^\d+\.\s*/, '')}
+                        </h2>
+                      )}
                       {isFaq ? (
                         <div className="space-y-4 not-prose mt-6">
                           {parseFAQs(section.content).map((faq, faqIdx) => {
@@ -450,7 +460,7 @@ const BlogDetail = ({ slug: propSlug }) => {
                             Table of Contents
                           </h4>
                           <nav className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                            {post.sections.map((sec) => {
+                            {post.sections.filter((sec) => sec.id !== 'introduction').map((sec) => {
                               const isActive = activeSection === sec.id;
                               return (
                                 <button
@@ -487,9 +497,9 @@ const BlogDetail = ({ slug: propSlug }) => {
                   <div className="inline-flex items-center gap-1 bg-[#47BF72]/15 text-[#47BF72] text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                     <Sparkles className="w-3 h-3" /> {post.sidebarCta?.tag || 'Growth Campaign'}
                   </div>
-                  <h4 className="text-lg font-semibold leading-snug">
+                  <div className="text-lg font-semibold leading-snug">
                     {post.sidebarCta?.title || 'Ready to grow your channel?'}
-                  </h4>
+                  </div>
                   <p className="text-xs text-gray-400 leading-relaxed">
                     {post.sidebarCta?.description || 'Start your promotion today and reach millions of targeted viewers. We scale subscribers, watch hours, and sales.'}
                   </p>

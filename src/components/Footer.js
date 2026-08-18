@@ -112,7 +112,7 @@ const Footer = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1.1fr_0.9fr_0.9fr_1.3fr] gap-6 lg:gap-8 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1.1fr_0.9fr_1.3fr] gap-6 lg:gap-8 pb-16">
 
             {/* Col 1: Brand Info */}
             <div className="space-y-4 pr-2">
@@ -134,7 +134,7 @@ const Footer = () => {
 
             {/* Col 2: Services */}
             <div>
-              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Services</h3>
+              <div className="text-base font-bold text-white mb-5 tracking-wide">Services</div>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li><Link to="/affordable-seo-services-in-india" className="hover:text-white transition-colors">SEO Services</Link></li>
                 <li><Link to="/web-development-services" className="hover:text-white transition-colors">Web Development Services</Link></li>
@@ -146,7 +146,7 @@ const Footer = () => {
 
             {/* Col 3: Company */}
             <div>
-              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Company</h3>
+              <div className="text-base font-bold text-white mb-5 tracking-wide">Company</div>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li><Link to="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
                 <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
@@ -155,19 +155,9 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Col 4: Legal */}
+            {/* Col 4: Locations */}
             <div>
-              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Legal</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
-              </ul>
-            </div>
-
-            {/* Col 5: Locations */}
-            <div>
-              <h3 className="text-base font-bold text-white mb-5 tracking-wide">Our Offices</h3>
+              <div className="text-base font-bold text-white mb-5 tracking-wide">Our Offices</div>
               <div className="space-y-4 text-xs text-gray-400">
                 <div>
                   <span className="font-semibold text-white block text-sm mb-1">Head Office , India</span>
@@ -183,8 +173,9 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-white/10 pt-8 flex justify-between items-center text-sm text-gray-400">
+          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>© {currentYear} XD Media. All rights reserved.</p>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </footer>
