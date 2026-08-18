@@ -151,11 +151,21 @@ const renderFormattedContent = (content) => {
         currentList.items.push(trimmedLine.replace(/^\d+\.\s/, '').trim());
       } else {
         flushList(`list-${paraIdx}-${lineIdx}`);
-        elements.push(
-          <p key={`p-${paraIdx}-${lineIdx}`} className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
-            {parseInlineMarkdown(trimmedLine)}
-          </p>
-        );
+        const isStandaloneHeading = trimmedLine.startsWith('**') && trimmedLine.endsWith('**') && !trimmedLine.slice(2, -2).includes('**');
+        if (isStandaloneHeading) {
+          const headingText = trimmedLine.slice(2, -2).trim();
+          elements.push(
+            <h3 key={`h3-${paraIdx}-${lineIdx}`} className="text-xl sm:text-2xl font-bold text-slate-900 mt-6 mb-3 tracking-tight font-sans">
+              {headingText}
+            </h3>
+          );
+        } else {
+          elements.push(
+            <p key={`p-${paraIdx}-${lineIdx}`} className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4">
+              {parseInlineMarkdown(trimmedLine)}
+            </p>
+          );
+        }
       }
     });
 
