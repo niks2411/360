@@ -368,22 +368,26 @@ const PrivacyPolicy = () => {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 bg-white/[0.01] border border-white/5 rounded-xl p-4">
-                  <MapPin className="w-5 h-5 text-[#47BF72] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">Address</h4>
-                    <p className="text-xs text-gray-400">
-                      SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh
-                    </p>
+                {typeof window !== 'undefined' && !window.location.hostname.includes('xdmedia.agency') && (
+                  <div className="flex items-start gap-3 bg-white/[0.01] border border-white/5 rounded-xl p-4">
+                    <MapPin className="w-5 h-5 text-[#47BF72] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">Address</h4>
+                      <p className="text-xs text-gray-400">
+                        SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-3 bg-white/[0.01] border border-white/5 rounded-xl p-4">
-                  <Phone className="w-5 h-5 text-[#47BF72] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">Call Us</h4>
-                    <p className="text-xs text-gray-400">+91 7901724043</p>
+                )}
+                {typeof window !== 'undefined' && !window.location.hostname.includes('xdmedia.agency') && (
+                  <div className="flex items-start gap-3 bg-white/[0.01] border border-white/5 rounded-xl p-4">
+                    <Phone className="w-5 h-5 text-[#47BF72] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-1">Call Us</h4>
+                      <p className="text-xs text-gray-400">+91 7901724043</p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </section>
 

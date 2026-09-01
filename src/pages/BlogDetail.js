@@ -524,9 +524,9 @@ const BlogDetail = ({ slug: propSlug }) => {
 
               {/* Social Share Widget */}
               <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm space-y-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
                   <Share2 className="w-3.5 h-3.5" /> Share this article
-                </h4>
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}

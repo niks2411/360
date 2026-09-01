@@ -83,6 +83,8 @@ const Contact = () => {
     }
   };
 
+  const isAgencyDomain = typeof window !== 'undefined' && window.location.hostname.includes('xdmedia.agency');
+
   const contactInfo = [
     {
       icon: Mail,
@@ -90,18 +92,18 @@ const Contact = () => {
       detail: 'connect@xdmedia.in',
       action: 'mailto:connect@xdmedia.in'
     },
-    {
+    ...(!isAgencyDomain ? [{
       icon: Phone,
       title: 'Call Us',
       detail: '+91 7901724043',
       action: 'tel:+917901724043'
-    },
-    {
+    }] : []),
+    ...(!isAgencyDomain ? [{
       icon: MapPin,
       title: 'Head Office , India',
       detail: 'SCO-40, HLP Galleria\nSAS Nagar Mohali, 160062\nChandigarh',
       action: '#'
-    },
+    }] : []),
     {
       icon: MapPin,
       title: 'Branch Office , South Africa',

@@ -128,7 +128,9 @@ const Footer = () => {
               </p>
               <div className="pt-2 space-y-1.5 text-sm text-gray-400">
                 <p><span className="text-gray-300 font-medium">Email:</span> connect@xdmedia.in</p>
-                <p><span className="text-gray-300 font-medium">Phone:</span> +91 7901724043</p>
+                {typeof window !== 'undefined' && !window.location.hostname.includes('xdmedia.agency') && (
+                  <p><span className="text-gray-300 font-medium">Phone:</span> +91 7901724043</p>
+                )}
               </div>
             </div>
 
@@ -159,10 +161,12 @@ const Footer = () => {
             <div>
               <div className="text-base font-bold text-white mb-5 tracking-wide">Our Offices</div>
               <div className="space-y-4 text-xs text-gray-400">
-                <div>
-                  <span className="font-semibold text-white block text-sm mb-1">Head Office , India</span>
-                  <span className="leading-relaxed block">SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh</span>
-                </div>
+                {typeof window !== 'undefined' && !window.location.hostname.includes('xdmedia.agency') && (
+                  <div>
+                    <span className="font-semibold text-white block text-sm mb-1">Head Office , India</span>
+                    <span className="leading-relaxed block">SCO-40, HLP Galleria, SAS Nagar Mohali, 160062, Chandigarh</span>
+                  </div>
+                )}
                 <div>
                   <span className="font-semibold text-white block text-sm mb-1">Branch Office , South Africa</span>
                   <span className="leading-relaxed block">Sandton, Johannesburg 2091, South Africa</span>
